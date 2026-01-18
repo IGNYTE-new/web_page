@@ -67,6 +67,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -80,6 +81,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover { color: var(--electric); }
@@ -368,7 +370,6 @@
             font-weight: 600;
         }
 
-        /* Form Styles */
         .form-container {
             max-width: 600px;
             margin: 0 auto;
@@ -555,6 +556,7 @@
             color: rgba(255,255,255,0.9);
             margin-top: 15px;
             position: relative;
+            white-space: pre-wrap;
         }
 
         .copy-btn {
@@ -576,6 +578,36 @@
             color: var(--midnight);
         }
 
+        .manifesto-section {
+            background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), transparent);
+            padding: 100px 5%;
+            margin: 60px 0;
+        }
+
+        .manifesto-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .manifesto-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--electric);
+        }
+
+        .manifesto-content .big-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .manifesto-content .emphasis {
+            color: var(--electric);
+            font-weight: 700;
+        }
+
         footer {
             padding: 60px 5%;
             text-align: center;
@@ -591,6 +623,7 @@
             .nav-links { gap: 1rem; font-size: 0.85rem; }
             .stats-bar { padding: 30px 20px; }
             .content-page h1 { font-size: 2.5rem; }
+            .manifesto-content .big-text { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -598,24 +631,24 @@
     <div class="bg-gradient"></div>
 
     <nav>
-        <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">IGNYTE</a>
+        <span class="logo" onclick="showPage('home')">IGNYTE</span>
         <div class="nav-links">
-            <a href="#blog" onclick="event.preventDefault(); showPage('blog');">Blog</a>
-            <a href="#about" onclick="event.preventDefault(); showPage('about');">About</a>
-            <a href="#prompts" onclick="event.preventDefault(); showPage('prompts');">Free Prompts</a>
-            <a href="#demo" class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="event.preventDefault(); showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Get Free Audit</a>
+            <a onclick="showPage('blog')">Blog</a>
+            <a onclick="showPage('about')">About</a>
+            <a onclick="showPage('prompts')">Free Prompts</a>
+            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Get Free Audit</a>
         </div>
     </nav>
 
     <!-- HOME PAGE -->
     <div id="home" class="page active">
         <section class="hero">
-            <h1>Your Enquiries Are <span class="gradient-text">Dying in Your Inbox</span></h1>
-            <p class="hero-subtitle">Every 5 minutes you wait, conversion drops 80%. IGNYTE qualifies, scores, and routes hot buyers to your sales team in under 90 seconds, while your competitors are still checking email.</p>
+            <h1>Your Ad Spend Is Buying <span class="gradient-text">Digital Ghosts</span></h1>
+            <p class="hero-subtitle">Most automotive software is built to look pretty for the C-suite. IGNYTE is built for the showroom floor. We turn clicks into conversations in under 60 seconds, before your competitors even check their inbox.</p>
             
             <div class="hero-cta">
-                <a href="#demo" class="btn-primary">See Your Revenue Leak (Free Audit)</a>
-                <a href="#solution" class="btn-ghost">How It Works</a>
+                <a href="#demo" class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})">Stop The Leak (Free Audit)</a>
+                <a href="#solution" class="btn-ghost" onclick="document.getElementById('solution').scrollIntoView({behavior: 'smooth'})">60-Second Intelligence</a>
             </div>
         </section>
 
@@ -625,22 +658,34 @@
                 <div class="stat-label">Higher conversion rate</div>
             </div>
             <div class="stat">
-                <div class="stat-number">87s</div>
-                <div class="stat-label">Average response time</div>
+                <div class="stat-number">&lt;60s</div>
+                <div class="stat-label">Response-ready logic</div>
             </div>
             <div class="stat">
                 <div class="stat-number">£47k</div>
-                <div class="stat-label">Avg. monthly revenue recovered</div>
+                <div class="stat-label">Avg. monthly leak stopped</div>
             </div>
             <div class="stat">
                 <div class="stat-number">24/7</div>
-                <div class="stat-label">Works while you sleep</div>
+                <div class="stat-label">Pure momentum</div>
             </div>
         </div>
 
+        <section class="manifesto-section">
+            <div class="manifesto-content">
+                <h2>The Antidote to Bloated CRM Culture</h2>
+                <p class="big-text">Most automotive software is built to look pretty for the C-suite. You're sold overpriced SaaS with sleek GUIs and complex dashboards that solve bottlenecks at the wrong end of the funnel.</p>
+                <p class="big-text">Meanwhile, your actual sales floor is losing a war against the clock.</p>
+                <p class="big-text">In the UK independent market, ad spend is your biggest lever. But if your response time is measured in hours instead of seconds, you aren't buying leads. <span class="emphasis">You're buying expensive digital ghosts.</span></p>
+                <p class="big-text">IGNYTE is the antidote to bloated CRM culture. We don't care about vanity metrics or complicated filing systems. We care about <span class="emphasis">Response-Ready Logic.</span></p>
+                <p class="big-text">We've engineered a high-speed intelligence layer that does one thing well: it makes your ad spend actually work. We bridge the gap between "Click" and "Conversation" by ensuring your team owns the first minute of every inquiry.</p>
+                <p class="big-text">No technical overhead. No steep learning curves. Just pure momentum for your inventory.</p>
+            </div>
+        </section>
+
         <section id="problem" class="problem-section">
             <div class="section-header">
-                <h2>The £180,000 Problem Hiding in Your Inbox</h2>
+                <h2>The £180,000 Leak You Can't See</h2>
                 <p>Your marketing budget is working. Your enquiries just aren't making it to the phone fast enough.</p>
             </div>
 
@@ -667,40 +712,40 @@
 
         <section id="solution" class="solution-section">
             <div class="section-header">
-                <h2>How IGNYTE Fixes This in <span class="gradient-text">90 Seconds</span></h2>
-                <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. No technical setup required.</p>
+                <h2>The IGNYTE Standard: <span class="gradient-text">60-Second Intelligence</span></h2>
+                <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. Built for the showroom floor, not the IT department.</p>
             </div>
 
             <div class="solution-flow">
                 <div class="flow-card">
                     <div class="flow-number">1</div>
-                    <div class="icon">📨</div>
-                    <h3>Universal Capture</h3>
-                    <p>Enquiry hits AutoTrader, your website contact form, Facebook lead ad, or email. IGNYTE intercepts it instantly. No complex integrations—just works.</p>
+                    <div class="icon">⚡</div>
+                    <h3>Radical Capture</h3>
+                    <p>Enquiry hits AutoTrader, your website, Facebook, or email. IGNYTE intercepts it instantly. No complex integrations. No technical overhead. Just pure speed.</p>
                     <div class="time">⚡ 0-5 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">2</div>
-                    <div class="icon">🧠</div>
-                    <h3>Intelligent Scoring</h3>
-                    <p>Our system analyzes buyer signals: urgency language, finance readiness, vehicle match quality, time of enquiry, contact method. Hot leads get instant priority. Time-wasters get filtered to nurture.</p>
+                    <div class="icon">🎯</div>
+                    <h3>Response-Ready Logic</h3>
+                    <p>Our intelligence layer analyzes buyer signals: urgency language, finance readiness, vehicle match quality. Hot leads get instant priority. Time-wasters get filtered. Your team owns the first minute.</p>
                     <div class="time">⏱️ 5-30 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">3</div>
                     <div class="icon">📲</div>
-                    <h3>Smart Routing</h3>
-                    <p>High-score lead? SMS alert to your appointed manager, automated followup to prospect in less than 30 seconds. Mid-tier? Personalized auto-response + morning callback reminder. Tire-kicker? Nurture sequence. Your team only touches deals worth their time.</p>
-                    <div class="time">📞 30-90 seconds</div>
+                    <h3>Pure Momentum</h3>
+                    <p>High-score lead? SMS alert to your sales floor in under 30 seconds. Mid-tier? Personalized auto-response + callback reminder. Tire-kicker? Nurture sequence. Zero complexity. Maximum velocity.</p>
+                    <div class="time">📞 30-60 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">4</div>
-                    <div class="icon">📊</div>
-                    <h3>Revenue Attribution</h3>
-                    <p>Track every enquiry from source to signed contract. See which marketing channel drove actual sales. Kill what doesn't work, double down on what does. Simple dashboard, powerful insights.</p>
+                    <div class="icon">💰</div>
+                    <h3>Spend Optimization</h3>
+                    <p>Track every enquiry from source to signed contract. See which marketing channel drives actual sales. Kill what doesn't work, double down on what does. Stop the leak. Make your ad spend work.</p>
                     <div class="time">🎯 Real-time visibility</div>
                 </div>
             </div>
@@ -709,10 +754,10 @@
         <section id="demo" class="demo-section">
             <div class="form-container">
                 <div id="formContent">
-                    <h2>Get Your Free Revenue Audit</h2>
-                    <p class="form-subtitle">We'll show you exactly where your enquiries are dying and how much revenue you're leaving on the table. No obligation, just insights.</p>
+                    <h2>Stop The Leak</h2>
+                    <p class="form-subtitle">We'll show you exactly where your enquiries are dying and how much revenue you're leaving on the table. No obligation. No complexity. Just insights.</p>
                     
-                    <form id="auditForm">
+                    <form id="auditForm" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Smith">
@@ -750,1119 +795,16 @@
                             <textarea id="biggest_challenge" name="biggest_challenge" placeholder="e.g., Slow response times, can't track which leads convert, too many tire-kickers..."></textarea>
                         </div>
 
-                        <div class="guarantee" style="margin: 30px 0; width: 100%; text-align: center;">✅ Zero risk · Live in 48 hours</div>
+                        <div class="guarantee" style="margin: 30px 0; width: 100%; text-align: center;">✅ Complexity is a cost · Speed is a profit</div>
 
-                        <button type="submit" class="submit-btn" id="submitBtn">Get My Free Audit</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">Stop The Leak Now</button>
 
-                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 20px; text-align: center;">We'll email you within 2 hours with next steps. No spam, ever.</p>
+                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 20px; text-align: center;">We'll email you within 2 hours. No vanity metrics. Just velocity.</p>
                     </form>
                 </div>
 
                 <div id="formSuccess" style="display: none;">
                     <div class="form-success">
-                        <h3>✅ You're All Set!</h3>
+                        <h3>✅ Response-Ready</h3>
                         <p>Thanks for requesting your free revenue audit. We've received your details and will email you within 2 hours with:</p>
-                        <ul style="text-align: left; max-width: 400px; margin: 30px auto; line-height: 2;">
-                            <li>Personalized audit of your current lead flow</li>
-                            <li>Estimated monthly revenue leak calculation</li>
-                            <li>Custom IGNYTE implementation plan</li>
-                        </ul>
-                        <p style="margin-top: 30px;">Check your inbox: <strong id="submittedEmail"></strong></p>
-                        <a href="#home" class="btn-ghost" style="margin-top: 30px;" onclick="showPage('home')">Back to Home</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- BLOG PAGE -->
-    <div id="blog" class="page">
-        <div class="content-page">
-            <h1>IGNYTE <span class="gradient-text">Insights</span></h1>
-            <p style="font-size: 1.3rem; margin-bottom: 60px;">Revenue intelligence strategies for UK automotive sales teams.</p>
-
-            <article style="margin-bottom: 60px;">
-                <h2>Why Your Best Salespeople Quit (And How Speed-to-Lead Fixes It)</h2>
-                <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 15px;">Published 12 January 2026</p>
-                <p>Your top performers aren't leaving for more money. They're leaving because they're tired of chasing dead leads while hot buyers go to competitors who respond faster. Here's the brutal math: when a salesperson spends 4 hours daily on tire-kickers, they're not just wasting time—they're burning out. IGNYTE's scoring system ensures your A-players only touch high-intent enquiries. The result? Higher close rates, better commissions, happier sales teams. Read on to see how three UK dealerships cut sales team turnover by 40% in six months.</p>
-            </article>
-
-            <article style="margin-bottom: 60px;">
-                <h2>The £180,000 Leak: What After-Hours Enquiries Cost You</h2>
-                <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 15px;">Published 8 January 2026</p>
-                <p>Saturday 7pm: A buyer submits a test drive request through AutoTrader. Sunday 9am: They enquire about finance on your website. Monday 8am: Your sales team arrives, checks email, and finds two enquiries. But it's too late—the buyer visited your competitor's showroom Sunday afternoon and drove off in a car that should have been yours. 32% of all automotive enquiries happen outside business hours. Without automated response systems, you're invisible when buyers are most active. This post breaks down exactly how much revenue you're losing to the "after-hours ghost" and what to do about it.</p>
-            </article>
-
-            <article>
-                <h2>How to Audit Your Lead Flow (and Find Hidden Revenue in 15 Minutes)</h2>
-                <p style="opacity: 0.6; font-size: 0.9rem; margin-bottom: 15px;">Published 3 January 2026</p>
-                <p>Most dealerships have no idea where their enquiries are dying. They know marketing spend. They know closed deals. But the gap between those two numbers? Complete mystery. This guide walks you through a simple 15-minute audit: pull your enquiry sources for last month, check average response times, calculate conversion rates by channel, and identify your three biggest leaks. You'll discover that 40% of your AutoTrader spend is driving enquiries that never get followed up. Or that your website contact form has a 6-hour average response time. Once you see the numbers, the solution becomes obvious.</p>
-            </article>
-        </div>
-    </div>
-
-    <!-- ABOUT PAGE -->
-    <div id="about" class="page">
-        <div class="content-page">
-            <h1>We Built This Because We Were <span class="gradient-text">Tired of Watching Revenue Die</span></h1>
-            
-            <p>IGNYTE started in a dealership manager's office at 11pm on a Tuesday. He was scrolling through weekend enquiries—47 of them—that had been sitting in an inbox for three days. Half were junk. A quarter were hot leads that had already bought elsewhere. The rest? Who knows. They stopped responding.</p>
-
-            <p>The frustrating part wasn't the lost sales. It was knowing the problem was fixable. These weren't bad leads. They were good leads killed by slow follow-up.</p>
-
-            <h2>The Boring Solution That Actually Works</h2>
-
-            <p>We didn't build a complex AI system. We didn't create another CRM. We built a dead-simple workflow that does one thing exceptionally well: gets enquiries to the right person's phone before the buyer forgets they even enquired.</p>
-
-            <p>No dashboards you'll never use. No features you don't need. Just automatic lead capture, intelligent scoring, and instant routing. It works while you sleep. It works on bank holidays. It works when your sales manager is on vacation.</p>
-
-            <h2>Built for UK Automotive, Not Silicon Valley</h2>
-
-            <p>We're not a venture-backed SaaS company trying to sell you a "revolutionary platform." We're operators who understand UK dealership workflows, AutoTrader's quirks, and why your sales team ignores the CRM.</p>
-
-            <p>IGNYTE is deliberately simple. Plug-and-play setup. No technical requirements. Live in 48 hours. If it doesn't pay for itself in month one, we refund you and shut it off. That's the deal.</p>
-
-            <h2>The Team</h2>
-
-            <p>Two former automotive sales managers. One automation engineer. Zero tolerance for complexity. We built IGNYTE because we needed it to exist—then realized every dealership in the UK has the same problem.</p>
-
-            <p>Want to see if IGNYTE fits your operation? Book a 15-minute audit. We'll show you exactly where your enquiries are dying and whether we can fix it.</p>
-
-            <div style="margin-top: 50px; text-align: center;">
-                <a href="mailto:hello@ignyte.co.uk?subject=Free Revenue Audit Request" class="btn-primary">Get Your Free Audit</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- FREE PROMPTS PAGE -->
-    <div id="prompts" class="page">
-        <div class="content-page">
-            <h1>40 AI Prompts to <span class="gradient-text">10x Your Sales Output</span></h1>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">Copy-paste these into ChatGPT, Claude, or your AI tool of choice. Designed specifically for UK automotive sales teams.</p>
-            <p style="opacity: 0.7; margin-bottom: 50px;">Each prompt uses chain-of-thought reasoning to get better results than generic requests. Click the copy button and paste directly—no editing needed.</p>
-
-            <div class="prompt-grid">
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Post-Test Drive Follow-Up</h3>
-                    <p>Capitalizes on test drive momentum with strategic next-day follow-up.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at post-test drive follow-up that converts interest to purchase.
-
-Test drive context:
-- Vehicle: [VEHICLE]
-- Customer reaction: [POSITIVE/NEUTRAL/MIXED]
-- Concerns mentioned: [ANY OBJECTIONS OR HESITATIONS]
-- Next step agreed: [WHAT WAS DISCUSSED]
-
-Write follow-up for day after test drive that:
-1. References specific moment from drive ("loved how you smiled when...")
-2. Addresses any concerns raised without being defensive
-3. Provides new information that moves decision forward
-4. Creates soft urgency (other interest, timing, availability)
-5. Suggests concrete next step
-
-Think through:
-- What emotional high point can we callback to?
-- What logical objection needs addressing?
-- What's the ONE thing blocking their decision?
-
-Provide:
-- Email message (80-100 words)
-- Subject line that references the drive
-- One piece of new value (comparison data, availability update, finance option)
-
-UK English, enthusiastic but not pushy tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3">Add-On Opportunity Identifier</h3>
-                    <p>Spots upsell opportunities for warranties, GAP insurance, accessories.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at identifying add-on sales opportunities that feel like value, not upselling.
-
-Customer profile:
-- Buying: [VEHICLE TYPE AND AGE]
-- Customer type: [FIRST CAR / FAMILY / ENTHUSIAST / BUSINESS]
-- Budget signals: [STRETCHING / COMFORTABLE / CONSERVATIVE]
-- Usage mentioned: [COMMUTE / FAMILY / LEISURE]
-
-Identify add-on opportunities:
-
-Think through their likely concerns:
-1. Protection needs - warranty, GAP, cosmetic coverage based on vehicle age and value
-2. Lifestyle fit - accessories, roof boxes, tow bar based on usage signals
-3. Convenience - service plans, tire packages based on profile
-4. Financial structure - how they're paying affects what makes sense
-
-For top 3 relevant add-ons:
-- Name the product
-- Explain WHY it fits their situation (not generic)
-- Provide positioning angle (fear-based, convenience-based, or value-based)
-- Give exact introduction language
-- Suggest timing (at sale, post-sale, or during test drive)
-
-Prioritize by:
-- Likelihood of acceptance
-- Margin opportunity
-- Customer benefit alignment
-
-Format as sales opportunity brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Availability Update Alert</h3>
-                    <p>Notifies interested customers when similar vehicle becomes available.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at creating urgency around new inventory for warm leads.
-
-Situation:
-- Customer previously interested in: [ORIGINAL VEHICLE - now sold/unavailable]
-- New stock: [SIMILAR VEHICLE NOW AVAILABLE]
-- Time since last contact: [TIMEFRAME]
-- How new vehicle compares: [BETTER SPEC / LOWER PRICE / DIFFERENT COLOR / ETC]
-
-Write availability alert that:
-1. Reminds them of original interest (jog memory)
-2. Presents new vehicle as opportunity, not consolation
-3. Highlights specific advantages over what they originally viewed
-4. Creates urgency without being pushy (we know there's interest, won't last)
-5. Makes next step effortless (view online, visit, hold with deposit)
-
-Think through:
-- Why is this NEW vehicle actually better for them?
-- What timing factor makes NOW the right moment?
-- How do we reignite interest that went cold?
-
-Provide:
-- Email message (70-90 words)
-- Subject line (urgent but not spammy)
-- One specific reason THIS vehicle is worth reconsidering
-
-UK English, helpful insider-tip tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Email vs Phone Preference Detector</h3>
-                    <p>Determines customer's preferred communication channel to maximize response.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at reading communication preferences from customer behavior.
-
-Customer interactions:
-- Contact info provided: [EMAIL / PHONE / BOTH]
-- Response pattern: [QUICK EMAIL REPLIES / ANSWERS CALLS / IGNORES CALLS / ETC]
-- Time of enquiries: [BUSINESS HOURS / EVENINGS / WEEKENDS]
-- Message style: [DETAILED WRITTEN / BRIEF TEXTS / PREFERS TALKING]
-
-Analyze their communication preference:
-
-PHONE PREFERENCE SIGNALS:
-- Provided mobile and asked for callback
-- Answers calls promptly
-- Enquired during hours they could talk
-- Brief written messages suggesting they'd rather discuss
-
-EMAIL/TEXT PREFERENCE SIGNALS:
-- Provided email only
-- Detailed written questions
-- Ignores calls but replies to emails
-- Evening/weekend enquiries (doesn't want calls during)
-
-Determine:
-- PRIMARY channel: Email / Phone / SMS
-- TIMING preference: Business hours / Evenings / Weekends / Flexible
-- MESSAGE style: Detailed / Brief / Conversational
-- DECISION style: Wants info to consider / Wants to talk through
-
-Provide:
-- Preferred contact method ranking (1st, 2nd, 3rd choice)
-- Best times to reach
-- Message approach (formal, casual, data-heavy, conversational)
-- What to avoid (e.g., "Don't call after 5pm," "Don't send long emails")
-
-Format as contact strategy brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Service-to-Sales Converter</h3>
-                    <p>Turns service department customers into sales prospects.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at identifying sales opportunities from service interactions.
-
-Service customer context:
-- Current vehicle: [MAKE/MODEL/YEAR]
-- Service reason: [MOT / REPAIR / MAINTENANCE]
-- Vehicle age/mileage: [AGE AND MILES]
-- Repair cost if applicable: [COST]
-
-Create sales outreach that:
-1. Feels like helpful information, not sales pitch
-2. Connects to their current service situation naturally
-3. Introduces upgrade path as solution to their current pain/situation
-4. Offers trade-in value as concrete next step
-5. No pressure - plant seed only
-
-Think through:
-- Is repair cost triggering "time for new car" thought?
-- Is vehicle age at natural replacement point?
-- What would make them WANT to explore upgrading?
-
-Scenarios to address:
-- HIGH REPAIR COST: Position new/newer as better investment
-- AGING VEHICLE: Highlight reliability, features, safety of upgrade
-- ROUTINE SERVICE: Plant seed about part-exchange value while still good
-
-Provide:
-- Email message (60-80 words)
-- Specific hook based on their situation
-- Trade valuation offer as concrete CTA
-
-UK English, advisory helpful tone, never pushy.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Deposit Request Strategy</h3>
-                    <p>Asks for holding deposit at right moment with right language.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at securing commitments without being pushy.
-
-Customer situation:
-- Interest level: [HOT / WARM]
-- Hesitation: [DECIDING BETWEEN OPTIONS / TIMING / BUDGET / PARTNER APPROVAL]
-- Competition: [OTHER DEALERS / OTHER VEHICLES]
-- Vehicle demand: [HIGH / NORMAL / SLOW MOVING]
-
-Create deposit request approach:
-
-Think through:
-- What's their primary hesitation to committing now?
-- What's the legitimate reason vehicle won't be available if they wait?
-- How do we frame deposit as protection for THEM, not commitment to US?
-- What refund terms remove risk?
-
-Provide 3 deposit request styles:
-
-STYLE 1 - SCARCITY: Use when genuine demand exists
-STYLE 2 - RISK REMOVAL: Use when they're hesitant but interested
-STYLE 3 - ASSUMPTIVE: Use when buying signals are strong
-
-For each style:
-- Exact language to use
-- When in conversation to introduce it
-- How to handle "I need to think about it"
-- Deposit amount to request and refund terms to mention
-
-UK English, confident professional tone, never high-pressure.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Question Avalanche Handler</h3>
-                    <p>Responds to customers who send 10+ questions at once without overwhelming them back.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at handling detailed customer questions efficiently.
-
-Customer sent multiple questions: [PASTE THEIR QUESTIONS]
-
-Create response that:
-1. Acknowledges their thoroughness (compliment, not criticism)
-2. Groups questions by theme (don't answer 15 separate items)
-3. Answers each completely but concisely
-4. Suggests phone call for complex ones ("easier to walk through this...")
-5. Includes one question back to them (maintains dialogue, not just Q&A)
-
-Think through:
-- Which questions indicate highest priority/concern?
-- Which questions are really asking the same thing differently?
-- Which answers move toward sale vs just information gathering?
-- Is email the right medium or should we suggest call
-                    <span class="category">Lead Qualification</span>
-                    <h3>Hot Lead Detector</h3>
-                    <p>Analyzes enquiry messages to identify high-intent buyers vs tire-kickers.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert automotive sales analyst. I need you to analyze this customer enquiry and determine their buying intent.
-
-First, read this enquiry message: [PASTE ENQUIRY HERE]
-
-Think through these factors step-by-step:
-1. Urgency signals - does the message mention timeframes, immediate needs, or current situation requiring a vehicle?
-2. Specificity - are they asking about a specific vehicle, or just browsing categories?
-3. Financial readiness - do they mention budget, trade-in, finance options, or cash purchase?
-4. Engagement level - is this a generic message or do they ask detailed questions?
-5. Contact preference - did they provide phone number, request callback, or just email?
-
-Based on your analysis, score this lead from 1-10 and classify as:
-- HOT (8-10): Immediate follow-up required, high probability close
-- WARM (5-7): Qualified but needs nurturing
-- COLD (1-4): Low intent, nurture sequence only
-
-Provide your reasoning, then give the score and classification.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>After-Hours Auto-Response Generator</h3>
-                    <p>Creates personalized holding responses for enquiries received outside business hours.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at writing sales responses that maintain engagement without being pushy.
-
-I received this enquiry outside business hours: [PASTE ENQUIRY]
-
-The customer asked about: [VEHICLE/QUESTION]
-
-Write me a warm, professional auto-response that:
-1. Acknowledges their specific enquiry (reference the vehicle or question)
-2. Sets expectation for follow-up (within 2 hours of opening, specify our hours: Mon-Fri 9am-6pm, Sat 9am-5pm)
-3. Provides one helpful piece of information relevant to their question
-4. Includes a soft call-to-action (e.g., "In the meantime, feel free to reply with...")
-5. Sounds human, not robotic
-
-Keep it under 100 words. Use UK English spelling and casual professional tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Finance Readiness Assessor</h3>
-                    <p>Determines if a customer is finance-ready based on their enquiry language.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a finance expert specializing in automotive lending.
-
-Analyze this customer enquiry for finance readiness signals: [PASTE ENQUIRY]
-
-Step through these indicators:
-1. Explicit mentions - do they ask about monthly payments, deposit, APR, or finance options?
-2. Affordability signals - do they mention budget constraints, "affordable," or price concerns?
-3. Trade-in potential - do they mention current vehicle or part-exchange?
-4. Employment stability - any mentions of job, income, or financial situation?
-5. Credit awareness - do they mention credit score, approval concerns, or past finance?
-
-Based on this analysis:
-- If HIGH finance readiness: suggest specific finance-focused talking points for sales team
-- If MEDIUM: identify questions to ask to qualify further
-- If LOW: recommend cash buyer approach
-
-Provide your assessment with supporting evidence from their message.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Objection Handler</h3>
-                    <p>Generates responses to common customer objections about price, timing, or features.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a master automotive sales trainer specializing in objection handling.
-
-The customer raised this objection: [PASTE OBJECTION]
-
-Context: [e.g., "They're comparing our £24,995 Golf to a £22,500 one at another dealer"]
-
-Think through the response strategy:
-1. What's the real objection behind their words? (price, trust, urgency, value perception?)
-2. What bridge statement acknowledges their concern without being defensive?
-3. What reframe shifts the conversation from price to value, or timing to opportunity?
-4. What question can we ask to uncover the real decision criteria?
-5. What next step keeps the conversation moving forward?
-
-Write me a 3-4 sentence response that:
-- Validates their concern
-- Reframes with value or context
-- Asks a qualifying question
-- Suggests a concrete next step
-
-Keep it conversational, confident but not pushy. UK English.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Follow-Up Sequence Builder</h3>
-                    <p>Creates a 5-touch email sequence for warm leads who haven't responded.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an email marketing specialist for automotive sales.
-
-I need a 5-email follow-up sequence for this situation:
-- Lead enquired about: [VEHICLE/SERVICE]
-- Initial response sent: [DATE]
-- No reply received
-- Customer profile: [any known info]
-
-Create emails for Days 2, 4, 7, 14, and 30 after initial contact.
-
-For each email, think through:
-1. What new value can we provide? (don't just say "following up")
-2. What angle hasn't been covered yet? (features, finance, availability, alternatives, urgency)
-3. What question makes them want to respond?
-4. What subject line gets opened?
-
-Each email should:
-- Be 60-80 words maximum
-- Offer something new (info, perspective, or option)
-- Include one clear question
-- Avoid sounding desperate or pushy
-- Use UK English, casual professional tone
-
-Provide all 5 emails with subject lines.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Trade-In Value Estimator Script</h3>
-                    <p>Helps sales team quickly assess trade-in potential from customer descriptions.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an automotive valuation expert in the UK market.
-
-The customer described their trade-in vehicle as follows: [PASTE DESCRIPTION]
-
-Analyze this step-by-step:
-1. Vehicle identification - extract make, model, year, and any trim details mentioned
-2. Condition indicators - note any mentions of mileage, service history, damage, or upgrades
-3. Market context - consider current demand for this vehicle type in UK
-4. Missing information - what critical details would affect valuation?
-
-Provide:
-- Estimated value range based on info given (use realistic UK market data)
-- Key questions to ask to narrow the range
-- Red flags that might lower value
-- Selling points that might increase value
-- Suggested talking points for the sales conversation
-
-Format as a quick brief a salesperson can reference in 30 seconds.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Competitor Comparison Script</h3>
-                    <p>Creates talking points when customers mention they're shopping competitors.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a competitive intelligence expert for automotive sales.
-
-Customer mentioned they're comparing our vehicle to: [COMPETITOR VEHICLE/DEALER]
-
-Our vehicle: [YOUR VEHICLE DETAILS]
-Price difference: [HIGHER/LOWER/SAME]
-
-Think through the positioning:
-1. What are the genuine advantages of our vehicle? (be honest, don't fabricate)
-2. What are the genuine advantages of theirs? (acknowledge them to build trust)
-3. What's the value equation beyond price? (warranty, service, location, availability, condition)
-4. What questions expose the weaknesses of their option without sounding defensive?
-5. What reframe makes this about fit, not just price?
-
-Create:
-- 3 key talking points that highlight our advantages
-- 2 questions that make them reconsider the competitor
-- 1 "bridge" statement that acknowledges both options are good but positions ours as better fit
-- Suggested close that moves them toward decision
-
-Keep it ethical - never bash competitors directly. Focus on our strengths and asking good questions.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Test Drive Booking Confirmation</h3>
-                    <p>Generates professional confirmation messages that reduce no-shows.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at writing appointment confirmations that maximize show-up rates.
-
-Test drive details:
-- Customer name: [NAME]
-- Vehicle: [VEHICLE]
-- Date/Time: [DATETIME]
-- Special requests: [ANY SPECIFIC ASKS]
-
-Write a confirmation message that:
-1. Confirms the specific details clearly
-2. Sets expectations (what to bring, how long it takes, who they'll meet)
-3. Creates anticipation/excitement about the vehicle
-4. Includes a subtle commitment reinforcement (e.g., "Looking forward to showing you why this is our most popular model")
-5. Provides easy way to reschedule if needed
-6. Mentions our address and parking details
-
-Keep it warm, professional, and under 120 words. Include a subject line if email, or format for SMS if text.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Urgency Level Detector</h3>
-                    <p>Identifies time-sensitive buying signals in customer messages.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at identifying urgency signals in sales enquiries.
-
-Analyze this customer message: [PASTE MESSAGE]
-
-Look for these urgency indicators:
-1. Explicit deadlines - mentions of "need by," "this week," "before," specific dates
-2. Situational urgency - car died, new job, moving house, lease ending
-3. Competitive shopping - "also looking at," "need to decide soon," visiting dealers
-4. Emotional urgency - excitement, frustration, or pressure language
-5. Financial windows - tax return, bonus, limited-time budget availability
-
-Rate the urgency as:
-- CRITICAL (needs response within 1 hour): immediate purchase need
-- HIGH (needs response within 4 hours): strong buying intent, short timeline
-- MEDIUM (needs response same day): active shopping, no immediate deadline
-- LOW (can wait 24 hours): browsing or early research stage
-
-Explain your rating with specific evidence from their message, then recommend response approach and timeline.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Re-engagement Campaign for Dead Leads</h3>
-                    <p>Revives old enquiries that went cold months ago.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at re-engaging cold leads without being annoying.
-
-Context:
-- Lead enquired about: [VEHICLE TYPE]
-- Last contact: [MONTHS AGO]
-- Never responded to follow-ups
-- Season/market has changed since then
-
-Create a re-engagement email that:
-1. Acknowledges time has passed (don't pretend it's a normal follow-up)
-2. Provides NEW value (new inventory, price changes, market update, different option)
-3. Gives them an easy out ("If you've sorted this already, no worries")
-4. Includes one compelling reason to re-engage NOW (limited stock, seasonal opportunity, new model)
-5. Makes reply effortless (simple yes/no question or "hit reply with...")
-
-Think through:
-- What's changed in the market since they enquired that's relevant to them?
-- What might have been their original objection, and how can we address it differently now?
-- What low-pressure angle makes this feel helpful, not sales-y?
-
-Write the email in 70-90 words with a subject line that doesn't scream "sales follow-up." UK English.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Budget Qualifier</h3>
-                    <p>Extracts budget information without making customers defensive.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a master at asking about budget in ways that feel helpful, not invasive.
-
-Situation: Customer enquired about [VEHICLE] but hasn't mentioned budget.
-
-Generate 3 different budget qualification approaches:
-
-APPROACH 1 - Range Method:
-Create a question that presents a range and lets them place themselves in it. Make it feel like you're trying to help, not qualify them out.
-
-APPROACH 2 - Trade-off Method:
-Create a question that uses features/priorities to uncover budget indirectly (e.g., "Are you focused on getting the newest model year, or is value more important?").
-
-APPROACH 3 - Monthly Payment Method:
-Create a question that shifts from total price to monthly affordability (works for finance customers).
-
-For each approach:
-- Write the exact question/statement
-- Explain why this angle works psychologically
-- Provide a follow-up based on their likely response
-
-Keep all language UK English, casual professional tone, never pushy.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Bad News Delivery (Vehicle Sold)</h3>
-                    <p>Turns "sorry it's sold" into an opportunity to offer alternatives.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are skilled at delivering bad news while keeping sales opportunities alive.
-
-Situation:
-- Customer enquired about: [SPECIFIC VEHICLE]
-- Vehicle status: SOLD
-- Alternative options: [LIST 2-3 SIMILAR VEHICLES]
-
-Write a response that:
-1. Delivers the bad news directly (don't bury it, builds trust)
-2. Validates their good taste ("That was a great spec, sold in 3 days")
-3. Pivots to alternatives with specific reasons why they might actually prefer them
-4. Creates urgency about alternatives without being pushy
-5. Offers concrete next step (links, visit, call to discuss)
-
-Think through:
-- How can we make the alternatives sound like upgrades or better fits, not consolation prizes?
-- What's one feature of an alternative that they might not have considered?
-- How do we acknowledge disappointment while maintaining momentum?
-
-Keep it 80-100 words, UK English, empathetic but forward-moving tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Part-Exchange Intent Analyzer</h3>
-                    <p>Identifies customers likely to need part-exchange even if they don't mention it.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at reading between the lines in automotive enquiries.
-
-Customer message: [PASTE ENQUIRY]
-
-Analyze for part-exchange likelihood:
-
-1. Direct signals - any mention of "current car," "trade," "part-ex," "upgrade"
-2. Indirect signals - focus on monthly payments, "need to sell," family size changes
-3. Vehicle type signals - enquiring about similar category (e.g., SUV to SUV suggests current SUV)
-4. Timing signals - "lease ending," "old car," "ready to change"
-5. Absence signals - no mention of how they'll fund purchase might mean they're relying on trade value
-
-Provide:
-- Part-exchange likelihood: HIGH / MEDIUM / LOW
-- Evidence supporting your assessment
-- Recommended approach: When and how to bring up part-exchange
-- Key questions to ask to surface this if not mentioned
-- Talking points if they do have a car to trade
-
-Format as quick sales brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Value Demonstration Email</h3>
-                    <p>Explains why your price is higher than competitors without being defensive.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at articulating value in premium pricing scenarios.
-
-Situation:
-- Our vehicle: [DETAILS AND PRICE]
-- Competitor vehicle customer mentioned: [DETAILS AND PRICE]
-- Price difference: [£AMOUNT higher]
-
-Write an email that:
-1. Acknowledges they found a cheaper option (never pretend it doesn't exist)
-2. Breaks down where the price difference comes from (be specific: warranty, mileage, spec, condition, service history)
-3. Reframes from "cost" to "value over ownership period"
-4. Includes 1-2 questions that make them consider total cost of ownership
-5. Offers to discuss in detail (phone/visit) rather than over-explain in email
-
-Think through:
-- What's the REAL reason our vehicle costs more? (don't invent features, be honest)
-- What long-term costs might the cheaper vehicle have that ours avoids?
-- How can we make this about investment, not expense?
-
-Keep it under 100 words, confident but not arrogant, UK English. Include subject line.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Appointment Setter</h3>
-                    <p>Moves online enquiries to in-person visits with high conversion language.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at transitioning digital conversations to in-person appointments.
-
-Customer has been engaging via: [EMAIL/SMS/CHAT]
-Current stage: [e.g., "Asked questions about features," "Requested finance quote," etc.]
-
-Create an appointment invitation that:
-1. Provides a reason to visit that feels like value, not obligation
-2. Offers specific time options (not just "when are you free?")
-3. Reduces friction (mentions how quick it is, what to expect, easy parking)
-4. Creates mild urgency without pressure (availability, other interest, timing)
-5. Includes an easy yes/no response format
-
-Think through:
-- What can they experience in person that they can't get online? (make THIS the hook)
-- What objection might they have to visiting? (address it preemptively)
-- How do we make it feel like the natural next step, not a big commitment?
-
-Provide:
-- The invitation message (60-80 words)
-- 2-3 specific time slot suggestions
-- Subject line if email, or opening line if SMS
-
-UK English, warm professional tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Finance Declined Response</h3>
-                    <p>Keeps customers engaged after finance rejection with alternative paths.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at handling difficult financial conversations with empathy and solutions.
-
-Situation:
-- Customer applied for finance
-- Application declined or terms not favorable
-- Still interested in the vehicle
-
-Write a response that:
-1. Delivers news with empathy (not clinical or dismissive)
-2. Explains without breaking confidentiality or getting into specifics
-3. Offers concrete alternatives (guarantor, larger deposit, different lender, different vehicle)
-4. Reframes this as temporary obstacle, not dead end
-5. Keeps door open for future when situation changes
-
-Think through:
-- How do we preserve dignity while being honest?
-- What questions help us understand their situation better without prying?
-- What alternative path is most likely to work given typical decline reasons?
-
-Create:
-- Initial response message (60-80 words)
-- 3 alternative options to present
-- Follow-up question to keep conversation going
-
-UK English, empathetic professional tone. Never make them feel like a "bad" customer.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Website Behavior Scorer</h3>
-                    <p>Interprets customer website activity to prioritize follow-up.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at interpreting digital behavior signals for sales prioritization.
-
-Customer website activity:
-- Pages viewed: [LIST]
-- Time on site: [DURATION]
-- Return visits: [NUMBER]
-- Actions taken: [e.g., saved vehicle, used calculator, downloaded brochure]
-
-Analyze this behavior:
-1. Intent signals - what actions indicate serious interest vs browsing?
-2. Research depth - are they comparing or have they narrowed to decision?
-3. Engagement pattern - first visit or returning? Quick browse or deep dive?
-4. Feature focus - what did they spend time on? (price tools = budget conscious, specs = detail-oriented)
-5. Next-step indicators - did they stop just before key action? (abandoned calculator, viewed contact page)
-
-Provide:
-- Engagement score: HOT / WARM / COOL
-- Psychological profile based on behavior (budget-focused, spec-focused, convenience-focused)
-- Recommended approach for first contact
-- Key talking points based on what they viewed
-- Timing recommendation for outreach
-
-Format as sales brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Seasonal Urgency Creator</h3>
-                    <p>Leverages seasonal factors to create genuine urgency for fence-sitters.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at creating urgency that feels helpful, not manipulative.
-
-Current context:
-- Season: [CURRENT MONTH/SEASON]
-- Lead stage: Interested but haven't committed
-- Vehicle type: [VEHICLE]
-- Time since first contact: [TIMEFRAME]
-
-Create a message that uses seasonal factors to encourage decision:
-
-Think through genuine urgency triggers:
-1. Seasonal demand (spring/summer for convertibles, winter for 4x4s)
-2. Registration plate changes (March/September in UK)
-3. Tax year considerations
-4. Weather-related needs
-5. School holiday timing (family cars)
-6. End of month/quarter stock movement
-
-Write a message that:
-- Connects their specific vehicle interest to current seasonal factor
-- Explains the real impact of waiting (price, availability, selection)
-- Offers concrete benefit of acting now (not just "limited time")
-- Maintains trust (don't fabricate urgency)
-
-Keep it 70-90 words, UK English. Include subject line if email.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Objection Predictor</h3>
-                    <p>Anticipates likely objections based on customer profile and handles proactively.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at predicting and preemptively addressing sales objections.
-
-Customer profile:
-- Enquired about: [VEHICLE]
-- Price point: [PRICE]
-- Customer signals: [e.g., "price-sensitive," "comparing multiple vehicles," "first-time buyer"]
-- Source: [AutoTrader, website, referral, etc.]
-
-Predict their likely objections:
-
-Think through:
-1. Price objections - based on their behavior, will they push back on price?
-2. Trust objections - new to your dealership, any reason to question credibility?
-3. Timing objections - signals they might not be ready?
-4. Alternative objections - shopping competitors, might have other options?
-5. Feature objections - vehicle might not fully meet needs?
-
-For the top 3 most likely objections:
-- State the objection
-- Explain why you predict it
-- Provide a preemptive addressing strategy (how to handle before they raise it)
-- Give exact language to use
-
-Format as sales playbook for this specific customer.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Price Negotiation Holder</h3>
-                    <p>Responds to "what's your best price" without immediately discounting.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at handling price questions that protect margin while keeping customer engaged.
-
-Customer asked: [PASTE THEIR PRICE QUESTION]
-
-Our situation:
-- Listed price: [PRICE]
-- Margin available: [SOME / MINIMAL / NONE]
-- Market position: [COMPETITIVELY PRICED / PREMIUM / BARGAIN]
-
-Write a response that:
-1. Doesn't immediately give discount (trains them to always ask for more)
-2. Reframes conversation from price to value equation
-3. Uncovers what they're really asking ("best price" often means "is this fair?")
-4. Asks qualifying questions before discussing price movement
-5. Positions any future discount as earned, not automatic
-
-Think through:
-- What do they need to hear to feel confident the price is fair?
-- What questions reveal if they're serious or fishing?
-- How do we maintain price integrity while staying warm?
-
-Provide:
-- Initial response (50-70 words)
-- 2 qualifying questions to ask before price discussion
-- Framework for when/how to discuss pricing
-
-UK English, confident but not arrogant tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Message Quality Scorer</h3>
-                    <p>Assesses enquiry quality based on how customer communicates.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at reading communication style for sales qualification.
-
-Customer message: [PASTE ENQUIRY]
-
-Analyze communication quality indicators:
-
-1. Effort level - did they write 2 words or 2 paragraphs? High effort = high interest
-2. Specificity - generic "is this available?" vs detailed questions about features
-3. Personalization - form-fill only, or did they add personal context?
-4. Professional tone - serious buyer voice vs casual browser voice
-5. Decision-maker language - "I need," "I'm looking for" vs "just wondering," "maybe"
-6. Complete contact info - gave phone number, or email-only?
-
-Rate the message quality:
-- A-QUALITY: Serious buyer, high intent, ready to engage
-- B-QUALITY: Genuine interest, needs qualification
-- C-QUALITY: Early research, low immediate intent
-- D-QUALITY: Probable time-waster or mass enquiry
-
-Provide:
-- Quality grade with evidence
-- Response priority level (immediate, same-day, next-day)
-- Recommended response style (detailed vs brief)
-- Red flags if any
-
-Format as quick reference for sales team.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Email Marketing</span>
-                    <h3>Referral Request Generator</h3>
-                    <p>Asks happy customers for referrals in ways that actually get responses.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at requesting referrals that feel natural, not transactional.
-
-Customer context:
-- Recently purchased: [VEHICLE]
-- Experience: [POSITIVE/SMOOTH/GREAT]
-- Relationship: [NEW/RETURNING/LOYAL]
-
-Create a referral request that:
-1. Acknowledges their satisfaction (be specific, not generic "glad you're happy")
-2. Makes the ask feel like helping their friends, not helping us
-3. Makes it effortless (what exactly should they do/say?)
-4. Offers incentive if applicable (but don't lead with it - feels transactional)
-5. Gives them an easy out ("only if it feels right")
-
-Think through:
-- What's their natural sphere? (work colleagues, family, neighbors)
-- What would they genuinely say about us to friends?
-- How do we make this about their credibility, not our sales?
-
-Provide:
-- Email version (70-90 words)
-- SMS version (40 words)
-- Exact language they can copy-paste to friends
-- Subject line for email
-
-UK English, warm appreciative tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Closing Signal Detector</h3>
-                    <p>Identifies buying signals that indicate customer is ready to close.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at recognizing buying signals that indicate readiness to close.
-
-Recent customer interactions: [PASTE CONVERSATION SUMMARY]
-
-Analyze for closing signals:
-
-VERBAL SIGNALS:
-1. Future ownership language - "when I have it," "after I buy it"
-2. Detail questions - asking about insurance, registration, pickup timing
-3. Ownership questions - "how do the heated seats work?" (assumes ownership)
-4. Minor objections - focused on small details, not major decisions
-5. Third-party mentions - "my wife said," "my insurance broker asked"
-
-BEHAVIORAL SIGNALS:
-1. Urgency shifts - suddenly available for appointments, quick responses
-2. Repeat visits - coming back to same vehicle, website, or showroom
-3. Paperwork interest - asking about process, what's needed
-4. Negotiation style - moved from "if" to "when" to "how much"
-
-For each signal you identify:
-- Flag it as STRONG or MODERATE closing indicator
-- Explain why it indicates readiness
-- Suggest closing approach that matches their style
-
-Recommend:
-- Should we close now, or one more step needed?
-- What closing technique fits their psychology? (assumptive, choice, urgency)
-- Exact closing question/statement to use
-
-Format as sales action brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Response Templates</span>
-                    <h3>Specification Query Handler</h3>
-                    <p>Answers detailed spec questions in ways that advance the sale.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at answering technical questions while maintaining sales momentum.
-
-Customer asked: [PASTE SPECIFICATION QUESTION]
-
-Vehicle: [VEHICLE DETAILS]
-
-Create response that:
-1. Answers their question completely and accurately (build trust with knowledge)
-2. Connects spec to benefit/experience (not just data dump)
-3. Anticipates their next logical question (stay ahead)
-4. Moves toward test drive/visit (make spec real, not just theoretical)
-5. Gauges their priority (why this spec matters to them)
-
-Think through:
-- Why are they asking THIS question? (what need does it indicate?)
-- What related specs should we mention that they haven't asked about?
-- How do we answer thoroughly without overwhelming?
-
-Provide:
-- Direct answer to their question
-- Related benefit/context
-- One follow-up question to understand their priorities
-- Call-to-action (test drive invitation that relates to their question)
-
-Keep it 80-100 words, UK English, knowledgeable but not condescending tone.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Lead Qualification</span>
-                    <h3>Competitor Mention Analyzer</h3>
-                    <p>Interprets when customers mention shopping other dealers/vehicles.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are expert at reading competitive shopping signals.
-
-Customer mentioned: [PASTE COMPETITOR REFERENCE]
-
-Analyze their competitive shopping behavior:
-
-1. Shopping stage - early research (many options) or final decision (down to 2-3)?
-2. Mention style - casual ("I'm looking around") or strategic ("X dealer offered Y")?
-3. Price-focused or feature-focused comparison?
-4. Power dynamic - using competitor for leverage, or genuinely undecided?
-5. Urgency - "just browsing" or "need to decide by" timeframe?
-
-Determine:
-- Are they a SERIOUS cross-shopper or just doing due diligence?
-- Are they USING competitors as negotiation tool or CONSIDERING them equally?
-- Is this EARLY stage (many options) or LATE stage (final choice)?
-
-Provide:
-- Shopping stage assessment
-- Recommended response strategy (compete on value, match price, qualify further, or let go)
-- Specific questions to ask that reveal true position
-- Risk level of losing to competitor (HIGH/MEDIUM/LOW)
-- Talking points that differentiate without bashing competitor
-
-Format as competitive intelligence brief.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
+                        <ul style
