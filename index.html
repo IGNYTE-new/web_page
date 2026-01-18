@@ -598,12 +598,12 @@
     <div class="bg-gradient"></div>
 
     <nav>
-        <a href="#home" class="logo" onclick="showPage('home')">IGNYTE</a>
+        <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">IGNYTE</a>
         <div class="nav-links">
-            <a href="#blog" onclick="showPage('blog')">Blog</a>
-            <a href="#about" onclick="showPage('about')">About</a>
-            <a href="#prompts" onclick="showPage('prompts')">Free Prompts</a>
-            <a href="#demo" class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Free Audit</a>
+            <a href="#blog" onclick="event.preventDefault(); showPage('blog');">Blog</a>
+            <a href="#about" onclick="event.preventDefault(); showPage('about');">About</a>
+            <a href="#prompts" onclick="event.preventDefault(); showPage('prompts');">Free Prompts</a>
+            <a href="#demo" class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="event.preventDefault(); showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Get Free Audit</a>
         </div>
     </nav>
 
@@ -1866,4 +1866,3 @@ Format as competitive intelligence brief.
                 </div>
 
                 <div class="prompt-card">
-                    
