@@ -195,9 +195,7 @@
             gap: 40px;
         }
 
-        .stat {
-            text-align: center;
-        }
+        .stat { text-align: center; }
 
         .stat-number {
             font-family: 'Sora', sans-serif;
@@ -207,10 +205,7 @@
             margin-bottom: 8px;
         }
 
-        .stat-label {
-            font-size: 0.95rem;
-            opacity: 0.7;
-        }
+        .stat-label { font-size: 0.95rem; opacity: 0.7; }
 
         .problem-section {
             padding: 100px 5%;
@@ -227,13 +222,6 @@
             font-family: 'Sora', sans-serif;
             font-size: 3rem;
             margin-bottom: 20px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            opacity: 0.7;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .problem-grid {
@@ -254,17 +242,8 @@
         .problem-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
+            top: 0; left: 0; width: 4px; height: 100%;
             background: linear-gradient(180deg, var(--danger), transparent);
-        }
-
-        .problem-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--danger);
         }
 
         .problem-card .cost {
@@ -296,78 +275,13 @@
             transition: 0.3s;
         }
 
-        .flow-card:hover {
-            border-color: var(--electric);
-            transform: translateY(-5px);
-        }
-
         .flow-number {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
+            top: 20px; right: 20px; width: 40px; height: 40px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--volt), var(--electric));
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        .flow-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .flow-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--electric);
-        }
-
-        .flow-card .time {
-            background: rgba(0, 255, 136, 0.1);
-            color: var(--success);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 15px;
-        }
-
-        .demo-section {
-            padding: 120px 5%;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(0, 245, 255, 0.05), transparent);
-        }
-
-        .demo-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 60px 40px;
-        }
-
-        .demo-container h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .demo-container .guarantee {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            color: var(--success);
-            padding: 12px 24px;
-            border-radius: 12px;
-            display: inline-block;
-            margin: 30px 0;
-            font-weight: 600;
         }
 
         .form-container {
@@ -379,251 +293,26 @@
             padding: 50px 40px;
         }
 
-        .form-container h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .form-container .form-subtitle {
-            text-align: center;
-            opacity: 0.7;
-            margin-bottom: 40px;
-            font-size: 1.05rem;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--electric);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            color: white;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--electric);
-            background: rgba(0,0,0,0.4);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.4);
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--electric); font-weight: 600; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 14px; background: rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border); border-radius: 12px; color: white;
         }
 
         .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, var(--volt), var(--danger));
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
+            width: 100%; background: linear-gradient(135deg, var(--volt), var(--danger));
+            color: white; padding: 16px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-success {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .form-success h3 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2.2rem;
-            color: var(--success);
-            margin-bottom: 20px;
-        }
-
-        .form-success p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-
-        .content-page {
-            padding: 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-page h1 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-        }
-
-        .content-page h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2rem;
-            margin: 50px 0 20px;
-            color: var(--electric);
-        }
-
-        .content-page p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .prompt-grid {
-            display: grid;
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .prompt-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .prompt-card:hover {
-            border-color: var(--electric);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .prompt-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: var(--electric);
-        }
-
-        .prompt-card .category {
-            background: rgba(124, 58, 237, 0.2);
-            color: var(--volt);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .prompt-card .prompt-text {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 12px;
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-            margin-top: 15px;
-            position: relative;
-            white-space: pre-wrap;
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--volt);
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .copy-btn:hover {
-            background: var(--electric);
-            color: var(--midnight);
-        }
-
-        .manifesto-section {
-            background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), transparent);
-            padding: 100px 5%;
-            margin: 60px 0;
-        }
-
-        .manifesto-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .manifesto-content h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--electric);
-        }
-
-        .manifesto-content .big-text {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .manifesto-content .emphasis {
-            color: var(--electric);
-            font-weight: 700;
-        }
-
-        footer {
-            padding: 60px 5%;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
+        .content-page { padding: 100px 5%; max-width: 1000px; margin: 0 auto; }
+        .prompt-card { background: var(--glass); padding: 30px; border-radius: 16px; margin-bottom: 20px; position: relative; border: 1px solid var(--glass-border); }
+        .prompt-text { background: #000; padding: 15px; border-radius: 8px; font-family: monospace; margin-top: 10px; }
+        .copy-btn { position: absolute; top: 20px; right: 20px; background: var(--volt); border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.8rem; }
-            .section-header h2 { font-size: 2rem; }
-            .hero-cta { flex-direction: column; }
-            .nav-links { gap: 1rem; font-size: 0.85rem; }
-            .stats-bar { padding: 30px 20px; }
-            .content-page h1 { font-size: 2.5rem; }
-            .manifesto-content .big-text { font-size: 1.1rem; }
+            .nav-links { display: none; } /* Simplified for mobile fix */
         }
     </style>
 </head>
@@ -640,12 +329,10 @@
         </div>
     </nav>
 
-    <!-- HOME PAGE -->
     <div id="home" class="page active">
         <section class="hero">
             <h1>Your Ad Spend Is Buying <span class="gradient-text">Digital Ghosts</span></h1>
-            <p class="hero-subtitle">Most automotive software is built to look pretty for the C-suite. IGNYTE is built for the showroom floor. We turn clicks into conversations in under 60 seconds, before your competitors even check their inbox.</p>
-            
+            <p class="hero-subtitle">Most automotive software is built to look pretty for the C-suite. IGNYTE is built for the showroom floor.</p>
             <div class="hero-cta">
                 <a href="#demo" class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})">Stop The Leak (Free Audit)</a>
                 <a href="#solution" class="btn-ghost" onclick="document.getElementById('solution').scrollIntoView({behavior: 'smooth'})">60-Second Intelligence</a>
@@ -653,158 +340,110 @@
         </section>
 
         <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-number">3.2x</div>
-                <div class="stat-label">Higher conversion rate</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">&lt;60s</div>
-                <div class="stat-label">Response-ready logic</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">£47k</div>
-                <div class="stat-label">Avg. monthly leak stopped</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Pure momentum</div>
-            </div>
+            <div class="stat"><div class="stat-number">3.2x</div><div class="stat-label">Higher conversion</div></div>
+            <div class="stat"><div class="stat-number">&lt;60s</div><div class="stat-label">Response time</div></div>
+            <div class="stat"><div class="stat-number">£47k</div><div class="stat-label">Avg. leak stopped</div></div>
         </div>
 
-        <section class="manifesto-section">
-            <div class="manifesto-content">
-                <h2>The Antidote to Bloated CRM Culture</h2>
-                <p class="big-text">Most automotive software is built to look pretty for the C-suite. You're sold overpriced SaaS with sleek GUIs and complex dashboards that solve bottlenecks at the wrong end of the funnel.</p>
-                <p class="big-text">Meanwhile, your actual sales floor is losing a war against the clock.</p>
-                <p class="big-text">In the UK independent market, ad spend is your biggest lever. But if your response time is measured in hours instead of seconds, you aren't buying leads. <span class="emphasis">You're buying expensive digital ghosts.</span></p>
-                <p class="big-text">IGNYTE is the antidote to bloated CRM culture. We don't care about vanity metrics or complicated filing systems. We care about <span class="emphasis">Response-Ready Logic.</span></p>
-                <p class="big-text">We've engineered a high-speed intelligence layer that does one thing well: it makes your ad spend actually work. We bridge the gap between "Click" and "Conversation" by ensuring your team owns the first minute of every inquiry.</p>
-                <p class="big-text">No technical overhead. No steep learning curves. Just pure momentum for your inventory.</p>
-            </div>
-        </section>
-
-        <section id="problem" class="problem-section">
-            <div class="section-header">
-                <h2>The £180,000 Leak You Can't See</h2>
-                <p>Your marketing budget is working. Your enquiries just aren't making it to the phone fast enough.</p>
-            </div>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>The Inbox Black Hole</h3>
-                    <p>Enquiries from AutoTrader, your website, Facebook ads—they all land in a shared inbox. Your sales team checks it manually. 2-4 hour response times during the day. Zero response after 6pm. By Monday morning, the buyer's already signing paperwork elsewhere.</p>
-                    <div class="cost">£8,400/month lost</div>
-                </div>
-
-                <div class="problem-card">
-                    <h3>The Tire-Kicker Tax</h3>
-                    <p>Your best salespeople waste 6 hours daily chasing enquiries from people "just browsing" or looking for finance they'll never qualify for. No way to know if it's a hot lead or a time-waster until you've already burned 20 minutes.</p>
-                    <div class="cost">£12,200/month wasted</div>
-                </div>
-
-                <div class="problem-card">
-                    <h3>The After-Hours Ghost</h3>
-                    <p>Saturday evening test drive request? Sunday morning finance enquiry? They sit in your inbox until Monday. Your competitor's automated system already booked the appointment. You never even knew they existed.</p>
-                    <div class="cost">£9,100/month invisible</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="solution" class="solution-section">
-            <div class="section-header">
-                <h2>The IGNYTE Standard: <span class="gradient-text">60-Second Intelligence</span></h2>
-                <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. Built for the showroom floor, not the IT department.</p>
-            </div>
-
-            <div class="solution-flow">
-                <div class="flow-card">
-                    <div class="flow-number">1</div>
-                    <div class="icon">⚡</div>
-                    <h3>Radical Capture</h3>
-                    <p>Enquiry hits AutoTrader, your website, Facebook, or email. IGNYTE intercepts it instantly. No complex integrations. No technical overhead. Just pure speed.</p>
-                    <div class="time">⚡ 0-5 seconds</div>
-                </div>
-
-                <div class="flow-card">
-                    <div class="flow-number">2</div>
-                    <div class="icon">🎯</div>
-                    <h3>Response-Ready Logic</h3>
-                    <p>Our intelligence layer analyzes buyer signals: urgency language, finance readiness, vehicle match quality. Hot leads get instant priority. Time-wasters get filtered. Your team owns the first minute.</p>
-                    <div class="time">⏱️ 5-30 seconds</div>
-                </div>
-
-                <div class="flow-card">
-                    <div class="flow-number">3</div>
-                    <div class="icon">📲</div>
-                    <h3>Pure Momentum</h3>
-                    <p>High-score lead? SMS alert to your sales floor in under 30 seconds. Mid-tier? Personalized auto-response + callback reminder. Tire-kicker? Nurture sequence. Zero complexity. Maximum velocity.</p>
-                    <div class="time">📞 30-60 seconds</div>
-                </div>
-
-                <div class="flow-card">
-                    <div class="flow-number">4</div>
-                    <div class="icon">💰</div>
-                    <h3>Spend Optimization</h3>
-                    <p>Track every enquiry from source to signed contract. See which marketing channel drives actual sales. Kill what doesn't work, double down on what does. Stop the leak. Make your ad spend work.</p>
-                    <div class="time">🎯 Real-time visibility</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="demo" class="demo-section">
+        <section id="demo" class="demo-section" style="padding: 100px 5%;">
             <div class="form-container">
                 <div id="formContent">
-                    <h2>Stop The Leak</h2>
-                    <p class="form-subtitle">We'll show you exactly where your enquiries are dying and how much revenue you're leaving on the table. No obligation. No complexity. Just insights.</p>
-                    
+                    <h2 style="text-align: center; margin-bottom: 20px;">Stop The Leak</h2>
                     <form id="auditForm" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                            <label>Full Name *</label>
+                            <input type="text" required placeholder="John Smith">
                         </div>
-
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="john@dealership.co.uk">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="john@dealership.co.uk">
                         </div>
-
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="07700 900000">
+                            <label>Dealership Name *</label>
+                            <input type="text" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="dealership">Dealership Name *</label>
-                            <input type="text" id="dealership" name="dealership" required placeholder="Your Dealership Ltd">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="monthly_enquiries">Approximate Monthly Enquiries</label>
-                            <select id="monthly_enquiries" name="monthly_enquiries">
-                                <option value="">Select range...</option>
-                                <option value="0-50">0-50 enquiries/month</option>
-                                <option value="50-100">50-100 enquiries/month</option>
-                                <option value="100-200">100-200 enquiries/month</option>
-                                <option value="200-500">200-500 enquiries/month</option>
-                                <option value="500+">500+ enquiries/month</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="biggest_challenge">Biggest Challenge Right Now</label>
-                            <textarea id="biggest_challenge" name="biggest_challenge" placeholder="e.g., Slow response times, can't track which leads convert, too many tire-kickers..."></textarea>
-                        </div>
-
-                        <div class="guarantee" style="margin: 30px 0; width: 100%; text-align: center;">✅ Complexity is a cost · Speed is a profit</div>
-
                         <button type="submit" class="submit-btn" id="submitBtn">Stop The Leak Now</button>
-
-                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 20px; text-align: center;">We'll email you within 2 hours. No vanity metrics. Just velocity.</p>
                     </form>
                 </div>
+                <div id="formSuccess" style="display: none; text-align: center; padding: 40px;">
+                    <h3 style="color: var(--success);">✅ Request Received</h3>
+                    <p>We will be in touch within 2 hours.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-                <div id="formSuccess" style="display: none;">
-                    <div class="form-success">
-                        <h3>✅ Response-Ready</h3>
-                        <p>Thanks for requesting your free revenue audit. We've received your details and will email you within 2 hours with:</p>
-                        <ul style
+    <div id="blog" class="page">
+        <div class="content-page">
+            <h1>Latest Insights</h1>
+            <div class="prompt-card">
+                <h3>The 90-Second Rule in Automotive Sales</h3>
+                <p>Why waiting 30 minutes to call a lead is costing you thousands in wasted ad spend.</p>
+                <a href="#" style="color: var(--electric); margin-top: 10px; display: block;">Read More →</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="page">
+        <div class="content-page">
+            <h1>About IGNYTE</h1>
+            <p>We are the antidote to bloated CRM culture. IGNYTE was built specifically for UK independent dealerships who need speed, not fancy dashboards.</p>
+        </div>
+    </div>
+
+    <div id="prompts" class="page">
+        <div class="content-page">
+            <h1>Free AI Prompts</h1>
+            <p>Copy these prompts into ChatGPT to help qualify your leads manually.</p>
+            
+            <div class="prompt-card">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <div class="category">Lead Qualification</div>
+                <h3>Vehicle Enquiry Filter</h3>
+                <div class="prompt-text">"Act as a dealership sales manager. Analyze this customer enquiry and identify: 1. Urgency level 2. Finance readiness 3. Trade-in potential..."</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IGNYTE Automotive Intelligence. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // PAGE SWITCHING LOGIC
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show target page
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // FORM SUBMISSION LOGIC
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerText = 'Processing...';
+
+            setTimeout(() => {
+                document.getElementById('formContent').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            }, 1500);
+        }
+
+        // COPY TO CLIPBOARD LOGIC
+        function copyText(btn) {
+            const text = btn.nextElementSibling.nextElementSibling.nextElementSibling.innerText;
+            navigator.clipboard.writeText(text);
+            btn.innerText = 'Copied!';
+            setTimeout(() => btn.innerText = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>
