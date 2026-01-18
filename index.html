@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGNYTE | Turn Every Enquiry Into Revenue Before Your Competitors Wake Up</title>
+    <title>IGNYTE | Automotive Intelligence & Revenue Velocity</title>
     
     <meta name="description" content="UK dealerships using IGNYTE convert 3.2x more enquiries by responding in under 90 seconds. AI qualification + instant routing = zero wasted ad spend.">
     
@@ -34,285 +34,90 @@
 
         .bg-gradient {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.15), transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(0, 245, 255, 0.1), transparent 50%),
                         var(--midnight);
         }
 
+        /* NAVIGATION */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            top: 0; width: 100%; z-index: 1000;
             background: rgba(10, 14, 39, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
             padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
         .logo { 
-            font-family: 'Sora', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
+            font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800;
             background: linear-gradient(135deg, var(--electric), var(--volt));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             cursor: pointer;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; transition: 0.3s; cursor: pointer; }
         .nav-links a:hover { color: var(--electric); }
 
+        /* BUTTONS */
         .btn-primary {
             background: linear-gradient(135deg, var(--volt), var(--danger));
-            color: white;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            color: white; padding: 14px 32px; border-radius: 12px; font-weight: 700;
+            text-decoration: none; transition: 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
+
+        /* PAGE ARCHITECTURE */
+        .page { display: none; min-height: 100vh; padding-top: 100px; padding-bottom: 100px; }
+        .page.active { display: block; }
+
+        /* BLOG & PROMPTS STYLING */
+        .content-page { padding: 0 5%; max-width: 1200px; margin: 0 auto; }
+        .gradient-text { background: linear-gradient(135deg, var(--electric), var(--volt)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        
+        .card { 
+            background: var(--glass); border: 1px solid var(--glass-border); 
+            padding: 30px; border-radius: 20px; transition: 0.3s; position: relative;
+        }
+        .card:hover { border-color: var(--electric); background: rgba(255,255,255,0.05); }
+        
+        .prompt-tag { 
+            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; 
+            padding: 4px 10px; border-radius: 20px; background: rgba(0, 245, 255, 0.1); 
+            color: var(--electric); margin-bottom: 15px; display: inline-block;
+        }
+        
+        .prompt-box { 
+            background: #000; padding: 15px; border-radius: 10px; 
+            font-family: 'Monaco', monospace; font-size: 0.85rem; color: #ddd;
+            margin-top: 15px; border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+        .copy-btn { 
+            position: absolute; top: 25px; right: 25px; 
+            background: var(--volt); border: none; color: white; 
+            padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.75rem;
         }
 
-        .btn-primary:hover::before { left: 100%; }
-        .btn-primary:hover { transform: translateY(-2px); }
-
-        .btn-ghost {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-            display: inline-block;
+        /* HERO & STATS (RETAINED FROM ORIGINAL) */
+        .hero { text-align: center; padding: 100px 5%; }
+        h1 { font-family: 'Sora', sans-serif; font-size: 4rem; line-height: 1.1; margin-bottom: 24px; }
+        .stats-bar { 
+            background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px; 
+            padding: 40px; margin: 40px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
         }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--electric); }
 
-        .btn-ghost:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: var(--electric);
-        }
-
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        .hero {
-            padding: 160px 5% 100px;
-            text-align: center;
-            position: relative;
-        }
-
-        h1 {
-            font-family: 'Sora', sans-serif;
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -2px;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--electric), var(--volt));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.35rem;
-            opacity: 0.8;
-            margin-bottom: 50px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .stats-bar {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 50px;
-            margin: 80px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-
-        .stat { text-align: center; }
-
-        .stat-number {
-            font-family: 'Sora', sans-serif;
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--electric);
-            margin-bottom: 8px;
-        }
-
-        .stat-label { font-size: 0.95rem; opacity: 0.7; }
-
-        .problem-section {
-            padding: 100px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .problem-card {
-            background: var(--glass);
-            border: 1px solid rgba(255, 51, 102, 0.2);
-            border-radius: 20px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(180deg, var(--danger), transparent);
-        }
-
-        .problem-card .cost {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--danger);
-            margin: 20px 0;
-        }
-
-        .solution-section {
-            padding: 100px 5%;
-            background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.05));
-        }
-
-        .solution-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .flow-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 40px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .flow-number {
-            position: absolute;
-            top: 20px; right: 20px; width: 40px; height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--volt), var(--electric));
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 50px 40px;
-        }
-
-        .form-group { margin-bottom: 25px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--electric); font-weight: 600; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 14px; background: rgba(0,0,0,0.3);
-            border: 1px solid var(--glass-border); border-radius: 12px; color: white;
-        }
-
-        .submit-btn {
-            width: 100%; background: linear-gradient(135deg, var(--volt), var(--danger));
-            color: white; padding: 16px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer;
-        }
-
-        .content-page { padding: 100px 5%; max-width: 1000px; margin: 0 auto; }
-        .prompt-card { background: var(--glass); padding: 30px; border-radius: 16px; margin-bottom: 20px; position: relative; border: 1px solid var(--glass-border); }
-        .prompt-text { background: #000; padding: 15px; border-radius: 8px; font-family: monospace; margin-top: 10px; }
-        .copy-btn { position: absolute; top: 20px; right: 20px; background: var(--volt); border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+        footer { padding: 60px 5%; text-align: center; border-top: 1px solid var(--glass-border); opacity: 0.6; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } /* Simplified for mobile fix */
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -322,52 +127,43 @@
     <nav>
         <span class="logo" onclick="showPage('home')">IGNYTE</span>
         <div class="nav-links">
-            <a onclick="showPage('blog')">Blog</a>
-            <a onclick="showPage('about')">About</a>
-            <a onclick="showPage('prompts')">Free Prompts</a>
-            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Get Free Audit</a>
+            <a onclick="showPage('blog')">Intelligence Hub</a>
+            <a onclick="showPage('prompts')">Prompt Library</a>
+            <a onclick="showPage('about')">The Manifesto</a>
+            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Free Audit</a>
         </div>
     </nav>
 
     <div id="home" class="page active">
         <section class="hero">
             <h1>Your Ad Spend Is Buying <span class="gradient-text">Digital Ghosts</span></h1>
-            <p class="hero-subtitle">Most automotive software is built to look pretty for the C-suite. IGNYTE is built for the showroom floor.</p>
-            <div class="hero-cta">
-                <a href="#demo" class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})">Stop The Leak (Free Audit)</a>
-                <a href="#solution" class="btn-ghost" onclick="document.getElementById('solution').scrollIntoView({behavior: 'smooth'})">60-Second Intelligence</a>
+            <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.2rem; opacity: 0.8;">In the UK independent market, ad spend is your biggest lever. But if your response time is measured in hours, you've already lost. IGNYTE turns clicks into conversations in under 90 seconds.</p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <button class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})">Get Free Revenue Audit</button>
+                <button class="btn-primary" style="background: var(--glass); border: 1px solid var(--glass-border);" onclick="showPage('prompts')">View Free Prompts</button>
             </div>
         </section>
 
         <div class="stats-bar">
-            <div class="stat"><div class="stat-number">3.2x</div><div class="stat-label">Higher conversion</div></div>
-            <div class="stat"><div class="stat-number">&lt;60s</div><div class="stat-label">Response time</div></div>
-            <div class="stat"><div class="stat-number">£47k</div><div class="stat-label">Avg. leak stopped</div></div>
+            <div style="text-align: center;"><div class="stat-number">3.2x</div><div>More Conversations</div></div>
+            <div style="text-align: center;"><div class="stat-number">&lt;60s</div><div>Logic Speed</div></div>
+            <div style="text-align: center;"><div class="stat-number">24/7</div><div>Momentum</div></div>
         </div>
 
-        <section id="demo" class="demo-section" style="padding: 100px 5%;">
-            <div class="form-container">
+        <section id="demo" style="padding: 100px 5%;">
+            <div style="max-width: 600px; margin: 0 auto; background: var(--glass); padding: 50px; border-radius: 30px; border: 1px solid var(--glass-border);">
                 <div id="formContent">
-                    <h2 style="text-align: center; margin-bottom: 20px;">Stop The Leak</h2>
-                    <form id="auditForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" required placeholder="John Smith">
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address *</label>
-                            <input type="email" required placeholder="john@dealership.co.uk">
-                        </div>
-                        <div class="form-group">
-                            <label>Dealership Name *</label>
-                            <input type="text" required>
-                        </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">Stop The Leak Now</button>
+                    <h2 style="text-align: center; margin-bottom: 30px;">Stop The Leak</h2>
+                    <form onsubmit="handleFormSubmit(event)">
+                        <input type="text" placeholder="Full Name" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 10px; color: white;">
+                        <input type="email" placeholder="Work Email" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 10px; color: white;">
+                        <input type="text" placeholder="Dealership Name" required style="width: 100%; padding: 15px; margin-bottom: 30px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 10px; color: white;">
+                        <button type="submit" id="submitBtn" class="btn-primary" style="width: 100%;">Audit My Funnel</button>
                     </form>
                 </div>
-                <div id="formSuccess" style="display: none; text-align: center; padding: 40px;">
-                    <h3 style="color: var(--success);">✅ Request Received</h3>
-                    <p>We will be in touch within 2 hours.</p>
+                <div id="formSuccess" style="display: none; text-align: center;">
+                    <h3 style="color: var(--success); margin-bottom: 10px;">Audit Requested</h3>
+                    <p>Check your inbox within 2 hours for your custom report.</p>
                 </div>
             </div>
         </section>
@@ -375,32 +171,78 @@
 
     <div id="blog" class="page">
         <div class="content-page">
-            <h1>Latest Insights</h1>
-            <div class="prompt-card">
-                <h3>The 90-Second Rule in Automotive Sales</h3>
-                <p>Why waiting 30 minutes to call a lead is costing you thousands in wasted ad spend.</p>
-                <a href="#" style="color: var(--electric); margin-top: 10px; display: block;">Read More →</a>
+            <h1 class="gradient-text" style="font-size: 3.5rem;">Intelligence Hub</h1>
+            <p style="margin-bottom: 40px; opacity: 0.8;">The blueprint for high-velocity independent dealerships.</p>
+            
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>The 90-Second Rule: Why Lead Decay is the #1 Profit Killer</h3>
+                    <p style="margin-top: 15px; opacity: 0.7;">Answering a car enquiry in 90 seconds vs. 30 minutes increases your conversion rate by 300%. We break down the psychology of the modern buyer...</p>
+                    <button class="btn-primary" style="margin-top: 20px; padding: 10px 20px; font-size: 0.8rem;">Read Full Guide</button>
+                </div>
+                <div class="card">
+                    <h3>2026 Car Buying Trends: The Rise of Answer Engines</h3>
+                    <p style="margin-top: 15px; opacity: 0.7;">Google is no longer the first stop. How Perplexity and SearchGPT are changing how people find inventory and why your website needs 'Intelligence Layering'.</p>
+                    <button class="btn-primary" style="margin-top: 20px; padding: 10px 20px; font-size: 0.8rem;">Read Full Guide</button>
+                </div>
+                <div class="card">
+                    <h3>Financing Qualification: Stopping the 'Tire-Kicker' Tax</h3>
+                    <p style="margin-top: 15px; opacity: 0.7;">Your best sales team is wasting 6 hours a day on leads that will never qualify for finance. Here is how to automate the filter without losing the human touch.</p>
+                    <button class="btn-primary" style="margin-top: 20px; padding: 10px 20px; font-size: 0.8rem;">Read Full Guide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="prompts" class="page">
+        <div class="content-page">
+            <h1 class="gradient-text" style="font-size: 3.5rem;">The Prompt Library</h1>
+            <p style="margin-bottom: 40px; opacity: 0.8;">Advanced AI scripts for high-performance sales teams.</p>
+            
+            <div class="grid-layout">
+                <div class="card">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <span class="prompt-tag">Chain of Thought</span>
+                    <h3>The Intent Decoder</h3>
+                    <div class="prompt-box">"Act as a dealership psychologist. Analyze this email: [PASTE EMAIL]. Think step-by-step: 1. What is their real budget? 2. What is their hidden 'pain' (e.g., growing family)? 3. Suggest a 2-sentence empathetic reply."</div>
+                </div>
+
+                <div class="card">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <span class="prompt-tag">One-Shot</span>
+                    <h3>The 'Ghost' Reviver</h3>
+                    <div class="prompt-box">"Follow this style: 'Hi [Name], I just saw the [Car] we discussed is going to the auction tomorrow. Wanted to give you first dibs.' Now, write a similar 'last chance' text for [Customer Name] regarding [Car Model]."</div>
+                </div>
+
+                <div class="card">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <span class="prompt-tag">Few-Shot</span>
+                    <h3>Objection Eraser</h3>
+                    <div class="prompt-box">"Handle the 'price is too high' objection using this logic: I understand -> Others felt the same -> They found [Value]. Apply this to: '[Customer says price is too high because of insurance costs]'"</div>
+                </div>
+
+                <div class="card">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    <span class="prompt-tag">System Prompt</span>
+                    <h3>Video Script Generator</h3>
+                    <div class="prompt-box">"Write a 30-second video script for a customer named [Name]. The goal is to sell the 'Test Drive Experience', not the car. Mention that the keys are on my desk and the coffee is ready. Max 75 words."</div>
+                </div>
+
+                <div class="card" style="opacity: 0.6; border-style: dashed;">
+                    <p style="text-align: center;">+ 36 Additional High-Velocity Prompts available in the Full Audit Package</p>
+                    <p style="font-size: 0.7rem; text-align: center; margin-top: 10px;">Topics: Part-Ex Negotiation, Saturday Booking SMS, Finance Pre-approval, After-Hours Auto-Replies, etc.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="about" class="page">
         <div class="content-page">
-            <h1>About IGNYTE</h1>
-            <p>We are the antidote to bloated CRM culture. IGNYTE was built specifically for UK independent dealerships who need speed, not fancy dashboards.</p>
-        </div>
-    </div>
-
-    <div id="prompts" class="page">
-        <div class="content-page">
-            <h1>Free AI Prompts</h1>
-            <p>Copy these prompts into ChatGPT to help qualify your leads manually.</p>
-            
-            <div class="prompt-card">
-                <button class="copy-btn" onclick="copyText(this)">Copy</button>
-                <div class="category">Lead Qualification</div>
-                <h3>Vehicle Enquiry Filter</h3>
-                <div class="prompt-text">"Act as a dealership sales manager. Analyze this customer enquiry and identify: 1. Urgency level 2. Finance readiness 3. Trade-in potential..."</div>
+            <h1 class="gradient-text" style="font-size: 3.5rem;">The IGNYTE Manifesto</h1>
+            <div style="max-width: 800px; font-size: 1.4rem; line-height: 1.8; margin-top: 40px;">
+                <p>We believe most automotive software is built for the C-Suite, not the showroom floor.</p>
+                <p style="margin-top: 20px;">While competitors build complex dashboards, we build **Response-Ready Logic**. We believe the first dealership to speak to a lead wins 80% of the time.</p>
+                <p style="margin-top: 20px;">IGNYTE isn't just a tool; it's a velocity layer. We make your ad spend work by ensuring no enquiry ever dies in an inbox.</p>
             </div>
         </div>
     </div>
@@ -410,39 +252,46 @@
     </footer>
 
     <script>
-        // PAGE SWITCHING LOGIC
+        // NAVIGATION LOGIC
         function showPage(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-
-            // Show target page
-            const activePage = document.getElementById(pageId);
-            if (activePage) {
-                activePage.classList.add('active');
-                window.scrollTo(0, 0);
+            pages.forEach(p => p.classList.remove('active'));
+            
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+                window.scrollTo(0,0);
             }
         }
 
-        // FORM SUBMISSION LOGIC
-        function handleFormSubmit(event) {
-            event.preventDefault();
+        // FORM LOGIC
+        function handleFormSubmit(e) {
+            e.preventDefault();
             const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Analyzing Funnel...';
             btn.disabled = true;
-            btn.innerText = 'Processing...';
 
             setTimeout(() => {
                 document.getElementById('formContent').style.display = 'none';
                 document.getElementById('formSuccess').style.display = 'block';
-            }, 1500);
+            }, 1800);
         }
 
-        // COPY TO CLIPBOARD LOGIC
-        function copyText(btn) {
-            const text = btn.nextElementSibling.nextElementSibling.nextElementSibling.innerText;
-            navigator.clipboard.writeText(text);
+        // PROMPT COPY LOGIC
+        function copyPrompt(btn) {
+            const box = btn.parentElement.querySelector('.prompt-box');
+            navigator.clipboard.writeText(box.innerText);
+            
+            const originalText = btn.innerText;
             btn.innerText = 'Copied!';
-            setTimeout(() => btn.innerText = 'Copy', 2000);
+            btn.style.background = '#00FF88';
+            btn.style.color = '#000';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = 'var(--volt)';
+                btn.style.color = 'white';
+            }, 2000);
         }
     </script>
 </body>
