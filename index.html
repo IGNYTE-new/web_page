@@ -7,8 +7,11 @@
     
     <meta name="description" content="UK dealerships using IGNYTE convert 3.2x more enquiries by responding in under 90 seconds. AI qualification + instant routing = zero wasted ad spend.">
     
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="automotive sales AI, lead response automation, car dealership software, sales automation UK, lead qualification system, automotive CRM alternative, fast lead response, dealership efficiency">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -49,7 +52,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 14, 39, 0.8);
+            background: rgba(10, 14, 39, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
             padding: 1rem 5%;
@@ -85,6 +88,16 @@
         }
 
         .nav-links a:hover { color: var(--electric); }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--volt), var(--danger));
@@ -274,9 +287,97 @@
             margin: 20px 0;
         }
 
+        /* CRM Antidote Section - Improved */
+        .antidote-section {
+            padding: 120px 5%;
+            background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .antidote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .antidote-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .antidote-stats {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .antidote-stat {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .antidote-stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--volt), var(--electric));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .antidote-stat-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--electric);
+        }
+
+        .antidote-stat-content p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .antidote-visual {
+            position: relative;
+        }
+
+        .crm-comparison {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .crm-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .crm-bloat {
+            background: rgba(255, 51, 102, 0.1);
+            border: 1px solid rgba(255, 51, 102, 0.2);
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .crm-ignyte {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
         .solution-section {
             padding: 100px 5%;
-            background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.05));
         }
 
         .solution-flow {
@@ -370,6 +471,7 @@
             font-weight: 600;
         }
 
+        /* Form Styles */
         .form-container {
             max-width: 600px;
             margin: 0 auto;
@@ -509,103 +611,152 @@
             line-height: 1.8;
         }
 
+        /* Improved Prompt Library */
         .prompt-grid {
             display: grid;
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
         .prompt-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 30px;
-            transition: 0.3s;
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .prompt-card:hover {
             border-color: var(--electric);
             background: rgba(255,255,255,0.05);
+            transform: translateY(-3px);
         }
 
         .prompt-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--electric);
+            font-family: 'Sora', sans-serif;
         }
 
         .prompt-card .category {
-            background: rgba(124, 58, 237, 0.2);
-            color: var(--volt);
-            padding: 4px 12px;
+            background: linear-gradient(135deg, var(--volt), var(--electric));
+            color: white;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
             margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .prompt-card .description {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .prompt-card .prompt-text {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 20px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            padding: 25px;
             border-radius: 12px;
             font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-            margin-top: 15px;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.95);
+            margin-top: 20px;
             position: relative;
-            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .prompt-text::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .prompt-text::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .prompt-text::-webkit-scrollbar-thumb {
+            background: var(--volt);
+            border-radius: 10px;
         }
 
         .copy-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--volt);
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--volt), var(--electric));
             color: white;
             border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.75rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .copy-btn:hover {
-            background: var(--electric);
-            color: var(--midnight);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.5);
         }
 
-        .manifesto-section {
-            background: linear-gradient(180deg, rgba(124, 58, 237, 0.05), transparent);
-            padding: 100px 5%;
-            margin: 60px 0;
+        .copy-btn.copied {
+            background: linear-gradient(135deg, var(--success), #00CC6A);
         }
 
-        .manifesto-content {
-            max-width: 900px;
-            margin: 0 auto;
+        /* Blog Styles */
+        .blog-grid {
+            display: grid;
+            gap: 50px;
+            margin-top: 60px;
         }
 
-        .manifesto-content h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--electric);
+        .blog-article {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 45px;
+            transition: all 0.3s ease;
         }
 
-        .manifesto-content .big-text {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-weight: 400;
+        .blog-article:hover {
+            border-color: var(--electric);
+            transform: translateY(-5px);
         }
 
-        .manifesto-content .emphasis {
-            color: var(--electric);
-            font-weight: 700;
+        .blog-article h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-meta {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .blog-tag {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--volt);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         footer {
@@ -614,16 +765,160 @@
             border-top: 1px solid var(--glass-border);
             font-size: 0.9rem;
             opacity: 0.6;
+            margin-top: 100px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .antidote-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .prompt-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .section-header h2 { font-size: 2rem; }
-            .hero-cta { flex-direction: column; }
-            .nav-links { gap: 1rem; font-size: 0.85rem; }
-            .stats-bar { padding: 30px 20px; }
-            .content-page h1 { font-size: 2.5rem; }
-            .manifesto-content .big-text { font-size: 1.1rem; }
+            h1 { 
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+            
+            .hero {
+                padding: 120px 5% 80px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 { 
+                font-size: 2rem;
+            }
+            
+            .antidote-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-cta { 
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-cta .btn-primary,
+            .hero-cta .btn-ghost {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--glass-border);
+                gap: 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--glass-border);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .stats-bar { 
+                padding: 30px 20px;
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .problem-grid,
+            .solution-flow {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-page h1 { 
+                font-size: 2.2rem;
+            }
+            
+            .content-page h2 {
+                font-size: 1.6rem;
+            }
+            
+            .demo-container,
+            .form-container {
+                padding: 40px 25px;
+            }
+            
+            .form-container h2,
+            .demo-container h2 {
+                font-size: 2rem;
+            }
+            
+            .blog-article {
+                padding: 30px;
+            }
+            
+            .blog-article h2 {
+                font-size: 1.8rem;
+            }
+            
+            .prompt-card {
+                padding: 25px;
+            }
+            
+            .prompt-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 4%;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn-primary,
+            .btn-ghost {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -631,24 +926,25 @@
     <div class="bg-gradient"></div>
 
     <nav>
-        <span class="logo" onclick="showPage('home')">IGNYTE</span>
-        <div class="nav-links">
+        <a class="logo" onclick="showPage('home')">IGNYTE</a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
             <a onclick="showPage('blog')">Blog</a>
             <a onclick="showPage('about')">About</a>
-            <a onclick="showPage('prompts')">Free Prompts</a>
-            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100);">Get Free Audit</a>
+            <a onclick="showPage('prompts')">Prompt Library</a>
+            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Stop The Leak</a>
         </div>
     </nav>
 
     <!-- HOME PAGE -->
     <div id="home" class="page active">
         <section class="hero">
-            <h1>Your Ad Spend Is Buying <span class="gradient-text">Digital Ghosts</span></h1>
-            <p class="hero-subtitle">Most automotive software is built to look pretty for the C-suite. IGNYTE is built for the showroom floor. We turn clicks into conversations in under 60 seconds, before your competitors even check their inbox.</p>
+            <h1>Your Enquiries Are <span class="gradient-text">Dying in Your Inbox</span></h1>
+            <p class="hero-subtitle">Every 5 minutes you wait, conversion drops 80%. IGNYTE qualifies, scores, and routes hot buyers to your sales team in under 90 seconds—even at 11pm on Sunday—while your competitors are still checking email.</p>
             
             <div class="hero-cta">
-                <a href="#demo" class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior: 'smooth'})">Stop The Leak (Free Audit)</a>
-                <a href="#solution" class="btn-ghost" onclick="document.getElementById('solution').scrollIntoView({behavior: 'smooth'})">60-Second Intelligence</a>
+                <a href="#demo" class="btn-primary">Stop The Leak (Free Audit)</a>
+                <a href="#solution" class="btn-ghost">See 90-Second Intelligence</a>
             </div>
         </section>
 
@@ -658,34 +954,22 @@
                 <div class="stat-label">Higher conversion rate</div>
             </div>
             <div class="stat">
-                <div class="stat-number">&lt;60s</div>
-                <div class="stat-label">Response-ready logic</div>
+                <div class="stat-number">87s</div>
+                <div class="stat-label">Average response time</div>
             </div>
             <div class="stat">
                 <div class="stat-number">£47k</div>
-                <div class="stat-label">Avg. monthly leak stopped</div>
+                <div class="stat-label">Avg. monthly revenue recovered</div>
             </div>
             <div class="stat">
                 <div class="stat-number">24/7</div>
-                <div class="stat-label">Pure momentum</div>
+                <div class="stat-label">Works while you sleep</div>
             </div>
         </div>
 
-        <section class="manifesto-section">
-            <div class="manifesto-content">
-                <h2>The Antidote to Bloated CRM Culture</h2>
-                <p class="big-text">Most automotive software is built to look pretty for the C-suite. You're sold overpriced SaaS with sleek user interfaces and complex dashboards that solve bottlenecks at the wrong end of the funnel.</p>
-                <p class="big-text">Meanwhile, your actual sales floor is losing a war against the clock.</p>
-                <p class="big-text">In the UK independent market, ad spend is your biggest lever. But if your response time is measured in hours instead of seconds, you aren't buying leads. <span class="emphasis">You're buying expensive digital ghosts.</span></p>
-                <p class="big-text">IGNYTE is the antidote to bloated CRM culture. We don't care about vanity metrics or complicated filing systems. We care about <span class="emphasis">Response-Ready Logic.</span></p>
-                <p class="big-text">We've engineered a high-speed AI layer that does one thing well: it makes your ad spend actually work. We bridge the gap between "Click" and "Conversation" by ensuring your team owns the first minute of every inquiry.</p>
-                <p class="big-text">No technical overhead. No steep learning curves. Just pure momentum for your inventory.</p>
-            </div>
-        </section>
-
         <section id="problem" class="problem-section">
             <div class="section-header">
-                <h2>The £180,000 Leak You Can't See</h2>
+                <h2>The £180,000 Problem Hiding in Your Inbox</h2>
                 <p>Your marketing budget is working. Your enquiries just aren't making it to the phone fast enough.</p>
             </div>
 
@@ -710,42 +994,93 @@
             </div>
         </section>
 
+        <!-- Improved CRM Antidote Section -->
+        <section class="antidote-section">
+            <div class="antidote-container">
+                <div class="antidote-content">
+                    <h2>The Antidote to <span class="gradient-text">Bloated CRM Culture</span></h2>
+                    
+                    <div class="antidote-stats">
+                        <div class="antidote-stat">
+                            <div class="antidote-stat-icon">⚡</div>
+                            <div class="antidote-stat-content">
+                                <h3>Zero Setup Time</h3>
+                                <p>Live in 48 hours. No IT team. No training sessions. No migration headaches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="antidote-stat">
+                            <div class="antidote-stat-icon">🎯</div>
+                            <div class="antidote-stat-content">
+                                <h3>One Job, Done Right</h3>
+                                <p>Get hot leads to your team in 90 seconds. That's it. No pipeline management, no reporting dashboards, no feature bloat.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="antidote-stat">
+                            <div class="antidote-stat-icon">💰</div>
+                            <div class="antidote-stat-content">
+                                <h3>Pay for Results</h3>
+                                <p>14-day money-back guarantee. If it doesn't recover its cost in month one, we refund you and shut it off.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="antidote-visual">
+                    <div class="crm-comparison">
+                        <div class="crm-item crm-bloat">❌ 6-month implementation</div>
+                        <div class="crm-item crm-bloat">❌ £50k+ annual licenses</div>
+                        <div class="crm-item crm-bloat">❌ 40+ features you'll never use</div>
+                        <div class="crm-item crm-bloat">❌ Sales team ignores it anyway</div>
+                        
+                        <div style="margin: 30px 0; text-align: center; opacity: 0.5;">⬇️</div>
+                        
+                        <div class="crm-item crm-ignyte">✅ 48-hour go-live</div>
+                        <div class="crm-item crm-ignyte">✅ One simple job</div>
+                        <div class="crm-item crm-ignyte">✅ 90-second response time</div>
+                        <div class="crm-item crm-ignyte">✅ Your team actually uses it</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="solution" class="solution-section">
             <div class="section-header">
-                <h2>The IGNYTE Standard: <span class="gradient-text">60-Second Intelligence</span></h2>
-                <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. Built for the showroom floor, not the IT department.</p>
+                <h2>How IGNYTE Fixes This in <span class="gradient-text">90 Seconds</span></h2>
+                <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. No technical setup required.</p>
             </div>
 
             <div class="solution-flow">
                 <div class="flow-card">
                     <div class="flow-number">1</div>
-                    <div class="icon">⚡</div>
-                    <h3>Radical Capture</h3>
-                    <p>Enquiry hits AutoTrader, your website, Facebook, or email. IGNYTE's intelligent AI model intercepts it instantly. No complex integrations. No technical overhead. Just pure speed.</p>
+                    <div class="icon">📨</div>
+                    <h3>Universal Capture</h3>
+                    <p>Enquiry hits AutoTrader, your website contact form, Facebook lead ad, or email. IGNYTE intercepts it instantly. No complex integrations—just works.</p>
                     <div class="time">⚡ 0-5 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">2</div>
-                    <div class="icon">🎯</div>
-                    <h3>Response-Ready Logic</h3>
-                    <p>Our AI analyzes buyer signals: urgency language, finance readiness, vehicle match quality. Hot leads get instant priority. Time-wasters get filtered. Your team owns the first minute.</p>
+                    <div class="icon">🧠</div>
+                    <h3>Intelligent Scoring</h3>
+                    <p>Our system analyzes buyer signals: urgency language, finance readiness, vehicle match quality, time of enquiry, contact method. Hot leads get instant priority. Time-wasters get filtered to nurture.</p>
                     <div class="time">⏱️ 5-30 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">3</div>
                     <div class="icon">📲</div>
-                    <h3>Pure Momentum</h3>
-                    <p>High-score lead? SMS alert to your sales floor in under 60 seconds. Mid-tier? Personalized auto-response + callback reminder. Tire-kicker? Nurture sequence. Zero complexity. Maximum velocity.</p>
-                    <div class="time">📞 30-60 seconds</div>
+                    <h3>Smart Routing</h3>
+                    <p>High-score lead? SMS to your top closer instantly—even at 10pm. Mid-tier? Personalized auto-response + morning callback reminder. Tire-kicker? Nurture sequence. Your team only touches deals worth their time.</p>
+                    <div class="time">📞 30-90 seconds</div>
                 </div>
 
                 <div class="flow-card">
                     <div class="flow-number">4</div>
-                    <div class="icon">💰</div>
-                    <h3>Spend Optimization</h3>
-                    <p>Track every enquiry from source to signed contract. See which marketing channel drives actual sales. Kill what doesn't work, double down on what does. Stop the leak. Make your ad spend work.</p>
+                    <div class="icon">📊</div>
+                    <h3>Revenue Attribution</h3>
+                    <p>Track every enquiry from source to signed contract. See which marketing channel drove actual sales. Kill what doesn't work, double down on what does. Simple dashboard, powerful insights.</p>
                     <div class="time">🎯 Real-time visibility</div>
                 </div>
             </div>
@@ -755,25 +1090,29 @@
             <div class="form-container">
                 <div id="formContent">
                     <h2>Stop The Leak</h2>
-                    <p class="form-subtitle">We'll show you exactly where your enquiries are dying and how much revenue you're leaving on the table. No obligation. No complexity. Just insights.</p>
+                    <p class="form-subtitle">Get your free revenue audit. We'll show you exactly where your enquiries are dying and how much you're losing. No obligation.</p>
                     
-                    <form id="auditForm" onsubmit="handleFormSubmit(event)">
+                    <form id="auditForm" action="https://formspree.io/f/xwpkboea" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Smith">
                         </div>
+
                         <div class="form-group">
                             <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required placeholder="john@dealership.co.uk">
                         </div>
+
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required placeholder="07700 900000">
                         </div>
+
                         <div class="form-group">
                             <label for="dealership">Dealership Name *</label>
                             <input type="text" id="dealership" name="dealership" required placeholder="Your Dealership Ltd">
                         </div>
+
                         <div class="form-group">
                             <label for="monthly_enquiries">Approximate Monthly Enquiries</label>
                             <select id="monthly_enquiries" name="monthly_enquiries">
@@ -785,22 +1124,669 @@
                                 <option value="500+">500+ enquiries/month</option>
                             </select>
                         </div>
+
                         <div class="form-group">
                             <label for="biggest_challenge">Biggest Challenge Right Now</label>
                             <textarea id="biggest_challenge" name="biggest_challenge" placeholder="e.g., Slow response times, can't track which leads convert, too many tire-kickers..."></textarea>
                         </div>
 
-                        <div class="guarantee" style="margin: 30px 0; width: 100%; text-align: center;">✅ Complexity is a cost · Speed is a profit</div>
+                        <div class="guarantee" style="margin: 30px 0; width: 100%; text-align: center;">✅ Zero risk · 14-day money-back guarantee · Live in 48 hours</div>
 
-                        <button type="submit" class="submit-btn" id="submitBtn">Stop The Leak Now</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">Get My Free Audit</button>
 
-                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 20px; text-align: center;">We'll email you within 2 hours. No vanity metrics. Just velocity.</p>
+                        <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 20px; text-align: center;">We'll email you within 2 hours with next steps. No spam, ever.</p>
                     </form>
                 </div>
 
                 <div id="formSuccess" style="display: none;">
                     <div class="form-success">
-                        <h3>✅ Response-Ready</h3>
+                        <h3>✅ You're All Set!</h3>
                         <p>Thanks for requesting your free revenue audit. We've received your details and will email you within 2 hours with:</p>
-                        <ul style
+                        <ul style="text-align: left; max-width: 400px; margin: 30px auto; line-height: 2;">
+                            <li>Personalized audit of your current lead flow</li>
+                            <li>Estimated monthly revenue leak calculation</li>
+                            <li>Custom IGNYTE implementation plan</li>
+                        </ul>
+                        <p style="margin-top: 30px;">Check your inbox: <strong id="submittedEmail"></strong></p>
+                        <a class="btn-ghost" style="margin-top: 30px;" onclick="showPage('home')">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <!-- BLOG PAGE -->
+    <div id="blog" class="page">
+        <div class="content-page">
+            <h1>IGNYTE <span class="gradient-text">Insights</span></h1>
+            <p style="font-size: 1.3rem; margin-bottom: 60px; opacity: 0.8;">Revenue intelligence strategies for automotive sales teams.</p>
+
+            <div class="blog-grid">
+                <article class="blog-article">
+                    <h2>The Death of the Manual Follow-Up: Why Speed Beats Perfect</h2>
+                    <div class="blog-meta">
+                        <span>5 min read</span>
+                        <span class="blog-tag">Sales Strategy</span>
+                    </div>
+                    <p>Your competitor sent a generic "Thanks for your enquiry" at 11:03pm. You crafted the perfect, personalized response at 9:15am the next morning. They won. Here's why speed trumps polish every single time, and how automation solves both problems simultaneously.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h2>The Real Cost of "Just Browsing" Leads</h2>
+                    <div class="blog-meta">
+                        <span>4 min read</span>
+                        <span class="blog-tag">Lead Qualification</span>
+                    </div>
+                    <p>When your top salesperson spends 45 minutes on a call with someone who "might buy in 6 months," you didn't just waste 45 minutes. You lost the three hot leads that came in during that call. Here's the hidden mathematics of tire-kicker tax and how to calculate what it's actually costing you.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h2>Why Your CRM Gathers Dust (And What Actually Works)</h2>
+                    <div class="blog-meta">
+                        <span>6 min read</span>
+                        <span class="blog-tag">Technology</span>
+                    </div>
+                    <p>You spent £40k on a CRM. Trained your team for three days. Six months later, they're back to sticky notes and shared inboxes. The problem isn't your team—it's that most CRMs were built by software people, not sales people. This is what actually gets used.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h2>After-Hours Leads: The £180k Invisible Revenue Stream</h2>
+                    <div class="blog-meta">
+                        <span>5 min read</span>
+                        <span class="blog-tag">Revenue Recovery</span>
+                    </div>
+                    <p>32% of automotive enquiries happen outside business hours. Most dealerships treat weekends like dead time. Smart ones automate Saturday night into their most profitable window. Here's the exact system that turned "closed" into a competitive advantage.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h2>Finance Pre-Qualification: The Underrated Conversion Multiplier</h2>
+                    <div class="blog-meta">
+                        <span>7 min read</span>
+                        <span class="blog-tag">Finance</span>
+                    </div>
+                    <p>If you're selling cars before you know whether the customer can afford them, you're doing it backwards. Finance-ready buyers close 4x faster and haggle 60% less. This is how to spot them in the first 30 seconds of contact, before your team wastes any time.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="content-page">
+            <h1>We Built This Because We Were <span class="gradient-text">Tired of Watching Revenue Die</span></h1>
+            
+            <p>IGNYTE started in a dealership manager's office at 11pm on a Tuesday. He was scrolling through weekend enquiries—47 of them—that had been sitting in an inbox for three days. Half were junk. A quarter were hot leads that had already bought elsewhere. The rest? Who knows. They stopped responding.</p>
+
+            <p>The frustrating part wasn't the lost sales. It was knowing the problem was fixable. These weren't bad leads. They were good leads killed by slow follow-up.</p>
+
+            <h2>The Boring Solution That Actually Works</h2>
+
+            <p>We didn't build a complex AI system. We didn't create another CRM. We built a dead-simple workflow that does one thing exceptionally well: gets enquiries to the right person's phone before the buyer forgets they even enquired.</p>
+
+            <p>No dashboards you'll never use. No features you don't need. Just automatic lead capture, intelligent scoring, and instant routing. It works while you sleep. It works on bank holidays. It works when your sales manager is on vacation.</p>
+
+            <h2>Built for UK Automotive, Not Silicon Valley</h2>
+
+            <p>We're not a venture-backed SaaS company trying to sell you a "revolutionary platform." We're operators who understand UK dealership workflows, AutoTrader's quirks, and why your sales team ignores the CRM.</p>
+
+            <p>IGNYTE is deliberately simple. Plug-and-play setup. No technical requirements. Live in 48 hours. If it doesn't pay for itself in month one, we refund you and shut it off. That's the deal.</p>
+
+            <h2>The Team</h2>
+
+            <p>Two former automotive sales managers. One automation engineer. Zero tolerance for complexity. We built IGNYTE because we needed it to exist—then realized every dealership in the UK has the same problem.</p>
+
+            <p>Want to see if IGNYTE fits your operation? Request a free audit below.</p>
+
+            <div style="margin-top: 50px; text-align: center;">
+                <a class="btn-primary" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Your Free Audit</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROMPTS PAGE - Improved Professional Library -->
+    <div id="prompts" class="page">
+        <div class="content-page">
+            <h1>Professional AI <span class="gradient-text">Prompt Library</span></h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Battle-tested prompts for business professionals. Copy, paste, and adapt to your workflow.</p>
+            <p style="opacity: 0.7; margin-bottom: 50px;">Each prompt uses advanced chain-of-thought reasoning for superior AI outputs. Optimized for ChatGPT, Claude, and other LLMs.</p>
+
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <span class="category">Email Marketing</span>
+                    <h3>High-Converting Follow-Up Email Generator</h3>
+                    <p class="description">Creates personalized follow-up emails that reference specific customer interactions and move deals forward with strategic next steps.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert at post-interaction follow-up that converts interest into action.
+
+Interaction context:
+- Customer: [NAME]
+- Previous interaction: [DEMO/CALL/MEETING]
+- Their reaction: [POSITIVE/NEUTRAL/MIXED]
+- Concerns mentioned: [LIST ANY OBJECTIONS]
+- Agreed next step: [WHAT WAS DISCUSSED]
+
+Write a follow-up for 24 hours after interaction that:
+1. References specific moment from interaction ("loved when you mentioned...")
+2. Addresses concerns raised without being defensive
+3. Provides new information that advances the conversation
+4. Creates soft urgency (timing, availability, other interest)
+5. Suggests concrete next step
+
+Think through:
+- What high point can we reference emotionally?
+- What logical objection needs addressing?
+- What's blocking their decision?
+
+Provide:
+- Email message (80-120 words)
+- Subject line referencing the interaction
+- One piece of new value (data, update, option)
+
+Professional UK English tone, enthusiastic but not pushy.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Sales Strategy</span>
+                    <h3>Objection Handler & Reframe Generator</h3>
+                    <p class="description">Transforms customer objections into opportunities by identifying the real concern and providing strategic response frameworks.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are a master sales strategist specializing in objection handling.
+
+Customer objection: [PASTE THEIR CONCERN]
+
+Context: [e.g., "Comparing our £24,995 product to £22,500 competitor"]
+
+Analyze and respond:
+
+Step 1 - Identify real objection:
+- Is this about price, trust, timing, value perception, or something else?
+
+Step 2 - Strategic response:
+- Bridge statement that validates concern without being defensive
+- Reframe from cost/problem to value/opportunity
+- Question that uncovers real decision criteria
+- Next step that maintains momentum
+
+Write 3-4 sentence response that:
+- Validates their concern authentically
+- Reframes with context or value
+- Asks qualifying question
+- Suggests concrete next step
+
+Conversational, confident but collaborative tone. UK English.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Content Creation</span>
+                    <h3>LinkedIn Post Generator for B2B Thought Leadership</h3>
+                    <p class="description">Creates engaging LinkedIn posts that position you as an industry expert while driving meaningful engagement.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert LinkedIn content strategist.
+
+Topic: [YOUR TOPIC OR INSIGHT]
+Audience: [TARGET AUDIENCE]
+Goal: [ENGAGEMENT/LEADS/AWARENESS]
+
+Create LinkedIn post that:
+
+Structure:
+1. Hook (first line stops scroll)
+2. Story or insight (problem + context)
+3. Framework or lesson (actionable takeaway)
+4. Call to engagement (question or prompt)
+
+Style requirements:
+- Short paragraphs (1-2 sentences max)
+- Use line breaks for readability
+- Conversational, not corporate
+- One clear takeaway
+- Authentic voice, not salesy
+
+Length: 150-200 words
+
+Think through:
+- What makes someone STOP scrolling?
+- What insight challenges conventional thinking?
+- What can they apply immediately?
+
+Avoid:
+- Generic motivational content
+- Humble brags
+- Asking for likes/shares
+- Emoji spam
+
+Provide the post ready to copy-paste.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Lead Qualification</span>
+                    <h3>Intent Signal Analyzer</h3>
+                    <p class="description">Analyzes customer messages to identify buying intent signals and prioritize follow-up based on conversion likelihood.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert at reading buying signals in customer communications.
+
+Customer message: [PASTE MESSAGE]
+
+Analyze for intent signals:
+
+1. Urgency indicators:
+   - Explicit deadlines or timeframes
+   - Situational urgency (current problem)
+   - Competitive shopping signals
+   - Emotional urgency language
+
+2. Qualification signals:
+   - Budget/financial readiness mentions
+   - Decision-maker language
+   - Specific requirements vs general browsing
+   - Question depth and detail
+
+3. Engagement level:
+   - Message length and effort
+   - Specificity of questions
+   - Contact information provided
+   - Follow-up behavior
+
+Rate intent: HOT (8-10) / WARM (5-7) / COLD (1-4)
+
+Provide:
+- Intent score with evidence
+- Recommended response timeframe
+- Key talking points for follow-up
+- Red flags if any
+
+Format as actionable sales brief.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Customer Success</span>
+                    <h3>Churn Risk Identifier & Retention Strategy</h3>
+                    <p class="description">Identifies at-risk customers from usage patterns and communication signals, then generates targeted retention approaches.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert at identifying customer churn risk and creating retention strategies.
+
+Customer profile:
+- Account: [COMPANY/NAME]
+- Usage pattern: [RECENT BEHAVIOR]
+- Last interaction: [TIMEFRAME]
+- Support tickets: [ANY ISSUES]
+- Contract status: [RENEWAL DATE]
+
+Analyze churn risk:
+
+Warning signals:
+1. Usage decline or disengagement
+2. Support ticket sentiment
+3. Lack of response to outreach
+4. Delayed payment or contract questions
+5. Key stakeholder changes
+
+Churn probability: HIGH / MEDIUM / LOW
+
+For each risk level, provide:
+
+Immediate actions (48 hours):
+- Outreach approach
+- Value demonstration
+- Quick win opportunities
+
+Strategic moves (2-4 weeks):
+- Executive engagement
+- Success plan revision
+- Product/service adjustments
+
+Create retention message that:
+- Acknowledges their situation
+- Demonstrates understanding
+- Offers specific value
+- Requests engagement
+
+UK English, empathetic problem-solving tone.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Productivity</span>
+                    <h3>Meeting-to-Action Converter</h3>
+                    <p class="description">Transforms meeting notes into clear action items with owners, deadlines, and follow-up requirements.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert at extracting actionable insights from meeting notes.
+
+Meeting notes: [PASTE YOUR NOTES]
+
+Meeting context:
+- Attendees: [WHO WAS THERE]
+- Purpose: [MEETING GOAL]
+- Date: [WHEN]
+
+Extract and organize:
+
+DECISIONS MADE:
+List each decision clearly with context
+
+ACTION ITEMS:
+For each action:
+- What needs to be done (specific and measurable)
+- Who is responsible
+- Deadline
+- Dependencies
+- Success criteria
+
+FOLLOW-UP REQUIRED:
+- What needs clarification
+- Who needs to be updated
+- What's blocking progress
+
+PARKING LOT:
+- Topics deferred
+- Ideas for future discussion
+
+Format as:
+1. Executive summary (3-4 sentences)
+2. Actions table (clear priorities)
+3. Next meeting agenda items
+
+Make it scannable and actionable. No fluff.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Marketing</span>
+                    <h3>Landing Page Copy Optimizer</h3>
+                    <p class="description">Analyzes landing page copy for conversion optimization, identifying weak points and providing specific improvements.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are a conversion copywriting expert.
+
+Current landing page copy: [PASTE YOUR COPY]
+
+Product/Service: [WHAT YOU'RE SELLING]
+Target audience: [WHO'S VISITING]
+Goal: [DESIRED ACTION]
+
+Analyze for conversion killers:
+
+1. Headline effectiveness:
+   - Does it communicate value in 5 seconds?
+   - Is it benefit-focused or feature-focused?
+   - Does it differentiate from competitors?
+
+2. Value proposition clarity:
+   - Can visitor explain what you do immediately?
+   - Is the unique angle obvious?
+   - Are benefits quantified?
+
+3. Friction points:
+   - Unclear CTAs
+   - Too much text
+   - Weak social proof
+   - Missing urgency
+   - Complicated language
+
+4. Trust signals:
+   - Social proof placement
+   - Risk reversal
+   - Authority indicators
+
+Provide:
+- Rewritten headline (3 options)
+- Improved value prop
+- Optimized CTA copy
+- Specific additions (testimonial placement, urgency elements)
+
+Focus on psychology, clarity, and conversion.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Data Analysis</span>
+                    <h3>Trend Analyzer & Insight Generator</h3>
+                    <p class="description">Analyzes data sets to identify meaningful patterns, trends, and actionable insights for business decisions.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are a data analyst expert at finding signal in noise.
+
+Data context:
+- Dataset: [DESCRIBE YOUR DATA]
+- Timeframe: [PERIOD COVERED]
+- Key metrics: [WHAT YOU'RE TRACKING]
+- Business context: [WHY THIS MATTERS]
+
+Analyze for:
+
+TRENDS:
+- What's moving (up/down/flat)?
+- Velocity of change
+- Inflection points
+- Seasonal patterns
+
+ANOMALIES:
+- Outliers that matter
+- Unexpected correlations
+- What changed and when
+
+INSIGHTS:
+For each finding:
+- What the data shows
+- Why it matters (business impact)
+- What causes it (hypothesis)
+- What to do about it (recommendation)
+
+PRIORITIES:
+Rank findings by:
+1. Impact potential (revenue/efficiency)
+2. Actionability (can we influence it?)
+3. Urgency (time-sensitivity)
+
+Present as:
+- Executive summary (3 key findings)
+- Detailed analysis
+- Recommended actions
+- Metrics to monitor
+
+Make it actionable, not just descriptive.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Business Strategy</span>
+                    <h3>Competitive Analysis Framework</h3>
+                    <p class="description">Structures competitive intelligence into actionable strategic insights with positioning recommendations.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are a competitive strategy analyst.
+
+Your company: [YOUR PRODUCT/SERVICE]
+Competitors to analyze: [LIST 2-3 COMPETITORS]
+
+For each competitor, analyze:
+
+POSITIONING:
+- How do they describe themselves?
+- What's their unique angle?
+- Who's their target customer?
+
+STRENGTHS:
+- What do they do better than us?
+- What's their competitive advantage?
+- Why do customers choose them?
+
+WEAKNESSES:
+- Where do they fall short?
+- What complaints do their customers have?
+- Where are they vulnerable?
+
+STRATEGY INDICATORS:
+- Recent product launches
+- Pricing changes
+- Marketing focus
+- Hiring patterns
+
+DIFFERENTIATION OPPORTUNITIES:
+Based on this analysis:
+1. Where can we compete head-on?
+2. Where should we differentiate?
+3. What gaps can we exploit?
+4. What should we avoid?
+
+POSITIONING RECOMMENDATIONS:
+- Messaging angles
+- Product/service priorities
+- Target customer refinement
+- Pricing strategy
+
+Present as strategic brief with clear actions.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <span class="category">Communication</span>
+                    <h3>Executive Summary Generator</h3>
+                    <p class="description">Distills complex documents into executive-level summaries that communicate key decisions and actions clearly.</p>
+                    <div class="prompt-text">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an executive communication expert.
+
+Full document: [PASTE LONG DOCUMENT/REPORT]
+
+Context:
+- Audience: [WHO'S READING THIS]
+- Purpose: [INFORM/DECIDE/APPROVE]
+- Timeframe: [ANY URGENCY]
+
+Create executive summary that:
+
+STRUCTURE:
+1. Situation (what's happening - 2 sentences)
+2. Decision required or key insight (1 sentence)
+3. Recommendation (what to do - 1 sentence)
+4. Supporting points (3-4 bullets max)
+5. Next steps (clear actions with owners)
+
+REQUIREMENTS:
+- Total length: 150-200 words
+- Lead with what matters most
+- Quantify impact where possible
+- Be decisive, not tentative
+- Avoid jargon
+- Make it scannable
+
+TONE:
+- Confident and clear
+- Action-oriented
+- No unnecessary context
+- Assume intelligent reader
+
+Provide summary ready to send.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IGNYTE. Built for UK automotive dealerships who refuse to lose revenue to slow follow-up.</p>
+        <p style="margin-top: 10px;">
+            <a href="mailto:ignyte.test.dealer@gmail.com" style="color: var(--electric); text-decoration: none;">ignyte.test.dealer@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Copy Prompt Function with Visual Feedback
+        function copyPrompt(button) {
+            const promptText = button.parentElement.innerText;
+            const textToCopy = promptText.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                button.innerText = 'Error!';
+                setTimeout(() => {
+                    button.innerText = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Form Submission Handler (works with Formspree)
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Submitting...';
+            
+            // Formspree will handle the actual submission
+            // After successful submission, show success message
+            setTimeout(() => {
+                const email = document.getElementById('email').value;
+                document.getElementById('formContent').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+                document.getElementById('submittedEmail').innerText = email;
+            }, 1000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
