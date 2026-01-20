@@ -207,10 +207,16 @@
             display: none;
             background: none;
             border: none;
-            color: white;
-            font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+        }
+
+        .menu-icon-bar {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: 0.3s;
         }
 
         .btn-primary {
@@ -247,17 +253,20 @@
             background: var(--glass);
             border: 1px solid var(--glass-border);
             color: white;
-            padding: 12px 28px;
+            padding: 16px 48px;
             border-radius: 12px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: 0.3s;
             display: inline-block;
+            min-width: 180px;
+            text-align: center;
         }
 
         .btn-ghost:hover {
             background: rgba(255,255,255,0.05);
             border-color: var(--electric);
+            transform: translateY(-2px);
         }
 
         .page {
@@ -278,13 +287,14 @@
 
         h1 {
             font-family: 'Sora', sans-serif;
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             line-height: 1.1;
             margin-bottom: 20px;
             letter-spacing: -2px;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 800;
         }
 
         .gradient-text {
@@ -368,7 +378,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
             opacity: 0.5;
             transition: opacity 0.3s;
@@ -379,11 +389,12 @@
         }
 
         .powered-by-item {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: rgba(255,255,255,0.7);
             transition: 0.3s;
             padding: 8px 16px;
+            white-space: nowrap;
         }
 
         .powered-by-item:hover {
@@ -392,9 +403,10 @@
 
         /* 2025 Market Pain Points Stats */
         .market-pain-section {
-            background: linear-gradient(180deg, rgba(255, 51, 102, 0.05), transparent);
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.03), transparent);
             padding: 60px 5%;
             margin: 80px 0;
+            border-top: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .pain-stats-grid {
@@ -407,7 +419,7 @@
 
         .pain-stat-card {
             background: var(--glass);
-            border: 1px solid rgba(255, 51, 102, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.2);
             border-radius: 16px;
             padding: 28px;
             text-align: center;
@@ -422,19 +434,19 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, var(--danger), transparent);
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.6), transparent);
         }
 
         .pain-stat-card:hover {
             transform: translateY(-5px);
-            border-color: var(--danger);
+            border-color: rgba(245, 158, 11, 0.4);
         }
 
         .pain-stat-number {
             font-family: 'Sora', sans-serif;
             font-size: 3rem;
             font-weight: 800;
-            color: var(--danger);
+            color: #F59E0B;
             margin-bottom: 15px;
         }
 
@@ -611,7 +623,7 @@
         }
 
         .flow-modal .flow-details li::before {
-            content: "â†’";
+            content: "•";
             position: absolute;
             left: 0;
             color: var(--electric);
@@ -786,7 +798,7 @@
         }
 
         .pricing-features li::before {
-            content: "âœ“";
+            content: "+";
             color: var(--success);
             font-weight: 800;
             font-size: 1.2rem;
@@ -802,6 +814,7 @@
             padding: 70px 5%;
             max-width: 1300px;
             margin: 0 auto;
+            border-top: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .section-header {
@@ -832,7 +845,7 @@
 
         .problem-card {
             background: var(--glass);
-            border: 1px solid rgba(255, 51, 102, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.2);
             border-radius: 16px;
             padding: 30px;
             position: relative;
@@ -846,13 +859,13 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, var(--danger), transparent);
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.6), transparent);
         }
 
         .problem-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
-            color: var(--danger);
+            color: #F59E0B;
         }
 
         .problem-card p {
@@ -863,7 +876,7 @@
         .problem-card .cost {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--danger);
+            color: #F59E0B;
             margin: 15px 0 0;
         }
 
@@ -1493,7 +1506,11 @@
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                align-items: center;
+                justify-content: center;
             }
 
             .nav-links {
@@ -1598,11 +1615,16 @@
 
             .prompt-card {
                 padding: 22px;
+                margin-bottom: 35px;
+            }
+
+            .prompt-card:last-child {
+                margin-bottom: 0;
             }
 
             .prompt-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 0;
             }
 
         .powered-by-section {
@@ -1794,7 +1816,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav>
         <a class="logo" onclick="showPage('home')">IGNYTE</a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span class="menu-icon-bar"></span>
+            <span class="menu-icon-bar"></span>
+            <span class="menu-icon-bar"></span>
+        </button>
         <div class="nav-links" id="navLinks">
             <a onclick="showPage('about')">About</a>
             <a onclick="showPage('pricing')">Pricing</a>
@@ -1902,7 +1928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="problem-grid">
                 <div class="problem-card">
                     <h3>The Inbox Black Hole</h3>
-                    <p>Enquiries from AutoTrader, your website, Facebook adsâ€”they all land in a shared inbox. Your sales team checks it manually. 2-4 hour response times during the day. Zero response after 6pm. By Monday morning, the buyer's already signing paperwork elsewhere.</p>
+                    <p>Enquiries from AutoTrader, your website, Facebook ads—they all land in a shared inbox. Your sales team checks it manually. 2-4 hour response times during the day. Zero response after 6pm. By Monday morning, the buyer's already signing paperwork elsewhere.</p>
                     <div class="cost">£8,400/month lost</div>
                 </div>
 
@@ -1966,17 +1992,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="antidote-visual">
                     <div class="crm-comparison">
-                        <div class="crm-item crm-bloat">âŒ 6-month implementation</div>
-                        <div class="crm-item crm-bloat">âŒ £50k+ annual licenses</div>
-                        <div class="crm-item crm-bloat">âŒ 40+ features you'll never use</div>
-                        <div class="crm-item crm-bloat">âŒ Sales team ignores it anyway</div>
+                        <div class="crm-item crm-bloat"> - 6-month implementation</div>
+                        <div class="crm-item crm-bloat">- £50k+ annual licenses</div>
+                        <div class="crm-item crm-bloat">- 40+ features you'll never use</div>
+                        <div class="crm-item crm-bloat">- Sales team ignores it anyway</div>
 
-                        <div style="margin: 30px 0; text-align: center; opacity: 0.5;">â¬‡ï¸</div>
+                        <div style="margin: 30px 0; text-align: center; opacity: 0.5; font-size: 1.5rem;">⬇</div>
 
-                        <div class="crm-item crm-ignyte">âœ… 48-hour go-live</div>
-                        <div class="crm-item crm-ignyte">âœ… One simple job</div>
-                        <div class="crm-item crm-ignyte">âœ… 90-second response time</div>
-                        <div class="crm-item crm-ignyte">âœ… Your team actually uses it</div>
+                        <div class="crm-item crm-ignyte">+ 48-hour go-live</div>
+                        <div class="crm-item crm-ignyte">+ One simple job</div>
+                        <div class="crm-item crm-ignyte">+ 90-second response time</div>
+                        <div class="crm-item crm-ignyte">+ Your team actually uses it</div>
                     </div>
                 </div>
             </div>
@@ -1993,7 +2019,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- Modal Container -->
             <div class="flow-modal" id="flowModal">
-                <div class="flow-modal-close" onclick="closeFlowModal()">Ã—</div>
+                <div class="flow-modal-close" onclick="closeFlowModal()">X</div>
                 <div class="flow-modal-content" id="flowModalContent"></div>
             </div>
 
@@ -2030,7 +2056,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h3>Intelligent Scoring</h3>
                     <p>Our AI analyzes buyer signals: urgency language, finance readiness, vehicle match quality, time of enquiry, contact method.</p>
                     <div class="time">
-                        <span class="tooltip-trigger">â±ï¸ 5-30 seconds
+                        <span class="tooltip-trigger"> +/- 5-30 seconds
                             <div class="tooltip-content">
                                 <p>AI processes message sentiment, extracts buying signals, scores 0-10 based on conversion likelihood.</p>
                             </div>
@@ -2052,11 +2078,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="flow-card">
                     <div class="flow-number">3</div>
-                    <div class="icon">📞</div>
+                    <div class="icon">🔍</div>
                     <h3>Smart Routing</h3>
                     <p>High-score lead? Alert to your top closer instantly. Mid-tier? Personalized auto-response. Cold? Nurture sequence.</p>
                     <div class="time">
-                        <span class="tooltip-trigger">📞 30-90 seconds
+                        <span class="tooltip-trigger">🔍 30-90 seconds
                             <div class="tooltip-content">
                                 <p>SMS/WhatsApp to sales team. Email to customer. Logged in CRM. All automated, all instant.</p>
                             </div>
@@ -2066,10 +2092,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="flow-details">
                         <strong style="color: var(--electric); display: block; margin-bottom: 10px;">Routing logic:</strong>
                         <ul>
-                            <li>Hot leads â†’ Instant SMS to available closer</li>
-                            <li>Warm leads â†’ Personalized email + morning reminder</li>
-                            <li>Cold leads â†’ 7-day nurture email sequence</li>
-                            <li>After hours â†’ Immediate auto-response + next-day alert</li>
+                            <li>Hot leads -> Instant SMS to available closer</li>
+                            <li>Warm leads -> Personalized email + morning reminder</li>
+                            <li>Cold leads -> 7-day nurture email sequence</li>
+                            <li>After hours -> Immediate auto-response + next-day alert</li>
                             <li>Round-robin or priority-based assignment</li>
                         </ul>
                         <p style="margin-top: 15px; opacity: 0.7; font-size: 0.9rem;">Your team only touches qualified buyers</p>
@@ -2078,7 +2104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="flow-card">
                     <div class="flow-number">4</div>
-                    <div class="icon">📊</div>
+                    <div class="icon">🔍</div>
                     <h3>Revenue Attribution</h3>
                     <p>Track every enquiry from source to signed contract. See which marketing channel drove actual sales.</p>
                     <div class="time">
@@ -2149,7 +2175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div style="text-align: center; margin-top: 50px;">
-                    <a onclick="showPage('pricing')" class="btn-ghost" style="cursor: pointer; font-size: 0.95rem;">View Full Features & FAQ →</a>
+                    <a onclick="showPage('pricing')" class="btn-ghost" style="cursor: pointer; font-size: 0.95rem;">View Full Features & FAQ</a>
                 </div>
             </div>
         </section>
@@ -2201,7 +2227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <textarea id="biggest_challenge" name="biggest_challenge" placeholder="Biggest Challenge Right Now (optional)"></textarea>
                         </div>
 
-                        <div class="guarantee" style="margin: 25px 0; width: 100%; text-align: center; background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.2); color: var(--success); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">✓ Zero risk · 14-day money-back guarantee · Live in 48 hours</div>
+                        <div class="guarantee" style="margin: 25px 0; width: 100%; text-align: center; background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.2); color: var(--success); padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">+ Zero risk | 14-day money-back guarantee | Live in 48 hours</div>
 
                         <button type="submit" class="submit-btn" id="submitBtn">Get My Free Audit</button>
 
@@ -2211,7 +2237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div id="formSuccess" style="display: none;">
                     <div class="form-success">
-                        <h3>✓ You're All Set!</h3>
+                        <h3>+ You're All Set!</h3>
                         <p>Thanks for requesting your free revenue audit. We've received your details and will email you within 2 hours with:</p>
                         <ul style="text-align: left; max-width: 400px; margin: 30px auto; line-height: 2;">
                             <li>Personalized audit of your current lead flow</li>
@@ -2281,7 +2307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div style="max-width: 800px; margin: 0 auto; text-align: left;">
                     <div style="background: var(--glass); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px;">
                         <h3 style="color: var(--electric); margin-bottom: 10px;">How quickly can I get started?</h3>
-                        <p style="opacity: 0.8;">48 hours from signup to go-live. We handle all the setupâ€”you just need to provide access to your email/forms.</p>
+                        <p style="opacity: 0.8;">48 hours from signup to go-live. We handle all the setup-you just need to provide access to your email/forms.</p>
                     </div>
 
                     <div style="background: var(--glass); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px;">
@@ -2296,7 +2322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div style="background: var(--glass); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px;">
                         <h3 style="color: var(--electric); margin-bottom: 10px;">Do I need technical knowledge?</h3>
-                        <p style="opacity: 0.8;">None whatsoever. We handle everything. You'll get a simple dashboard to track your leadsâ€”that's it.</p>
+                        <p style="opacity: 0.8;">None whatsoever. We handle everything. You'll get a simple dashboard to track your leads-that's it.</p>
                     </div>
                 </div>
             </div>
@@ -2334,7 +2360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <span>6 min read</span>
                         <span class="blog-tag">Technology</span>
                     </div>
-                    <p>You spent £40k on a CRM. Trained your team for three days. Six months later, they're back to sticky notes and shared inboxes. The problem isn't your teamâ€”it's that most CRMs were built by software people, not sales people...</p>
+                    <p>You spent £40k on a CRM. Trained your team for three days. Six months later, they're back to sticky notes and shared inboxes. The problem isn't your team-it's that most CRMs were built by software people, not sales people...</p>
                 </article>
 
                 <article class="blog-article" onclick="showBlogArticle('after-hours')">
@@ -2361,7 +2387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- INDIVIDUAL BLOG ARTICLES -->
     <div id="blog-speed-beats-perfect" class="page">
         <div class="blog-full-article">
-            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn">â† Back to Blog</a>
+            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn"><- Back to Blog</a>
 
             <h1>The Death of the Manual Follow-Up: Why Speed Beats Perfect</h1>
             <div class="blog-meta">
@@ -2376,7 +2402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <h2>The 5-Minute Window</h2>
 
-            <p>Research from InsideSales shows that responding to a lead within 5 minutes makes you 100x more likely to connect than waiting 30 minutes. Not 100% more likelyâ€”100 times more likely.</p>
+            <p>Research from InsideSales shows that responding to a lead within 5 minutes makes you 100x more likely to connect than waiting 30 minutes. Not 100% more likely-100 times more likely.</p>
 
             <p>By the time you've crafted that perfect email with the right vehicle specs, personalized greeting, and compelling call-to-action, the buyer has already:</p>
 
@@ -2425,7 +2451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <h2>The New Standard</h2>
 
-            <p>Speed is the new table stakes. If you're not responding to enquiries within 5 minutesâ€”even at 11pm on a Saturdayâ€”you're not competing anymore. You're just processing the leads that everyone else rejected.</p>
+            <p>Speed is the new table stakes. If you're not responding to enquiries within 5 minutes-even at 11pm on a Saturday-you're not competing anymore. You're just processing the leads that everyone else rejected.</p>
 
             <p>The good news? This isn't about hiring night shifts or burning out your team. It's about letting automation handle the speed while your people handle the skill.</p>
 
@@ -2440,7 +2466,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="blog-tire-kicker-tax" class="page">
         <div class="blog-full-article">
-            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn">â† Back to Blog</a>
+            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn"><- Back to Blog</a>
 
             <h1>The Real Cost of "Just Browsing" Leads</h1>
             <div class="blog-meta">
@@ -2504,9 +2530,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li>Enquiry comes in (any channel)</li>
                 <li>AI asks 3-4 qualifying questions</li>
                 <li>Scores the lead (hot/warm/cold)</li>
-                <li>Hot leads â†’ immediate sales team alert</li>
-                <li>Warm leads â†’ nurture sequence + callback reminder</li>
-                <li>Cold leads â†’ long-term email marketing</li>
+                <li>Hot leads -> immediate sales team alert</li>
+                <li>Warm leads -> nurture sequence + callback reminder</li>
+                <li>Cold leads -> long-term email marketing</li>
             </ol>
 
             <p>Your salespeople only touch qualified, ready-to-buy prospects. Everything else gets handled automatically.</p>
@@ -2515,7 +2541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <p>Let's say your team wastes 6 hours daily on tire-kickers. That's 30 hours weekly. 120 hours monthly.</p>
 
-            <p>If your average salesperson closes £40k monthly, that's £333/hour in productivity. 120 hours Ã— £333 = £40,000 monthly in wasted capacity.</p>
+            <p>If your average salesperson closes £40k monthly, that's £333/hour in productivity. 120 hours x £333 = £40,000 monthly in wasted capacity.</p>
 
             <p>Even if you only recover 50% of that time and redirect it to qualified buyers, that's £20,000 monthly in found revenue.</p>
 
@@ -2529,6 +2555,575 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Add more blog article pages as needed -->
+
+    <!-- CRM DUST BLOG ARTICLE -->
+    <div id="blog-crm-dust" class="page">
+        <div class="blog-full-article">
+            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn"><- Back to Blog</a>
+
+            <h1>Why Your CRM Gathers Dust (And What Actually Works)</h1>
+            <div class="blog-meta">
+                <span>6 min read</span>
+                <span class="blog-tag">Technology</span>
+                <span>January 2026</span>
+            </div>
+
+            <p>You spent £40k on a CRM system. Brought in consultants for three days of training. Held team meetings about "driving adoption." Six months later, your sales team is back to sticky notes, shared inboxes, and verbal handoffs.</p>
+
+            <p>This isn't a failure of your team. It's a fundamental misunderstanding of how car dealerships actually operate.</p>
+
+            <h2>The Silicon Valley Problem</h2>
+
+            <p>Most CRM systems were built by software companies for software companies. The workflows assume everyone sits at a desk all day. The data entry requirements presume you have time to "maintain accurate records." The reporting dashboards were designed for people who enjoy analyzing conversion funnels.</p>
+
+            <p>None of this describes how a car dealership works.</p>
+
+            <p>Your salespeople are on the forecourt with customers. They're doing test drives. They're at the finance desk closing deals. They're on the phone with parts departments. The absolute last thing they want to do is stop what they're doing to update a CRM field.</p>
+
+            <h3>The Real Workflow</h3>
+
+            <p>Here's what actually happens in your dealership:</p>
+
+            <ul>
+                <li>Lead comes in via email or web form</li>
+                <li>Someone checks the shared inbox (eventually)</li>
+                <li>They write the customer's name on a sticky note</li>
+                <li>They call the customer (if they remember)</li>
+                <li>They close the sale (hopefully)</li>
+                <li>They celebrate and move to the next customer</li>
+                <li>They forget to update the CRM</li>
+            </ul>
+
+            <p>Three months later, your finance director asks "What happened to those 200 leads from Q2?" Nobody knows. The CRM says they're all "Pending Follow-up" because nobody bothered to update the status.</p>
+
+            <h2>Why Traditional CRMs Fail Dealerships</h2>
+
+            <h3>1. They Require Too Much Manual Input</h3>
+
+            <p>Every field your team has to fill in is another opportunity for them not to use the system. "What's their budget?" "What timeline are they on?" "What's their part-exchange value?"</p>
+
+            <p>Your salespeople know these answers. But by the time they've finished the call, they've moved on to the next customer. The CRM remains empty.</p>
+
+            <h3>2. They Don't Match How Deals Actually Happen</h3>
+
+            <p>CRM companies love to talk about "pipeline stages" and "conversion funnels." But car sales don't work in neat linear progressions.</p>
+
+            <p>A customer might go from "first enquiry" to "signed paperwork" in 90 minutes if their current car broke down. Another might linger in "consideration" for six months while they save for a deposit.</p>
+
+            <p>Forcing these into predefined stages creates friction, not clarity.</p>
+
+            <h3>3. They're Built for Reporting, Not Selling</h3>
+
+            <p>The typical CRM dashboard shows you conversion rates, pipeline velocity, and 47 other metrics nobody asked for. What it doesn't show you is "Three hot leads came in 10 minutes ago and nobody's responded yet."</p>
+
+            <p>Your team doesn't need retrospective analysis. They need real-time alerts that help them close more deals today.</p>
+
+            <h3>4. They Assume Unlimited Time</h3>
+
+            <p>Have you ever timed how long it takes to properly log a lead in your CRM? 5 minutes? 7 minutes?</p>
+
+            <p>Multiply that by 30 leads per day. That's 2.5 hours your sales team isn't spending with customers.</p>
+
+            <p>No wonder they stop using it.</p>
+
+            <div class="highlight-box">
+                <p><strong>The Real Cost:</strong> A traditional CRM doesn't just cost £40k upfront. It costs 2-3 hours daily in lost selling time, multiplied by your entire sales team.</p>
+            </div>
+
+            <h2>What Actually Works</h2>
+
+            <p>The most successful dealerships we've worked with have abandoned the "do everything" CRM approach in favor of focused tools that solve specific problems.</p>
+
+            <h3>Automate What Can Be Automated</h3>
+
+            <p>Lead capture? Automated. Lead scoring? Automated. Initial response? Automated. Routing to the right salesperson? Automated.</p>
+
+            <p>The only time a human gets involved is when there's an actual conversation to be had with a qualified buyer.</p>
+
+            <h3>Reduce Data Entry to Zero</h3>
+
+            <p>If your system requires manual data entry, it will fail. Full stop.</p>
+
+            <p>Instead, capture information passively:</p>
+
+            <ul>
+                <li>Email parsing extracts lead details automatically</li>
+                <li>Behavioral analysis scores leads based on actions, not forms</li>
+                <li>Conversation tracking happens via integration, not manual logging</li>
+                <li>Revenue attribution comes from transaction data, not salespeople remembering to update records</li>
+            </ul>
+
+            <h3>Make It Stupidly Simple</h3>
+
+            <p>Your sales team should interact with the system in exactly two ways:</p>
+
+            <ol>
+                <li>Receive alert: "Hot lead, call them now"</li>
+                <li>Take action: Make the call</li>
+            </ol>
+
+            <p>Everything else should happen invisibly in the background.</p>
+
+            <h2>The IGNYTE Approach</h2>
+
+            <p>We built IGNYTE specifically for dealerships that are tired of fighting with bloated CRM systems.</p>
+
+            <p>Here's what it doesn't have:</p>
+
+            <ul>
+                <li>No pipeline visualization dashboards</li>
+                <li>No mandatory fields to fill in</li>
+                <li>No training required</li>
+                <li>No "change management" process</li>
+                <li>No 6-month implementation timeline</li>
+            </ul>
+
+            <p>Here's what it does have:</p>
+
+            <ul>
+                <li>Automatic lead capture from every source</li>
+                <li>AI-powered lead scoring in real time</li>
+                <li>Instant routing to your team (SMS, WhatsApp, Slack)</li>
+                <li>Zero manual data entry</li>
+                <li>48-hour go-live</li>
+            </ul>
+
+            <p>It's deliberately minimal. One job, done well: get qualified leads to your sales team before they go cold.</p>
+
+            <h2>The Results</h2>
+
+            <p>When dealerships switch from trying to maintain a full CRM to using a focused lead response system, three things happen immediately:</p>
+
+            <ol>
+                <li><strong>Response times collapse</strong> - from hours to minutes, because there's no friction between "lead arrives" and "salesperson knows about it"</li>
+                <li><strong>Conversion rates jump</strong> - typically 2-3x, because you're catching buyers while they're still hot</li>
+                <li><strong>Sales team actually uses it</strong> - 100% adoption, because it makes their job easier instead of harder</li>
+            </ol>
+
+            <p>Your CRM gathered dust because it was solving problems you don't have while ignoring problems you do have.</p>
+
+            <p>The solution isn't training your team harder. The solution is admitting that car dealerships need purpose-built tools, not repurposed enterprise software.</p>
+
+            <div style="margin-top: 60px; padding: 40px; background: rgba(124, 58, 237, 0.1); border-radius: 16px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">Ready to replace your unused CRM with something that actually works?</h3>
+                <a href="#" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)" class="btn-primary">See How IGNYTE Works</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- AFTER-HOURS BLOG ARTICLE -->
+    <div id="blog-after-hours" class="page">
+        <div class="blog-full-article">
+            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn"><- Back to Blog</a>
+
+            <h1>After-Hours Leads: The £180k Invisible Revenue Stream</h1>
+            <div class="blog-meta">
+                <span>5 min read</span>
+                <span class="blog-tag">Revenue Recovery</span>
+                <span>January 2026</span>
+            </div>
+
+            <p>Saturday at 7:43pm. A 34-year-old marketing manager in Manchester just found out her car failed its MOT. Catastrophically. She needs a replacement this week.</p>
+
+            <p>She opens AutoTrader on her phone. Finds your listing for a Honda Civic. Perfect budget. Perfect spec. 12 miles from her house. She hits "Email Dealer."</p>
+
+            <p>Your response arrives Monday at 9:47am: "Thanks for your enquiry. When would you like to view?"</p>
+
+            <p>Too late. She bought from your competitor Sunday morning.</p>
+
+            <h2>The Weekend Paradox</h2>
+
+            <p>According to Cox Automotive UK's 2025 research, 42% of car enquiries happen outside traditional business hours. That's:</p>
+
+            <ul>
+                <li>Weekday evenings (6pm-midnight): 23%</li>
+                <li>Weekends: 19%</li>
+                <li>Bank holidays and special occasions: Additional spike</li>
+            </ul>
+
+            <p>Think about it. When do people browse for cars? After work. On Sunday morning with coffee. Saturday evening after putting the kids to bed.</p>
+
+            <p>When are most dealerships staffed to respond? Monday-Friday, 9am-6pm. Maybe Saturday until 5pm if you're lucky.</p>
+
+            <p>The mismatch is costing you a fortune.</p>
+
+            <h3>The Real Numbers</h3>
+
+            <p>Let's assume your dealership gets 350 enquiries per month. Industry average conversion rate is 8%. That's 28 sales.</p>
+
+            <p>If 42% of enquiries come after hours, that's 147 enquiries hitting your inbox when nobody's there to respond. Your Monday morning response rate on those leads is probably 40% (the rest get frustrated and move on).</p>
+
+            <p>That means you're losing 88 potential conversations per month. At an 8% conversion rate, that's 7 lost sales monthly.</p>
+
+            <p>Average dealership profit per sale in the UK: £2,150.</p>
+
+            <p><strong>7 sales x £2,150 = £15,050 monthly. £180,600 annually.</strong></p>
+
+            <p>And that's assuming your Monday morning response rate is decent. Most dealerships we audit are closer to 20-25%.</p>
+
+            <h2>Why After-Hours Leads Are Actually Better</h2>
+
+            <p>Here's what most dealerships don't realize: after-hours leads often convert at higher rates than business-hours leads.</p>
+
+            <h3>1. They're More Serious</h3>
+
+            <p>People browsing AutoTrader at 10pm on a Tuesday aren't "just looking." They're in active buying mode. Their current car might have just broken down. Their lease might be ending soon. They're motivated.</p>
+
+            <h3>2. Less Competition</h3>
+
+            <p>When a lead comes in Saturday evening, most dealerships won't respond until Monday. If you respond Saturday night or Sunday morning, you're often the only salesperson they hear from.</p>
+
+            <p>Being the only one answering the phone is a powerful advantage.</p>
+
+            <h3>3. Urgency Works in Your Favor</h3>
+
+            <p>After-hours enquiries often come with inherent urgency. People don't leisurely browse for cars at 11pm unless something has pushed them into action.</p>
+
+            <p>Urgency means faster decisions. Faster decisions mean higher conversion rates.</p>
+
+            <h2>What Not to Do</h2>
+
+            <p>Some dealerships try to solve this problem by:</p>
+
+            <h3>Staffing Evening/Weekend Shifts</h3>
+
+            <p>Cost: £600-800 per weekend day for two salespeople. £15,600-20,800 annually just for Saturdays and Sundays. That's before you account for evenings.</p>
+
+            <p>Reality: Most of that time is spent waiting for enquiries that don't come, or come in bursts they can't handle efficiently.</p>
+
+            <h3>Rotating On-Call</h3>
+
+            <p>Sounds reasonable until you realize:</p>
+
+            <ul>
+                <li>Your sales team starts to resent weekend interruptions</li>
+                <li>Response quality suffers when someone's interrupted during family dinner</li>
+                <li>You're paying overtime or compensatory time off</li>
+                <li>Coverage gaps when someone forgets it's their weekend or goes on holiday</li>
+            </ul>
+
+            <h3>Generic Auto-Responders</h3>
+
+            <p>"Thanks for your enquiry. We'll respond during business hours."</p>
+
+            <p>Congratulations, you've just told the customer to call your competitor.</p>
+
+            <div class="highlight-box">
+                <p><strong>The fundamental problem:</strong> Manual response systems can't scale to 24/7 coverage without burning out your team or burning through your budget.</p>
+            </div>
+
+            <h2>The Automation Solution</h2>
+
+            <p>Here's what actually works: intelligent automation that handles after-hours enquiries the same way you'd handle business-hours enquiries, but without requiring humans to be awake.</p>
+
+            <h3>Instant Acknowledgment</h3>
+
+            <p>When an enquiry comes in at 9:17pm on Saturday:</p>
+
+            <ul>
+                <li>Immediate auto-response confirms receipt (within 90 seconds)</li>
+                <li>Response is personalized: references their specific vehicle interest, location, timing</li>
+                <li>Asks 2-3 qualifying questions: "When are you looking to buy?" "Do you have a part-exchange?"</li>
+                <li>Provides immediate value: "Here are some photos we just added of this vehicle"</li>
+            </ul>
+
+            <p>The customer feels heard. They stay engaged with your dealership. They don't immediately move to the next listing.</p>
+
+            <h3>AI Qualification</h3>
+
+            <p>While the customer is responding to your questions, AI is analyzing:</p>
+
+            <ul>
+                <li>Urgency signals in their language</li>
+                <li>Budget indicators</li>
+                <li>Decision authority</li>
+                <li>Timeline clarity</li>
+                <li>Vehicle match quality</li>
+            </ul>
+
+            <p>By Sunday morning, your system has already scored and prioritized every weekend enquiry.</p>
+
+            <h3>Smart Morning Handoff</h3>
+
+            <p>Monday at 8:30am (before your showroom opens), your sales team gets:</p>
+
+            <ul>
+                <li>All hot leads from the weekend, ranked by priority</li>
+                <li>Complete conversation history</li>
+                <li>Clear next actions: "This customer needs a test drive this week - call by 10am"</li>
+                <li>Contact details ready to dial</li>
+            </ul>
+
+            <p>No time wasted sorting through dozens of emails. No uncertainty about who to call first. Just clear priorities and immediate action.</p>
+
+            <h2>The Results</h2>
+
+            <p>Dealerships using automated after-hours response systems see:</p>
+
+            <ul>
+                <li><strong>3x higher weekend lead conversion</strong> - from typical 3-4% to 9-12%</li>
+                <li><strong>65% faster Monday morning follow-up</strong> - because leads are pre-qualified and prioritized</li>
+                <li><strong>Zero additional staffing costs</strong> - system runs 24/7 with no human intervention</li>
+                <li><strong>Zero team burnout</strong> - your salespeople sleep peacefully, knowing the system has their back</li>
+            </ul>
+
+            <h2>The Implementation Reality</h2>
+
+            <p>Most dealers think this requires complex systems integration or expensive development. It doesn't.</p>
+
+            <p>IGNYTE connects to your existing email, web forms, and messaging channels. Setup takes 48 hours. It starts capturing and qualifying after-hours leads immediately.</p>
+
+            <p>No weekend staffing required. No rotating on-call schedule. No burned-out sales team.</p>
+
+            <p>Just 24/7 lead response that captures revenue you're currently leaving on the table every single weekend.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>You're spending thousands on AutoTrader, Facebook ads, and other lead sources. Those investments are working - leads are coming in. The problem is you're only staffed to capture 60% of them.</p>
+
+            <p>The £180,000 annual opportunity isn't hidden. It's sitting in your inbox, timestamped 8:42pm Saturday, waiting for someone to respond.</p>
+
+            <p>Your competitors are starting to figure this out. The question is whether you'll be ahead of the curve or playing catch-up.</p>
+
+            <div style="margin-top: 60px; padding: 40px; background: rgba(124, 58, 237, 0.1); border-radius: 16px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">Stop losing weekend revenue to slow response</h3>
+                <a href="#" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)" class="btn-primary">See 24/7 Lead Response in Action</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINANCE PREQUALIFICATION BLOG ARTICLE -->
+    <div id="blog-finance-prequalification" class="page">
+        <div class="blog-full-article">
+            <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn"><- Back to Blog</a>
+
+            <h1>Finance Pre-Qualification: The Underrated Conversion Multiplier</h1>
+            <div class="blog-meta">
+                <span>7 min read</span>
+                <span class="blog-tag">Finance</span>
+                <span>January 2026</span>
+            </div>
+
+            <p>Your salesperson just spent 90 minutes with a customer. Perfect vehicle match. Great rapport. Test drive went brilliantly. They're ready to do paperwork.</p>
+
+            <p>Then finance comes back: "Sorry, declined."</p>
+
+            <p>Ninety minutes of your best salesperson's time. Zero revenue. One disappointed customer who now has to start the entire process over somewhere else.</p>
+
+            <p>This happens every single day in UK dealerships. And it's completely preventable.</p>
+
+            <h2>The Backwards Process</h2>
+
+            <p>Here's how most dealerships operate:</p>
+
+            <ol>
+                <li>Customer enquires about vehicle</li>
+                <li>Salesperson shows vehicle</li>
+                <li>Customer falls in love with vehicle</li>
+                <li>Numbers get discussed</li>
+                <li>Finance application submitted</li>
+                <li>Customer finds out they can't actually afford it</li>
+            </ol>
+
+            <p>You've built emotional attachment to a vehicle they can't buy. You've invested massive time. You've created disappointment and frustration.</p>
+
+            <p>And now you're starting from scratch: "Well, let me show you something in your budget range..."</p>
+
+            <h2>Why Finance-First Changes Everything</h2>
+
+            <p>Smart dealerships flip the process:</p>
+
+            <ol>
+                <li>Customer enquires about vehicle</li>
+                <li>Salesperson asks about budget/finance needs</li>
+                <li>Customer gets pre-qualified (soft credit check, 2 minutes)</li>
+                <li>Salesperson shows vehicles customer can actually afford</li>
+                <li>Customer falls in love with appropriate vehicle</li>
+                <li>Final finance approval is formality</li>
+                <li>Sale closes</li>
+            </ol>
+
+            <p>The difference? Time efficiency, emotional investment, and conversion rates.</p>
+
+            <h3>The Numbers Tell the Story</h3>
+
+            <p>According to Finance & Leasing Association UK data:</p>
+
+            <ul>
+                <li><strong>91% of UK car sales involve finance</strong> - yet most dealers treat it as an afterthought</li>
+                <li><strong>Finance-qualified buyers are 4.2x more likely to complete a purchase</strong> - because they're looking at vehicles they can actually afford</li>
+                <li><strong>Average time to sale drops from 3.8 visits to 1.6 visits</strong> - when customers are pre-qualified</li>
+                <li><strong>Price negotiation reduces by 60%</strong> - because customers understand their real monthly budget</li>
+            </ul>
+
+            <p>That last point is huge. Finance-qualified buyers haggle less because they're focused on monthly payment, not total price. They're comparing affordability, not negotiating tactics.</p>
+
+            <h2>The Psychology of Finance-First</h2>
+
+            <h3>It Builds Trust</h3>
+
+            <p>When you pre-qualify a customer before showing vehicles, you're saying: "I don't want to waste your time. Let's make sure we're showing you things that actually work for your situation."</p>
+
+            <p>Customers appreciate this honesty. It differentiates you from dealers who show them the £35k BMW when their budget is £25k.</p>
+
+            <h3>It Reduces Disappointment</h3>
+
+            <p>Nobody wants to fall in love with a car they can't have. By qualifying first, you prevent the emotional rollercoaster of excitement followed by crushing rejection.</p>
+
+            <h3>It Focuses the Search</h3>
+
+            <p>Most customers don't actually know what they can afford. They think in terms of total price when they should be thinking monthly payment.</p>
+
+            <p>Pre-qualification converts: "I want to spend £15,000" into "Your monthly payment would be £280."</p>
+
+            <p>Now the customer is shopping in reality, not fantasy.</p>
+
+            <h2>The Implementation Challenge</h2>
+
+            <p>Most dealers understand finance pre-qualification is valuable. But they struggle with execution because:</p>
+
+            <h3>1. Timing is Awkward</h3>
+
+            <p>When do you ask about finance? Too early feels pushy. Too late wastes time.</p>
+
+            <p>The solution: automated qualification during initial enquiry. Before anyone picks up the phone, the system has already asked: "Are you looking to finance?" and "What monthly payment works for your budget?"</p>
+
+            <h3>2. Customers Feel Exposed</h3>
+
+            <p>"Why do you need my financial information?" is a valid question that kills many qualification attempts.</p>
+
+            <p>The solution: frame it as helping them, not vetting them. "To make sure we show you vehicles that fit your budget, can you share your rough monthly payment target?"</p>
+
+            <h3>3. Sales Team Resists</h3>
+
+            <p>Some salespeople worry that discussing finance early "kills the dream." They want customers to fall in love first, then figure out money.</p>
+
+            <p>This is outdated thinking. Modern buyers research finance before they ever visit a dealership. They appreciate transparency.</p>
+
+            <h2>The Automated Approach</h2>
+
+            <p>Here's how smart dealerships implement finance pre-qualification without adding friction:</p>
+
+            <h3>Stage 1: Soft Qualification (Web Form/Email)</h3>
+
+            <p>When a customer enquires about a vehicle online:</p>
+
+            <ul>
+                <li>"Are you planning to finance this purchase?"</li>
+                <li>"What monthly payment range works for your budget?"</li>
+                <li>"Do you have a vehicle to part-exchange?"</li>
+            </ul>
+
+            <p>These aren't mandatory fields - you're not blocking the enquiry if they skip them. But most people answer because they're relevant questions.</p>
+
+            <h3>Stage 2: AI Analysis</h3>
+
+            <p>The system analyzes:</p>
+
+            <ul>
+                <li>Vehicle they're interested in (price point)</li>
+                <li>Their stated budget (if provided)</li>
+                <li>Typical finance terms for that vehicle type</li>
+                <li>Their location (employment statistics in their area)</li>
+            </ul>
+
+            <p>Result: "This customer is looking at a £22k vehicle with a £350/month budget. Likely qualified for PCP with 10% deposit."</p>
+
+            <p>Or: "This customer is looking at a £35k vehicle with £200/month budget. Not qualified without significant deposit."</p>
+
+            <h3>Stage 3: Intelligent Routing</h3>
+
+            <p>Well-qualified buyers with clear budgets? Straight to your senior closer.</p>
+
+            <p>Budget mismatch? Automated response: "The Audi A4 you enquired about typically requires £420/month on PCP. Here are some vehicles in your £350/month range that might interest you: [BMW 3 Series, Mercedes C-Class alternatives in budget]"</p>
+
+            <p>The customer gets redirected to appropriate options before anyone wastes time.</p>
+
+            <h2>Real World Example</h2>
+
+            <p>Let's walk through two scenarios:</p>
+
+            <h3>Scenario A: Traditional Approach</h3>
+
+            <ul>
+                <li>Customer enquires about Range Rover Evoque (£32k)</li>
+                <li>Salesperson calls: "When would you like to view it?"</li>
+                <li>Customer visits showroom</li>
+                <li>30-minute product demonstration</li>
+                <li>45-minute test drive</li>
+                <li>15 minutes discussing numbers</li>
+                <li>Finance application submitted</li>
+                <li>20 minutes waiting for answer</li>
+                <li>Declined - customer can only afford £250/month, Evoque requires £480</li>
+                <li>Salesperson shows alternatives in range</li>
+                <li>Customer feels embarrassed, leaves to "think about it"</li>
+                <li><strong>Total time: 2 hours, 20 minutes. Sale: £0.</strong></li>
+            </ul>
+
+            <h3>Scenario B: Finance-First Approach</h3>
+
+            <ul>
+                <li>Customer enquires about Range Rover Evoque</li>
+                <li>Automated qualification: "What monthly payment works for you?"</li>
+                <li>Customer responds: "Around £250"</li>
+                <li>System calculates: £250/month on PCP = £18-20k vehicle range</li>
+                <li>Automated response: "The Evoque typically runs £480/month. Here are some premium SUVs in your budget: Nissan Qashqai Tekna, Mazda CX-5 GT Sport, Seat Ateca Xcellence"</li>
+                <li>Customer clicks Qashqai (their second choice anyway, they just weren't sure it was "allowed")</li>
+                <li>Salesperson calls: "I see you're interested in the Qashqai. It's a great vehicle in your budget range. When would you like to view it?"</li>
+                <li>Customer visits, already knowing this vehicle is affordable</li>
+                <li>45-minute visit, test drive, paperwork</li>
+                <li>Finance approval is formality - we already knew they qualified</li>
+                <li><strong>Total time: 45 minutes. Sale: £19,500.</strong></li>
+            </ul>
+
+            <p>Same customer. Same budget. Completely different outcome.</p>
+
+            <h2>The Objection: "But We'll Lose Enquiries"</h2>
+
+            <p>Some dealers worry that asking about finance early will scare customers away. The data shows the opposite.</p>
+
+            <p>When University of Warwick studied UK car buying behavior, they found:</p>
+
+            <ul>
+                <li>87% of buyers actively want to discuss finance options early in the process</li>
+                <li>72% said they would be more likely to buy from a dealer who helped them understand affordability before showing vehicles</li>
+                <li>Only 9% said finance questions felt "invasive" when framed as "helping you find the right fit"</li>
+            </ul>
+
+            <p>Modern buyers are sophisticated. They know finance is part of the process. They appreciate dealers who treat them like adults.</p>
+
+            <h2>Implementation with IGNYTE</h2>
+
+            <p>IGNYTE's finance qualification module works automatically:</p>
+
+            <ol>
+                <li>Lead comes in (any channel - email, web, WhatsApp)</li>
+                <li>AI analyzes: vehicle interest + stated budget</li>
+                <li>Qualification questions asked naturally in conversation</li>
+                <li>System calculates affordability match</li>
+                <li>If mismatch: suggests alternatives automatically</li>
+                <li>If good match: routes to sales with "pre-qualified" flag</li>
+                <li>Your team only touches buyers who can afford what they're looking at</li>
+            </ol>
+
+            <p>The system handles uncomfortable questions. The salesperson inherits qualified, realistic buyers.</p>
+
+            <h2>The Competitive Advantage</h2>
+
+            <p>While your competitors waste hours showing cars to customers who can't afford them, you're closing deals with buyers who've been pre-qualified.</p>
+
+            <p>While they're dealing with disappointed customers who just found out they can't buy what they want, you're delivering keys to customers who knew from day one they were approved.</p>
+
+            <p>Finance pre-qualification isn't just about efficiency. It's about treating customers with respect, being honest about affordability, and closing more deals in less time.</p>
+
+            <p>The dealers winning in 2026 are the ones who've stopped selling cars and started selling financial solutions that happen to include cars.</p>
+
+            <div style="margin-top: 60px; padding: 40px; background: rgba(124, 58, 237, 0.1); border-radius: 16px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">Want to 4x your finance conversion rate?</h3>
+                <a href="#" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)" class="btn-primary">See How IGNYTE Qualifies Finance Automatically</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ABOUT PAGE -->
     <div id="about" class="page">
@@ -2670,7 +3265,7 @@ Content structure:
 3. Offer immediate help/next step
 
 Examples of good flow:
-"Hi Sarah! 👋 Saw you're interested in the Audi A4."
+"Hi Sarah! Saw you're interested in the Audi A4."
 "Quick question - are you looking to view this week or just gathering info?"
 "Either way, happy to help!"
 
@@ -2729,8 +3324,8 @@ LIKELY OBJECTIONS:
 Prepare responses for each
 
 CLOSING STRATEGY:
-- If qualified â†’ next step
-- If not qualified â†’ nurture approach
+- If qualified -> next step
+- If not qualified -> nurture approach
 
 Keep it scannable, actionable, 5-minute read max.
                     </div>
@@ -2773,9 +3368,9 @@ When they say "already using [Competitor]":
 "Many of our clients switched from [Competitor]. The top 3 reasons were..."
 
 TRAP QUESTIONS (what not to say):
-âŒ Never badmouth directly
-âŒ Never say "we're cheaper because..."
-âŒ Never promise features we don't have
+-  Never badmouth directly
+-  Never say "we're cheaper because..."
+-  Never promise features we don't have
 
 DEAL-WINNING DIFFERENTIATORS:
 1. [Specific advantage with proof]
@@ -3182,11 +3777,11 @@ Customer context:
 Create referral request approach:
 
 TIMING (when to ask):
-âœ… Right after major win
-âœ… Unprompted positive feedback
-âœ… Renewal/expansion
-âŒ During onboarding
-âŒ When they have issues
++  Right after major win
++  Unprompted positive feedback
++  Renewal/expansion
+-  During onboarding
+-  When they have issues
 
 APPROACH:
 
@@ -3241,8 +3836,8 @@ For each feature:
 - Value: Why it matters
 
 Example:
-âŒ "AI-powered lead scoring"
-âœ… "Your sales team only touches buyers who are ready to buy"
+-  "AI-powered lead scoring"
++  "Your sales team only touches buyers who are ready to buy"
 
 CUSTOMER OUTCOME FOCUS:
 
@@ -3315,16 +3910,16 @@ Step 4 - Timeline & accountability:
 "You'll hear from me by [specific time] with [specific update]."
 
 DON'T SAY:
-âŒ "Unfortunately..."
-âŒ "Sorry for any inconvenience"
-âŒ "As per our policy..."
-âŒ "Let me check with my team"
+-  "Unfortunately..."
+-  "Sorry for any inconvenience"
+-  "As per our policy..."
+-  "Let me check with my team"
 
 DO SAY:
-âœ… "This is unacceptable"
-âœ… "Here's exactly what I'm doing"
-âœ… "You have my direct number"
-âœ… "This won't happen again because..."
++  "This is unacceptable"
++  "Here's exactly what I'm doing"
++  "You have my direct number"
++  "This won't happen again because..."
 
 FOLLOW-UP RESPONSE:
 
@@ -3363,8 +3958,8 @@ Goal: [INBOUND LEADS/PARTNERSHIPS/JOBS]
 Optimize for conversion:
 
 HEADLINE FORMULA:
-âŒ "Marketing Manager at Company X"
-âœ… "I help [target] achieve [outcome] | [credibility indicator]"
+-  "Marketing Manager at Company X"
++  "I help [target] achieve [outcome] | [credibility indicator]"
 
 Example: "I help B2B SaaS companies convert 3x more trials | Ex-Salesforce | £50M+ pipeline generated"
 
@@ -3551,10 +4146,10 @@ CTA:
 Single, clear action.
 
 AVOID:
-âŒ Technical jargon
-âŒ Every feature detail
-âŒ Multiple CTAs
-âŒ "Excited to announce" (show don't tell)
+-  Technical jargon
+-  Every feature detail
+-  Multiple CTAs
+-  "Excited to announce" (show don't tell)
 
 IN-APP NOTIFICATION:
 
@@ -3608,8 +4203,8 @@ The Challenge (not "responsibilities"):
 - [Specific problem] by [specific approach]
 
 Use concrete examples:
-âŒ "Manage customer relationships"
-âœ… "Turn angry customers into advocates when product breaks at 3am"
+-  "Manage customer relationships"
++  "Turn angry customers into advocates when product breaks at 3am"
 
 You're Great If (not "requirements"):
 "You might be perfect for this if you:"
@@ -3633,8 +4228,8 @@ Beyond compensation:
 - Unique benefits
 
 Make it specific, not generic:
-âŒ "Competitive salary"
-âœ… "£X-Y base + equity that vests monthly from day 1"
+-  "Competitive salary"
++  "£X-Y base + equity that vests monthly from day 1"
 
 The Process:
 Transparency builds trust:
@@ -3816,9 +4411,9 @@ CTA: Book 15-min success call OR join community
 THROUGHOUT SEQUENCE:
 
 Track and branch:
-- If completed activation â†’ Success path
-- If stuck â†’ Help path
-- If inactive â†’ Re-engagement path
+- If completed activation -> Success path
+- If stuck -> Help path
+- If inactive -> Re-engagement path
 
 Personalization variables:
 - Use case they selected
