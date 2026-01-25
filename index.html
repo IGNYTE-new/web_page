@@ -4692,15 +4692,15 @@ Include script for presenting options:
                     </div>
                 </div>
 
-    <footer>
+<footer>
         <p>&copy; 2026 IGNYTE. Built for UK automotive dealerships who refuse to lose revenue to slow follow-up.</p>
         <p style="margin-top: 10px;">
             <a href="/cdn-cgi/l/email-protection#e9818c858586a9808e87909d8cc79a99888a8c"><span class="__cf_email__" data-cfemail="6d05080101022d040a03141908431e1d0c0e08">[email&#160;protected]</span></a> | 
             <a href="/privacy.html">Privacy Policy</a> | 
             <a href="/terms.html">Terms of Service</a>
         </p>
-    </footer>
-
+</footer>
+            
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
@@ -4805,13 +4805,13 @@ Include script for presenting options:
         document.getElementById('flowModalOverlay')?.addEventListener('click', closeFlowModal);
 
         // Add click handlers to flow cards
+        // Close modal on escape key
         document.querySelectorAll('.flow-card').forEach(card => {
             card.addEventListener('click', function() {
                 openFlowModal(this);
             });
         });
 
-        // Close modal on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeFlowModal();
