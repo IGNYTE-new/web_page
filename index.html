@@ -1932,7 +1932,6 @@
     margin-top: 20px;
     opacity: 0.6;
     font-size: 0.9rem;
-}
 
 @media (max-width: 768px) {
     .slider-button {
@@ -1954,6 +1953,13 @@
         font-size: 0.75rem;
         padding: 6px 14px;
     }
+    
+    @media (max-width: 896px) and (orientation: landscape) {
+    .hero {
+        padding: 80px 5% 60px;
+    }
+    /* ... rest of landscape styles ... */
+
 }
 
     </style>
@@ -4982,6 +4988,7 @@ Include script for presenting options:
                 closeFlowModal();
             }
         });
+        
 // Before/After Comparison Slider
 const slider = document.getElementById('comparisonSlider');
 const afterImage = document.getElementById('afterImage');
@@ -4999,12 +5006,15 @@ if (slider && afterImage && sliderHandle) {
         sliderHandle.style.left = `${percentage}%`;
     }
 
-    sliderHandle.addEventListener('mousedown', () => {
+    // Mouse events
+    sliderHandle.addEventListener('mousedown', (e) => {
         isSliding = true;
+        e.preventDefault();
     });
 
     document.addEventListener('mousemove', (e) => {
         if (!isSliding) return;
+        e.preventDefault();
         updateSlider(e.clientX);
     });
 
@@ -5012,6 +5022,7 @@ if (slider && afterImage && sliderHandle) {
         isSliding = false;
     });
 
+    // Touch events for mobile
     sliderHandle.addEventListener('touchstart', (e) => {
         isSliding = true;
         e.preventDefault();
@@ -5019,17 +5030,22 @@ if (slider && afterImage && sliderHandle) {
 
     document.addEventListener('touchmove', (e) => {
         if (!isSliding) return;
+        e.preventDefault();
         updateSlider(e.touches[0].clientX);
-    });
+    }, { passive: false });
 
     document.addEventListener('touchend', () => {
         isSliding = false;
     });
 
+    // Click to position
     slider.addEventListener('click', (e) => {
-        updateSlider(e.clientX);
+        if (e.target !== sliderHandle && !sliderHandle.contains(e.target)) {
+            updateSlider(e.clientX);
+        }
     });
 }
+
         
     </script>
 
