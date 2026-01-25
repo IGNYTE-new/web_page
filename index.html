@@ -1803,7 +1803,158 @@
             .pain-stats-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-        }
+            
+            /* Before/After Comparison Slider */
+.comparison-slider-container {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16/10;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 245, 255, 0.2);
+    border: 2px solid rgba(0, 245, 255, 0.3);
+}
+
+.comparison-slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+}
+
+.before-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #00F5FF, #7C3AED);
+    cursor: ew-resize;
+    z-index: 3;
+    transform: translateX(-50%);
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #7C3AED, #00F5FF);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 245, 255, 0.6);
+    cursor: ew-resize;
+}
+
+.slider-button::before,
+.slider-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.slider-button::before {
+    left: 15px;
+    border-width: 8px 12px 8px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.slider-button::after {
+    right: 15px;
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent white;
+}
+
+.label {
+    position: absolute;
+    top: 20px;
+    padding: 8px 20px;
+    background: rgba(10, 14, 39, 0.95);
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.label-before {
+    left: 20px;
+    color: #FF3366;
+    border-color: rgba(255, 51, 102, 0.4);
+}
+
+.label-after {
+    right: 20px;
+    color: #00FF88;
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+.slider-instruction {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .slider-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .slider-button::before {
+        left: 12px;
+        border-width: 6px 10px 6px 0;
+    }
+
+    .slider-button::after {
+        right: 12px;
+        border-width: 6px 0 6px 10px;
+    }
+
+    .label {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+}
 
     </style>
 </head>
@@ -2013,6 +2164,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2>How IGNYTE Fixes This in <span class="gradient-text">90 Seconds</span></h2>
                 <p>From enquiry to salesperson's phone. Fully automated. Works 24/7. No technical setup required.</p>
             </div>
+
+            <!-- Before/After Comparison Slider -->
+<div class="comparison-slider-container">
+    <div class="comparison-slider" id="comparisonSlider">
+        <div class="label label-before">Before IGNYTE</div>
+        <div class="label label-after">After IGNYTE</div>
+        
+        <div class="before-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Crect fill='%23ffffff' width='1600' height='1000'/%3E%3Crect fill='%23f5f5f5' width='1600' height='80'/%3E%3Ctext x='30' y='50' font-family='Arial,sans-serif' font-size='28' font-weight='600' fill='%23202124'%3E📧 Gmail - Inbox (247)%3C/text%3E%3Ctext x='1400' y='50' font-family='Arial,sans-serif' font-size='20' fill='%23d93025'%3E⚠ 247%3C/text%3E%3Crect x='20' y='100' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='150' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='135' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ebuyer_4829@email.com%3C/text%3E%3Ctext x='100' y='160' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3EInterested in 2019 Audi A4 - can I view this weekend?%3C/text%3E%3Ctext x='1400' y='135' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3E2 days ago%3C/text%3E%3Crect x='20' y='210' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='260' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='245' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ej.smith_993@gmail.com%3C/text%3E%3Ctext x='100' y='270' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3EQuick question about finance options for BMW%3C/text%3E%3Ctext x='1380' y='245' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3E18 hours%3C/text%3E%3Crect x='20' y='320' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='370' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='355' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Eautotrader_lead_8847%3C/text%3E%3Ctext x='100' y='380' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3ETest drive request - BMW 3 Series%3C/text%3E%3Ctext x='1320' y='355' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3ESat 11:42pm%3C/text%3E%3Crect x='20' y='430' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='480' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='465' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Efacebook_lead_2847%3C/text%3E%3Ctext x='100' y='490' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3EURGENT - My car died, need replacement ASAP%3C/text%3E%3Ctext x='1320' y='465' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3ESun 8:13am%3C/text%3E%3Crect x='20' y='540' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='590' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='575' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ewebsite_enquiry_3847%3C/text%3E%3Ctext x='100' y='600' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3EAvailability for Mercedes C-Class?%3C/text%3E%3Ctext x='1350' y='575' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3E5 hours%3C/text%3E%3Crect x='20' y='650' width='1560' height='100' fill='%23ffffff' stroke='%23e0e0e0' stroke-width='1'/%3E%3Ccircle cx='60' cy='700' r='20' fill='%23cccccc'/%3E%3Ctext x='100' y='685' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Econtact_form_9234%3C/text%3E%3Ctext x='100' y='710' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3EPart exchange valuation needed%3C/text%3E%3Ctext x='1320' y='685' font-family='Arial,sans-serif' font-size='13' fill='%23999'%3E1 day ago%3C/text%3E%3Crect x='0' y='920' width='1600' height='80' fill='%23fff3cd'/%3E%3Ctext x='50' y='960' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='%23d93025'%3E⏱ Average Response: 4.2 hours%3C/text%3E%3Ctext x='750' y='960' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='%23d93025'%3E📊 Weekend: 0%25 response%3C/text%3E%3C/svg%3E" alt="Before - Chaotic Gmail inbox">
+        </div>
+        
+        <div class="after-image" id="afterImage">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237C3AED;stop-opacity:0.03'/%3E%3Cstop offset='100%25' style='stop-color:%2300F5FF;stop-opacity:0.03'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23bg)' width='1600' height='1000'/%3E%3Crect fill='%23f8f9fa' width='1600' height='80'/%3E%3Ctext x='30' y='50' font-family='Arial,sans-serif' font-size='28' font-weight='600' fill='%23202124'%3E📧 Gmail - IGNYTE Managed%3C/text%3E%3Crect x='1350' y='25' width='200' height='35' fill='%2327ae60' rx='18'/%3E%3Ctext x='1375' y='50' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='%23ffffff'%3E✓ All Routed%3C/text%3E%3Crect x='20' y='100' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='115' width='80' height='26' fill='%23d93025' rx='13'/%3E%3Ctext x='45' y='133' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E🔥 HOT%3C/text%3E%3Ccircle cx='140' cy='128' r='8' fill='%2327ae60'/%3E%3Ctext x='130' y='133' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E9.8%3C/text%3E%3Ctext x='160' y='130' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ebuyer_4829@email.com%3C/text%3E%3Ctext x='160' y='155' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Routed to Sarah M.%3C/text%3E%3Ctext x='160' y='175' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 47 seconds%3C/text%3E%3Crect x='20' y='210' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='225' width='110' height='26' fill='%23ff9800' rx='13'/%3E%3Ctext x='38' y='243' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E✓ QUALIFIED%3C/text%3E%3Ccircle cx='160' cy='238' r='8' fill='%2327ae60'/%3E%3Ctext x='150' y='243' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E8.5%3C/text%3E%3Ctext x='180' y='240' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ej.smith_993@gmail.com%3C/text%3E%3Ctext x='180' y='265' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Finance pre-qualified → James K.%3C/text%3E%3Ctext x='180' y='285' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 62 seconds%3C/text%3E%3Crect x='20' y='320' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='335' width='100' height='26' fill='%23d93025' rx='13'/%3E%3Ctext x='42' y='353' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E⚡ URGENT%3C/text%3E%3Ccircle cx='150' cy='348' r='8' fill='%2327ae60'/%3E%3Ctext x='140' y='353' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E9.2%3C/text%3E%3Ctext x='170' y='350' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Eautotrader_lead_8847%3C/text%3E%3Ctext x='170' y='375' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Auto-response sent + SMS alert%3C/text%3E%3Ctext x='170' y='395' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 89 seconds%3C/text%3E%3Crect x='20' y='430' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='445' width='100' height='26' fill='%23d93025' rx='13'/%3E%3Ctext x='42' y='463' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E🚨 CRITICAL%3C/text%3E%3Ccircle cx='150' cy='458' r='8' fill='%2327ae60'/%3E%3Ctext x='140' y='463' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E10%3C/text%3E%3Ctext x='170' y='460' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Efacebook_lead_2847%3C/text%3E%3Ctext x='170' y='485' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Priority routed → Test drive booked%3C/text%3E%3Ctext x='170' y='505' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 53 seconds%3C/text%3E%3Crect x='20' y='540' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='555' width='80' height='26' fill='%23ff9800' rx='13'/%3E%3Ctext x='45' y='573' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E⭐ WARM%3C/text%3E%3Ccircle cx='130' cy='568' r='8' fill='%2327ae60'/%3E%3Ctext x='120' y='573' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E7.1%3C/text%3E%3Ctext x='150' y='570' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Ewebsite_enquiry_3847%3C/text%3E%3Ctext x='150' y='595' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Personalized email sent%3C/text%3E%3Ctext x='150' y='615' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 71 seconds%3C/text%3E%3Crect x='20' y='650' width='1560' height='100' fill='%23e8f5e9' stroke='%2327ae60' stroke-width='2'/%3E%3Crect x='30' y='665' width='80' height='26' fill='%232196f3' rx='13'/%3E%3Ctext x='45' y='683' font-family='Arial,sans-serif' font-size='12' font-weight='bold' fill='%23fff'%3E📋 INFO%3C/text%3E%3Ccircle cx='130' cy='678' r='8' fill='%2327ae60'/%3E%3Ctext x='120' y='683' font-family='Arial,sans-serif' font-size='14' font-weight='bold' fill='%23fff'%3E5.3%3C/text%3E%3Ctext x='150' y='680' font-family='Arial,sans-serif' font-size='16' font-weight='600' fill='%23202124'%3Econtact_form_9234%3C/text%3E%3Ctext x='150' y='705' font-family='Arial,sans-serif' font-size='14' fill='%23666'%3E✓ Added to nurture sequence%3C/text%3E%3Ctext x='150' y='725' font-family='Arial,sans-serif' font-size='13' fill='%2327ae60' font-weight='600'%3EResponse: 94 seconds%3C/text%3E%3Crect x='0' y='920' width='1600' height='80' fill='%23d4edda'/%3E%3Ctext x='50' y='960' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='%2327ae60'%3E⚡ Average Response: 87 seconds%3C/text%3E%3Ctext x='700' y='960' font-family='Arial,sans-serif' font-size='22' font-weight='bold' fill='%2327ae60'%3E📊 Weekend: 98%25 automated%3C/text%3E%3C/svg%3E" alt="After - IGNYTE organized">
+        </div>
+        
+        <div class="slider-handle" id="sliderHandle">
+            <div class="slider-button"></div>
+        </div>
+    </div>
+    <p class="slider-instruction">← Drag the slider to compare →</p>
+</div>
+<!-- END Comparison Slider -->
 
             <!-- Modal Overlay -->
             <div class="flow-modal-overlay" id="flowModalOverlay"></div>
@@ -4691,15 +4864,7 @@ Include script for presenting options:
 "Let me show you three ways to get into this vehicle..."
                     </div>
                 </div>
-
-<footer>
-        <p>&copy; 2026 IGNYTE. Built for UK automotive dealerships who refuse to lose revenue to slow follow-up.</p>
-        <p style="margin-top: 10px;">
-            <a href="/cdn-cgi/l/email-protection#e9818c858586a9808e87909d8cc79a99888a8c"><span class="__cf_email__" data-cfemail="6d05080101022d040a03141908431e1d0c0e08">[email&#160;protected]</span></a> | 
-            <a href="/privacy.html">Privacy Policy</a> | 
-            <a href="/terms.html">Terms of Service</a>
-        </p>
-</footer>
+        
             
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function showPage(pageId) {
@@ -4817,6 +4982,65 @@ Include script for presenting options:
                 closeFlowModal();
             }
         });
+// Before/After Comparison Slider
+const slider = document.getElementById('comparisonSlider');
+const afterImage = document.getElementById('afterImage');
+const sliderHandle = document.getElementById('sliderHandle');
+
+if (slider && afterImage && sliderHandle) {
+    let isSliding = false;
+
+    function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        const position = Math.max(0, Math.min(x - rect.left, rect.width));
+        const percentage = (position / rect.width) * 100;
+        
+        afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        sliderHandle.style.left = `${percentage}%`;
+    }
+
+    sliderHandle.addEventListener('mousedown', () => {
+        isSliding = true;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isSliding) return;
+        updateSlider(e.clientX);
+    });
+
+    document.addEventListener('mouseup', () => {
+        isSliding = false;
+    });
+
+    sliderHandle.addEventListener('touchstart', (e) => {
+        isSliding = true;
+        e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isSliding) return;
+        updateSlider(e.touches[0].clientX);
+    });
+
+    document.addEventListener('touchend', () => {
+        isSliding = false;
+    });
+
+    slider.addEventListener('click', (e) => {
+        updateSlider(e.clientX);
+    });
+}
+        
     </script>
+
+<footer>
+        <p>&copy; 2026 IGNYTE. Built for UK automotive dealerships who refuse to lose revenue to slow follow-up.</p>
+        <p style="margin-top: 10px;">
+            <a href="/cdn-cgi/l/email-protection#e9818c858586a9808e87909d8cc79a99888a8c"><span class="__cf_email__" data-cfemail="6d05080101022d040a03141908431e1d0c0e08">[email&#160;protected]</span></a> | 
+            <a href="/privacy.html">Privacy Policy</a> | 
+            <a href="/terms.html">Terms of Service</a>
+        </p>
+</footer>
+            
 </body>
 </html>
