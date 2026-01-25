@@ -1905,6 +1905,155 @@
             }
         }
 
+        /* --- ENTERPRISE WORKFLOW VISUALIZATION --- */
+.workflow-visual {
+    margin-top: 60px;
+    position: relative;
+    padding: 10px;
+}
+
+/* The "Glass" Container */
+.system-monitor {
+    background: rgba(13, 17, 48, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(124, 58, 237, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Header Bar looking like a Terminal/Dashboard */
+.monitor-header {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.monitor-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Monaco', monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00FF88;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00FF88;
+    animation: blink 2s infinite;
+}
+
+/* The Pipeline Grid */
+.pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Steps */
+    gap: 2px; /* For the borders */
+    background: rgba(255, 255, 255, 0.05); /* The border color */
+    position: relative;
+}
+
+.pipeline-step {
+    background: var(--midnight); /* Cards sit on top of grid */
+    padding: 30px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Connecting Line */
+.pipeline-step::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    right: -10px;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--volt), transparent);
+    z-index: 10;
+}
+.pipeline-step:last-child::after { display: none; }
+
+/* Node Styling */
+.node-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 6px;
+    color: var(--electric);
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.node-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* The "Code" Data Box */
+.data-block {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Monaco', monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-key { color: rgba(255, 255, 255, 0.4); }
+.data-val { color: #00FF88; }
+.data-val.warn { color: #FF3366; }
+.data-val.highlight { color: #00F5FF; }
+
+/* Active Pulse Animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .pipeline-grid {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 1px;
+    }
+    .pipeline-step::after {
+        top: auto;
+        bottom: -10px;
+        right: 50%;
+        width: 2px;
+        height: 20px;
+        transform: translateX(50%);
+        background: linear-gradient(180deg, var(--volt), transparent);
+    }
+    .pipeline-step {
+        padding: 25px;
+        align-items: center;
+        text-align: center;
+    }
+    .data-block {
+        width: 100%;
+        text-align: left;
+    }
+}
+
     </style>
 </head>
 
@@ -2043,67 +2192,99 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-        <section class="antidote-section">
-            <div class="antidote-container">
-                <div class="antidote-content">
-                    <h2>The Antidote to <span class="gradient-text">Bloated CRM Culture</span></h2>
+<section class="antidote-section">
+    <div class="antidote-container">
+        <div class="antidote-content">
+            <h2>The Brain That <span class="gradient-text">Never Sleeps</span></h2>
+            <p style="margin-bottom: 30px;">While your competitors are manually reading emails, IGNYTE runs a 46-step decision matrix in milliseconds. It validates, deduplicates, calculates finance, and routes—autonomous precision, zero fatigue.</p>
 
-                    <div class="antidote-stats">
-                        <div class="antidote-stat">
-                            <div class="antidote-stat-icon">⚡</div>
-                            <div class="antidote-stat-content">
-                                <h3>
-                                    <span class="tooltip-trigger">Zero Setup Time
-                                        <div class="tooltip-content">
-                                            <p>We connect to your email, forms, and channels. You're live in 48 hours with zero technical work required from your team.</p>
-                                        </div>
-                                    </span>
-                                </h3>
-                                <p>Live in 48 hours. No IT team. No training sessions. No migration headaches.</p>
-                            </div>
-                        </div>
-
-                        <div class="antidote-stat">
-                            <div class="antidote-stat-icon">🎯</div>
-                            <div class="antidote-stat-content">
-                                <h3>One Job, Done Right</h3>
-                                <p>Get hot leads to your team in  seconds. That's it. No pipeline management, no reporting dashboards, no feature bloat.</p>
-                            </div>
-                        </div>
-
-                        <div class="antidote-stat">
-                            <div class="antidote-stat-icon">💰</div>
-                            <div class="antidote-stat-content">
-                                <h3>
-                                    <span class="tooltip-trigger">Pay for Results
-                                        <div class="tooltip-content">
-                                            <p>If IGNYTE doesn't recover its cost in the first month through faster conversions, we refund you. No questions asked.</p>
-                                        </div>
-                                    </span>
-                                </h3>
-                                <p>14-day money-back guarantee. If it doesn't recover its cost in month one, we refund you and shut it off.</p>
-                            </div>
-                        </div>
+            <div class="antidote-stats">
+                <div class="antidote-stat">
+                    <div class="antidote-stat-icon">🧠</div>
+                    <div class="antidote-stat-content">
+                        <h3>Context Retention</h3>
+                        <p>Remembers every previous interaction. If John Smith emailed 3 months ago, we know.</p>
                     </div>
                 </div>
 
-                <div class="antidote-visual">
-                    <div class="crm-comparison">
-                        <div class="crm-item crm-bloat"> - 6-month implementation</div>
-                        <div class="crm-item crm-bloat">- £50k+ annual licenses</div>
-                        <div class="crm-item crm-bloat">- 40+ features you'll never use</div>
-                        <div class="crm-item crm-bloat">- Sales team ignores it anyway</div>
-
-                        <div style="margin: 30px 0; text-align: center; opacity: 0.5; font-size: 1.5rem;">⬇</div>
-
-                        <div class="crm-item crm-ignyte">+ 48-hour go-live</div>
-                        <div class="crm-item crm-ignyte">+ One simple job</div>
-                        <div class="crm-item crm-ignyte">+ -second response time</div>
-                        <div class="crm-item crm-ignyte">+ Your team actually uses it</div>
+                <div class="antidote-stat">
+                    <div class="antidote-stat-icon">🛡️</div>
+                    <div class="antidote-stat-content">
+                        <h3>Deduplication Shield</h3>
+                        <p>Prevents spamming your sales team. We filter the noise; they get the signal.</p>
+                    </div>
+                </div>
+                
+                 <div class="antidote-stat">
+                    <div class="antidote-stat-icon">⚡</div>
+                    <div class="antidote-stat-content">
+                        <h3>1.2s Execution</h3>
+                        <p>From "Email Received" to "Phone Ringing" faster than you can read this sentence.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+<div class="workflow-visual">
+    <div class="system-monitor">
+        <div class="monitor-header">
+            <div class="monitor-status">
+                <span class="status-dot"></span>
+                <span>IGNYTE_CORE_V46</span>
+                <span style="opacity:0.3">|</span>
+                <span>UPTIME: 99.99%</span>
+            </div>
+            <div class="monitor-status">
+                <span>AVG LATENCY: 1.2s</span>
+            </div>
+        </div>
+
+        <div class="pipeline-grid">
+            
+            <div class="pipeline-step">
+                <div class="node-badge">01 Ingest</div>
+                <div class="node-title">Universal Capture</div>
+                <div class="data-block">
+                    <span class="data-key">source:</span> <span class="data-val">"AutoTrader"</span><br>
+                    <span class="data-key">timestamp:</span> <span class="data-val">22:42:15</span><br>
+                    <span class="data-key">payload:</span> <span class="data-val">1.4kb</span>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div class="node-badge" style="border-color: rgba(0, 245, 255, 0.4); color: #00F5FF;">02 Analyze</div>
+                <div class="node-title">Deep Logic</div>
+                <div class="data-block">
+                    <span class="data-key">intent:</span> <span class="data-val">"Purchase"</span><br>
+                    <span class="data-key">urgency:</span> <span class="data-val highlight">HIGH (0.98)</span><br>
+                    <span class="data-key">finance:</span> <span class="data-val">"Approved"</span>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div class="node-badge" style="border-color: rgba(255, 51, 102, 0.4); color: #FF3366;">03 Validate</div>
+                <div class="node-title">Context Check</div>
+                <div class="data-block">
+                    <span class="data-key">crm_lookup:</span> <span class="data-val">Found</span><br>
+                    <span class="data-key">duplicate:</span> <span class="data-val warn">False</span><br>
+                    <span class="data-key">sales_rep:</span> <span class="data-val">"Active"</span>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div class="node-badge" style="border-color: #00FF88; color: #00FF88;">04 Execute</div>
+                <div class="node-title">Instant Routing</div>
+                <div class="data-block">
+                    <span class="data-key">sms_alert:</span> <span class="data-val">Sent -> Sarah</span><br>
+                    <span class="data-key">email_reply:</span> <span class="data-val">Drafted</span><br>
+                    <span class="data-key">status:</span> <span class="data-val">COMPLETED</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
 
 <section id="solution" class="solution-section">
             <div class="section-header">
