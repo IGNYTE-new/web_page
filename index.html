@@ -843,6 +843,65 @@
     line-height: 1.5;
 }
 
+/* --- MOBILE PREVIEW SECTION --- */
+.mobile-previews-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.mobile-frame {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    text-align: center;
+}
+
+.screen-edge {
+    background: #000;
+    border: 8px solid #1a1a1a; /* Sleek bezel */
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    aspect-ratio: 9 / 19.5; /* iPhone 16 aspect ratio */
+    margin-bottom: 20px;
+}
+
+.screen-edge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mobile-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    color: var(--electric);
+    font-weight: 700;
+}
+
+.mobile-subtext {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .mobile-previews-container {
+        gap: 30px;
+    }
+    .mobile-frame {
+        max-width: 280px;
+    }
+}
 /* Mobile Responsiveness for this section */
 @media (max-width: 768px) {
     .crm-mini-grid {
@@ -2645,6 +2704,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </section>
+
+    <section class="mobile-previews-section">
+    <div class="section-header">
+        <h2>Instant Engagement. <span class="gradient-text">Zero Effort.</span></h2>
+        <p>While you're on the forecourt, IGNYTE handles the handshake and the heads-up.</p>
+    </div>
+
+    <div class="mobile-previews-container">
+        <div class="mobile-frame">
+            <div class="screen-edge">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response">
+            </div>
+            <div class="mobile-label">To the Customer</div>
+            <p class="mobile-subtext">Instant WhatsApp/SMS response to keep them off your competitor's site.</p>
+        </div>
+
+        <div class="mobile-frame">
+            <div class="screen-edge" style="border-color: var(--volt);">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert">
+            </div>
+            <div class="mobile-label" style="color: var(--volt);">To Your Team</div>
+            <p class="mobile-subtext">The "HOT" lead alert sent via SMS, showing exactly why they are ready to buy.</p>
+        </div>
+    </div>
+</section>
 
         <section id="demo" class="demo-section">
             <div class="form-container">
