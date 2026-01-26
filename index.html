@@ -2455,13 +2455,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="menu-icon-bar"></span>
             <span class="menu-icon-bar"></span>
         </button>
-        <div class="nav-links" id="navLinks">
-            <a onclick="showPage('about')">How It Works</a>
-            <a onclick="showPage('pricing')">Pricing</a>
-            <a onclick="showPage('blog')">Insights</a>
-            <a onclick="showPage('prompts')">Resources</a>
-            <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem; text-align: center;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Request Walkthrough</a>
-        </div>
+<div class="nav-links" id="navLinks">
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('pricing')">Pricing</a>
+    <a onclick="showPage('blog')">Blog</a>
+    <a onclick="showPage('prompts')">Free Prompts</a>
+    <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem; text-align: center;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Started</a>
+</div>
     </nav>
 
     <div id="home" class="page active">
@@ -3030,131 +3030,224 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
     </div>
 
-    <div id="blog" class="page">
-        <div class="content-page">
-            <div class="section-header">
-                <h1>Lead Intelligence <span class="gradient-text">Insights</span></h1>
-                <p>Thinking on attention, triage, and what actually moves metal.</p>
-            </div>
+   <div id="blog" class="page">
+    <div class="content-page">
+        <h1>IGNYTE <span class="gradient-text">Insights</span></h1>
+        <p style="font-size: 1.3rem; margin-bottom: 60px; opacity: 0.8;">Revenue intelligence strategies for automotive sales teams.</p>
 
-            <div class="blog-grid">
-                <article class="blog-article" onclick="showPage('blog-1')">
-                    <div class="blog-meta">
-                        <span class="blog-tag">STRATEGY</span>
-                        <span>5 min read</span>
-                    </div>
-                    <h2>The Attention Tax: Why Every Enquiry Costs You — Even the Bad Ones</h2>
-                    <p style="opacity:0.8; margin-top:15px;">Your inbox doesn't distinguish between a deposit-ready buyer and a tyre-kicker. But your brain does — and that distinction costs energy.</p>
-                </article>
-
-                <article class="blog-article" onclick="showPage('blog-2')">
-                    <div class="blog-meta">
-                        <span class="blog-tag">TECH</span>
-                        <span>4 min read</span>
-                    </div>
-                    <h2>Why Spreadsheets Beat CRMs for Independent Dealers</h2>
-                    <p style="opacity:0.8; margin-top:15px;">Complex software kills momentum. Here's why the best dealers run on Google Sheets — and how to make it work.</p>
-                </article>
-            </div>
-        </div>
-    </div>
-
-    <div id="blog-1" class="page">
-        <div class="blog-full-article">
-            <a href="#" onclick="showPage('blog')" class="blog-back-btn">← Back to Articles</a>
-            <div class="blog-meta">
-                <span class="blog-tag">STRATEGY</span>
-                <span>By IGNYTE Team</span>
-            </div>
-            <h1>The Attention Tax: Why Every Enquiry Costs You</h1>
-            
-            <p>Every time your phone buzzes with a new lead notification, something happens in your brain. You context-switch. You evaluate. You decide whether to act now or later. That cognitive load has a cost — even if you don't respond.</p>
-
-            <h2>The Hidden Cost of Equal Treatment</h2>
-            <p>Most dealerships treat all enquiries the same: they land in the inbox, someone scrolls through, and judgment happens manually. But that process is exhausting — and it doesn't scale. When your 40th notification looks identical to your 4th, your brain starts to tune out.</p>
-
-            <div class="highlight-box">
-                "The problem isn't that you're missing leads. It's that you're spending attention on leads that don't deserve it — and running dry when the real buyers arrive."
-            </div>
-
-            <h3>Why Triage Beats Speed</h3>
-            <p>The industry talks about "speed to lead" like it's the only metric. But responding fast to a tyre-kicker doesn't help you. What helps is knowing which leads warrant your fastest response — and which ones can wait until morning.</p>
-        </div>
-    </div>
-
-    <div id="blog-2" class="page">
-        <div class="blog-full-article">
-            <a href="#" onclick="showPage('blog')" class="blog-back-btn">← Back to Articles</a>
-            <div class="blog-meta">
-                <span class="blog-tag">TECH</span>
-                <span>By IGNYTE Team</span>
-            </div>
-            <h1>Why Spreadsheets Beat CRMs for Independent Dealers</h1>
-            
-            <p>We've spoken to dozens of independent dealers across the UK. The pattern is consistent: they bought a CRM, used it for three months, and quietly went back to spreadsheets. Here's why that's not a failure — it's a signal.</p>
-
-            <h2>The Flexibility Advantage</h2>
-            <p>Google Sheets does one thing brilliantly: it shows you your data, your way. No training. No rigid pipelines. No monthly seat fees. For a 2-person forecourt, that's not a compromise — it's exactly what you need.</p>
-
-            <div class="highlight-box">
-                "The best software is the kind you never have to think about. It fills in the rows while you fill the forecourt."
-            </div>
-
-            <p>IGNYTE doesn't replace your workflow. It automates the tedious part — reading the email, extracting the details, assigning a priority, logging the row — so you can focus on the conversations that actually close.</p>
-        </div>
-    </div>
-
-    <div id="prompts" class="page">
-        <div class="content-page">
-            <div class="section-header">
-                <h1>Sales <span class="gradient-text">Resources</span></h1>
-                <p>ChatGPT prompts for automotive sales. Copy, paste, close.</p>
-            </div>
-
-            <div class="prompt-grid">
-                <div class="prompt-card">
-                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                    <span class="category">Objection Handling</span>
-                    <h3>The "I need to think about it" Crusher</h3>
-                    <p class="description">Use this when a customer goes ghost after getting the finance quote.</p>
-                    <div class="prompt-text">
-                        Act as a sympathetic but persistent car sales expert. Write a short, 2-sentence follow-up email to a customer who stopped replying after receiving a finance quote for a [Insert Car Model]. Acknowledge it's a big decision, but subtly remind them that this stock moves fast. End with a low-pressure question about their preferred monthly budget.
-                    </div>
+        <div class="blog-grid">
+            <article class="blog-article" onclick="showBlogArticle('speed-beats-perfect')">
+                <h2>The Death of the Manual Follow-Up: Why Speed Beats Perfect</h2>
+                <div class="blog-meta">
+                    <span>5 min read</span>
+                    <span class="blog-tag">Sales Strategy</span>
                 </div>
+                <p>Your competitor sent a generic response at 11:03pm. You crafted the perfect response at 9:15am. They won. Here's why...</p>
+            </article>
 
-                <div class="prompt-card">
-                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                    <span class="category">Inbound Response</span>
-                    <h3>The "Is this still available?" Reply</h3>
-                    <p class="description">Turn a generic Facebook marketplace query into a phone call.</p>
-                    <div class="prompt-text">
-                        Write a response to a Facebook Marketplace enquiry asking "Is this available?". 1. Confirm yes. 2. Create urgency (mention 2 other viewings). 3. Ask "Are you looking to finance or cash?" to qualify them immediately. Keep it under 50 words. Informal tone.
-                    </div>
+            <article class="blog-article" onclick="showBlogArticle('tire-kicker-tax')">
+                <h2>The Real Cost of "Just Browsing" Leads</h2>
+                <div class="blog-meta">
+                    <span>4 min read</span>
+                    <span class="blog-tag">Lead Qualification</span>
                 </div>
+                <p>When your top salesperson spends 45 minutes on a call with someone who "might buy in 6 months," you didn't just waste 45 minutes...</p>
+            </article>
 
-                <div class="prompt-card">
+            <article class="blog-article" onclick="showBlogArticle('crm-dust')">
+                <h2>Why Your CRM Gathers Dust</h2>
+                <div class="blog-meta">
+                    <span>6 min read</span>
+                    <span class="blog-tag">Technology</span>
+                </div>
+                <p>You spent £40k on a CRM. Six months later, they're back to sticky notes. The problem isn't your team—it's the software...</p>
+            </article>
+        </div>
+    </div>
+</div>
+<div id="prompts" class="page">
+    <div class="content-page">
+        <h1>Professional AI <span class="gradient-text">Prompt Library</span></h1>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">Battle-tested prompts for business professionals. Copy, paste, and adapt to your workflow.</p>
+        <p style="opacity: 0.7; margin-bottom: 50px;">Each prompt uses advanced chain-of-thought reasoning for superior AI outputs. Optimized for ChatGPT, Claude, and other LLMs.</p>
+
+        <div class="prompt-grid">
+            <div class="prompt-card">
+                <span class="category">Automotive Sales</span>
+                <h3>Instant Lead Response Generator</h3>
+                <p class="description">Creates personalized, urgent first responses to automotive enquiries that qualify buyers and book appointments.</p>
+                <div class="prompt-text">
                     <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-                    <span class="category">Negotiation</span>
-                    <h3>The Low-Ball Rebuttal</h3>
-                    <p class="description">How to handle a customer offering £2k below asking price.</p>
-                    <div class="prompt-text">
-                        Write a polite but firm email responding to a customer offering significantly less than the listed price. Explain that our cars are priced competitively based on the current UK market average (AutoTrader Retail Rating). Offer a small non-monetary incentive (like a full tank of fuel or extended warranty) instead of a discount.
-                    </div>
+You are an expert automotive sales responder specializing in immediate engagement.
+Lead details:
+- Name: [NAME]
+- Vehicle interest: [MAKE/MODEL]
+- Enquiry source: [AUTOTRADER/WEBSITE/FACEBOOK]
+- Message: [PASTE THEIR ENQUIRY]
+- Time received: [TIMESTAMP]
+
+Create instant response (within 90 seconds) that:
+1. References their specific vehicle interest
+2. Asks ONE qualifying question (Trade-in? Finance? Viewing?)
+3. Suggests specific appointment slots
+
+Tone: Enthusiastic, helpful, creates urgency without pressure.
+UK English.
                 </div>
             </div>
+<div id="blog-speed-beats-perfect" class="page">
+    <div class="blog-full-article">
+        <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn">← Back to Blog</a>
+        <h1>The Death of the Manual Follow-Up: Why Speed Beats Perfect</h1>
+        <div class="blog-meta">
+            <span>5 min read</span>
+            <span class="blog-tag">Sales Strategy</span>
+            <span>January 2026</span>
         </div>
+        <p>Your competitor sent a generic "Thanks for your enquiry" at 11:03pm. You crafted the perfect, personalized response at 9:15am the next morning. They won.</p>
+        <h2>The 5-Minute Window</h2>
+        <p>Research shows responding within 5 minutes makes you 100x more likely to connect than waiting 30 minutes. By the time you craft the perfect email, the buyer has already moved on.</p>
+        <div class="highlight-box">
+            <p><strong>Reality check:</strong> A mediocre response in 2 minutes beats a brilliant response in 2 hours. Every single time.</p>
+        </div>
+        <h2>The Automation Advantage</h2>
+        <p>The dealerships winning aren't staffing 24/7. They use automation that acknowledges instantly, qualifies, and routes hot leads. Speed is the new table stakes.</p>
     </div>
+</div>
 
-    <div id="about" class="page">
-        <div class="content-page">
-            <div class="section-header">
-                <h1>How <span class="gradient-text">IGNYTE Works</span></h1>
-            </div>
-            <p>IGNYTE sits between your inbox and your attention. When an enquiry arrives — from AutoTrader, Motors, your website, anywhere — it reads the message, detects intent signals, and assigns a verdict: HOT, WARM, or COLD.</p>
-            <p>HOT leads trigger an SMS to your closer. WARM leads get logged for morning review. COLD leads are tracked but suppressed. You still see everything in your Google Sheet — but your phone only buzzes when it matters.</p>
-            <p>No dashboards. No logins. No training. Just a judgement layer that protects your time and surfaces the buyers who are ready to move.</p>
+<div id="blog-tire-kicker-tax" class="page">
+    <div class="blog-full-article">
+        <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn">← Back to Blog</a>
+        <h1>The Real Cost of "Just Browsing" Leads</h1>
+        <div class="blog-meta">
+            <span>4 min read</span>
+            <span class="blog-tag">Lead Qualification</span>
+            <span>January 2026</span>
+        </div>
+        <p>When your top salesperson spends 45 minutes on a call with someone who "might buy in 6 months," you didn't just waste 45 minutes. You lost the three hot leads that came in during that call.</p>
+        <h2>The Hidden Mathematics</h2>
+        <p>Average UK car salespersons handle 8-12 enquiries daily. If 60% are tire-kickers, that's 5-7 hours wasted. Smart dealerships track urgency signals and decision authority before investing human time.</p>
+        <div class="highlight-box">
+            <p><strong>Rule of thumb:</strong> If a buyer can't answer "when do you need this by?" with a specific timeframe, they're not ready for your time.</p>
         </div>
     </div>
+</div>
+
+<div id="blog-crm-dust" class="page">
+    <div class="blog-full-article">
+        <a href="#" onclick="showPage('blog')" class="btn-ghost blog-back-btn">← Back to Blog</a>
+        <h1>Why Your CRM Gathers Dust</h1>
+        <div class="blog-meta">
+            <span>6 min read</span>
+            <span class="blog-tag">Technology</span>
+            <span>January 2026</span>
+        </div>
+        <p>You spent £40k on a CRM. Trained your team for three days. Six months later, they're back to sticky notes. The problem isn't your team—it's that most CRMs were built by software people, not sales people.</p>
+        <p>IGNYTE was built to be a decision layer, not a data entry form. It works with your existing tools rather than trying to replace them.</p>
+    </div>
+</div>
+            <div class="prompt-card">
+                <span class="category">Sales Strategy</span>
+                <h3>Objection Handler & Reframe Generator</h3>
+                <p class="description">Transforms customer objections into opportunities by identifying the real concern.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are a master sales strategist.
+Customer objection: [PASTE CONCERN]
+Context: [e.g., "Comparing our £24k product to £22k competitor"]
+
+Analyze and respond:
+Step 1: Identify real objection (Price, trust, timing?)
+Step 2: Bridge statement validating concern
+Step 3: Reframe from cost to value
+Step 4: Question to uncover decision criteria
+
+Write a 3-4 sentence response using UK English.
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Negotiation</span>
+                <h3>The Low-Ball Rebuttal</h3>
+                <p class="description">How to handle a customer offering significantly below asking price.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+Write a polite but firm email responding to a customer offering significantly less than listed price.
+Explain cars are priced competitively based on AutoTrader Retail Rating.
+Offer a small non-monetary incentive (fuel, warranty) instead of discount.
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Customer Service</span>
+                <h3>WhatsApp Business Auto-Response Builder</h3>
+                <p class="description">Generates conversational WhatsApp responses that qualify leads efficiently.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert WhatsApp Business messaging specialist.
+Message received: [PASTE MESSAGE]
+Business: [YOUR BUSINESS]
+
+Create WhatsApp response that:
+- Is conversational (short messages, 20-40 words max)
+- Uses 1-2 emojis max
+- Asks ONE qualifying question
+- Offers immediate help
+Provide response as 2-3 separate message bubbles.
+                </div>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Sales</span>
+                <h3>Multi-Touch Cold Outreach Campaign</h3>
+                <p class="description">Creates a strategic 5-touch sequence that builds familiarity without being annoying.</p>
+                <div class="prompt-text">
+                     <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+You are an expert cold outreach strategist.
+Target: [DETAILS]
+Pain point: [SPECIFIC PROBLEM]
+
+Create 5-touch sequence (7 days):
+Touch 1 (Email): Specific observation + Question (No pitch)
+Touch 2 (LinkedIn): Connection request + note
+Touch 3 (Email): Value add (insight/data) + Soft pitch
+Touch 4 (LinkedIn): Share relevant content
+Touch 5 (Breakup Email): Permission to follow up later
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="page">
+    <div class="content-page">
+        <h1>We Built This Because We Were <span class="gradient-text">Tired of Watching Revenue Die</span></h1>
+
+        <p>IGNYTE started with a simple observation: every UK dealership has the same problem. Not lack of leads. Not poor products. Not bad salespeople.</p>
+
+        <p>The problem is time. Specifically, the time between when a buyer shows interest and when your team responds.</p>
+
+        <h2>The Boring Solution That Actually Works</h2>
+
+        <p>We didn't build another complex AI dashboard. We didn't create another CRM. We built a dead-simple workflow that does one thing exceptionally well: gets enquiries to the right person's phone before the buyer forgets they even enquired.</p>
+
+        <p>No dashboards you'll never use. No features you don't need. Just automatic lead capture, intelligent scoring, and instant routing. It works while you sleep. It works on bank holidays. It works when your sales manager is on vacation.</p>
+
+        <h2>Built for UK Automotive, Not Silicon Valley</h2>
+
+        <p>We're not a venture-backed SaaS company trying to sell you a "revolutionary platform." We're operators who understand UK dealership workflows, marketplace quirks, and why your sales team ignores the CRM.</p>
+
+        <p>IGNYTE is deliberately simple. Plug-and-play setup. No technical requirements. Live in 48 hours. If it doesn't pay for itself in month one, we refund you and shut it off. That's the deal.</p>
+
+        <h2>The Team</h2>
+
+        <p>Former sales managers. One automation engineer. Zero tolerance for complexity. We built IGNYTE because we realized every dealership in the UK has the same problem: overwhelming data and underwhelming response times.</p>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a class="btn-primary" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Your Free Audit</a>
+        </div>
+    </div>
+</div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
