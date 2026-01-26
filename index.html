@@ -940,7 +940,6 @@
 }
 
 /* Responsive Logic */
-        
 @media (max-width: 1100px) {
     .mobile-previews-container {
         flex-direction: column;
@@ -962,67 +961,6 @@
         max-width: 320px;
     }
 }
-
-/* --- MOBILE REFINEMENT & SNAPSHOT LOGIC --- */
-@media (max-width: 768px) {
-    /* Utility to hide heavy sections for a faster mobile snapshot */
-    .mobile-hide {
-        display: none !important;
-    }
-
-    /* Refine Hero for immediate impact */
-    h1 {
-        font-size: 2.2rem !important;
-        line-height: 1.2 !important;
-        letter-spacing: -1px !important;
-    }
-
-    .hero {
-        padding: 60px 5% 40px !important;
-    }
-
-    /* Dual-Response Logic: Tighten for vertical stacking */
-    .mobile-previews-container {
-        padding: 40px 4% !important;
-        gap: 30px !important;
-    }
-
-    .logic-column {
-        gap: 12px !important;
-        margin: 10px 0 !important;
-    }
-    
-    .logic-card {
-        padding: 12px 16px !important;
-        background: rgba(13, 17, 48, 0.8) !important;
-    }
-
-    /* Hide detailed card descriptions on mobile to keep phones close */
-    .logic-card p {
-        display: none !important;
-    }
-
-    .logic-card h4 {
-        font-size: 0.85rem !important;
-        margin-bottom: 0 !important;
-        color: var(--electric) !important;
-    }
-
-    .logic-icon {
-        width: 24px !important;
-        height: 24px !important;
-        font-size: 0.8rem !important;
-    }
-
-    /* Prompt Library: Hide long descriptions to show more titles */
-    .prompt-card .description {
-        display: none !important;
-    }
-    
-    .prompt-grid {
-        gap: 20px !important;
-        margin-top: 30px !important;
-    }
     
         /* Pricing Section */
         .pricing-section {
@@ -2526,7 +2464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 
-      <section class="market-pain-section mobile-hide">
+        <section class="market-pain-section">
             <div class="section-header">
                 <h2>The Problem Isn't <span class="gradient-text">Speed</span></h2>
                 <p>You can't respond faster than your competitors if you don't know which enquiry to respond to first. The real bottleneck is decision-making under uncertainty.</p>
@@ -2556,7 +2494,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-        <section id="problem" class="problem-section mobile-
+        <section id="problem" class="problem-section">
             <div class="section-header">
                 <h2>Every Enquiry Looks the Same. <span class="gradient-text">They Aren't.</span></h2>
                 <p>Your inbox doesn't distinguish between a cash buyer ready to collect today and someone "just browsing" who won't buy for six months. Neither does AutoTrader. Neither does Motors. The notification arrives. You react. But reacting to the wrong one first is where deals die.</p>
@@ -2736,7 +2674,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>Every enquiry triggers a judgement. Here's what IGNYTE evaluates before your team sees anything.</p>
             </div>
 
-<div class="comparison-slider-container mobile-hide">
+<div class="comparison-slider-container">
     <div class="section-header" style="margin-bottom: 20px;">
         <p style="opacity: 0.8; font-size: 0.9rem;">Drag the slider to see your inbox before and after IGNYTE's judgement layer.</p>
     </div>
@@ -2868,55 +2806,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="mobile-previews-section">
     <div class="section-header" style="margin-bottom: 50px;">
         <h2>The <span class="gradient-text">Dual-Response</span> Engine</h2>
-        <p class="mobile-hide">IGNYTE intercepts, assesses, and routes leads in parallel. One response secures the customer; the other alerts your closer.</p>
+        <p>IGNYTE reads the lead, assesses the value, and routes it accordingly. No lost opportunities. No wasted time.</p>
     </div>
 
     <div class="mobile-previews-container">
         
         <div class="mobile-frame left">
             <div class="screen-edge">
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response" loading="lazy">
             </div>
-            <div class="mobile-label" style="color: var(--electric);">To Customer</div>
-            <p class="mobile-subtext">Immediate engagement to stop the marketplace search.</p>
+            <div class="mobile-label" style="color: var(--electric);">To the Customer</div>
+            <p class="mobile-subtext">Immediate engagement that stops them from returning to the marketplace. Business Hour logic automatically adjusts response based on time of enquiry</p>
         </div>
 
         <div class="logic-column">
+            
             <div class="logic-card">
                 <div class="logic-icon">🛡️</div>
                 <div class="logic-text">
-                    <h4>Intercept Status: ACTIVE</h4>
-                    <p>Showroom Offline. Competitor Risk: CRITICAL. Intercepted in 90s.</p>
+                    <h4>Leakage Protection: 21:45 PM</h4>
+                    <p>Dealership closed. Competitor risk: HIGH. System engages instantly to secure the lead before they browse the next vehicle.</p>
                 </div>
             </div>
 
             <div class="logic-card">
                 <div class="logic-icon">💎</div>
                 <div class="logic-text">
-                    <h4>Intent Assessment: 92/100</h4>
-                    <p>Signals Detected: "Cash Buyer" + "Stock ID Match".</p>
+                    <h4>Value Assessment: 92/100</h4>
+                    <p>Signals detected: "Cash Ready" + "Specific Stock ID". System tags this as a revenue-critical opportunity.</p>
                 </div>
             </div>
 
             <div class="logic-card">
                 <div class="logic-icon">🚀</div>
                 <div class="logic-text">
-                    <h4>Escalation Protocol</h4>
-                    <p>WhatsApp engaged. SMS dispatched to Sales Director.</p>
+                    <h4>Priority Escalation</h4>
+                    <p>1. Lead is held warm via WhatsApp.<br>2. Sales Director alerted to secure the deposit immediately.</p>
                 </div>
             </div>
+
         </div>
 
         <div class="mobile-frame right">
             <div class="screen-edge" style="border-color: #1a1a1a;">
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert" loading="lazy">
             </div>
             <div class="mobile-label" style="color: var(--volt);">To Management</div>
-            <p class="mobile-subtext">Filtered "Deposit Alerts" pushed directly to your phone.</p>
+            <p class="mobile-subtext">Direct alerts sent to you for immediate action. No need to sit monitoring emails.</p>
         </div>
 
     </div>
-
 </section>
         <section id="demo" class="demo-section">
             <div class="form-container">
@@ -5686,5 +5625,3 @@ function togglePrompt(btn) {
             
 </body>
 </html>
-index.html
-Displaying index.html.
