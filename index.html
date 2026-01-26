@@ -990,16 +990,17 @@
 .screen-edge img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Keeps full text visible as requested */
+    /* 1. Use 'contain' to ensure NO text is cut off */
+    object-fit: contain; 
+    /* 2. Push image to top so the header looks like a real app */
     object-position: top; 
-    display: block;
-    /* This forces the browser to use high-quality downsampling */
-    image-rendering: -webkit-optimize-contrast; 
-    /* The 'Secret Sauce': Forces GPU rendering for sharper text */
-    transform: translateZ(0); 
-    -webkit-font-smoothing: antialiased;
+    /* 3. The "Anti-Blur" combination */
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    /* 4. Match the background to the image so the 'empty' space blends in */
+    background-color: #ffffff; 
 }
-
+        
 .mobile-label {
     font-family: 'Sora', sans-serif;
     font-size: 1.1rem;
