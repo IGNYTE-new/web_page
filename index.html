@@ -990,15 +990,14 @@
 .screen-edge img {
     width: 100%;
     height: 100%;
-    /* 1. Use 'contain' to ensure NO text is cut off */
     object-fit: contain; 
-    /* 2. Push image to top so the header looks like a real app */
-    object-position: top; 
-    /* 3. The "Anti-Blur" combination */
-    image-rendering: -webkit-optimize-contrast;
-    transform: translateZ(0);
-    /* 4. Match the background to the image so the 'empty' space blends in */
-    background-color: #ffffff; 
+    object-position: top;
+    display: block;
+    /* Forces the browser to keep edges sharp on large screens */
+    image-rendering: -webkit-optimize-contrast; 
+    /* The 'Hardware Acceleration' hack: Fixes Desktop blur */
+    transform: translateZ(0); 
+    will-change: transform;
 }
         
 .mobile-label {
@@ -2461,9 +2460,15 @@
         align-items: center;
         gap: 30px;
     }
-    .mobile-frame {
-        width: 100%;
-        max-width: 320px; /* Makes the phone bigger/clearer on mobile screens */
+.mobile-frame {
+    width: 320px; /* Increased from 280px for better Desktop detail */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
     }
     .logic-column {
         padding: 0;
