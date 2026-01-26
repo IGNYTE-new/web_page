@@ -1524,21 +1524,22 @@
             font-weight: bold;
         }
 
-        /* Labels */
-        .slider-label {
-            position: absolute;
-            top: 20px;
-            background: rgba(10, 14, 39, 0.8);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.1);
-            z-index: 20;
-            pointer-events: none;
-        }
+ /* --- TRANSPARENT LABELS --- */
+.slider-label {
+    position: absolute;
+    top: 20px;
+    /* Changed from 0.8 to 0.4 for more transparency */
+    background: rgba(10, 14, 39, 0.4); 
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px); /* Keeps text readable even with transparent bg */
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 20;
+    pointer-events: none;
+}
 
         .label-before { right: 20px; }
         .label-after { left: 20px; }
