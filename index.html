@@ -866,16 +866,15 @@
     z-index: 2; /* Sits above connecting lines */
 }
 
-/* The Central Logic Column */
 .logic-column {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 0 30px;
-    position: relative;
+    justify-content: center; /* Vertically centers the cards between the phones */
+    gap: 15px;
+    padding: 0 40px;
 }
 
 /* The Logic Cards (The "Brain") */
@@ -991,16 +990,14 @@
 .screen-edge img {
     width: 100%;
     height: 100%;
-    /* 'contain' ensures the full text is visible without zooming */
-    object-fit: contain; 
-    /* Anchors to the top so headers are perfectly aligned */
+    object-fit: contain; /* Keeps full text visible as requested */
     object-position: top; 
     display: block;
-    /* 'auto' is smoother; '-webkit-optimize-contrast' sharpens text */
-    image-rendering: -webkit-optimize-contrast;
-    /* Forces the browser to use higher-quality scaling algorithms */
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    /* This forces the browser to use high-quality downsampling */
+    image-rendering: -webkit-optimize-contrast; 
+    /* The 'Secret Sauce': Forces GPU rendering for sharper text */
+    transform: translateZ(0); 
+    -webkit-font-smoothing: antialiased;
 }
 
 .mobile-label {
@@ -2457,7 +2454,21 @@
         text-align: left;
     }
 }
-
+@media (max-width: 768px) {
+    .mobile-previews-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .mobile-frame {
+        width: 100%;
+        max-width: 320px; /* Makes the phone bigger/clearer on mobile screens */
+    }
+    .logic-column {
+        padding: 0;
+        order: 2; /* Moves the logic cards between the two phones */
+    }
+}
     </style>
 </head>
 
