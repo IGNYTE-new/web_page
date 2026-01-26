@@ -1621,6 +1621,7 @@
             letter-spacing: 0.5px;
         }
 
+/* Update these starting at Line 849 */
 .prompt-card .description {
     font-size: 1rem;
     opacity: 0.8;
@@ -1628,11 +1629,39 @@
     line-height: 1.6;
 }
 
-.prompt-card .prompt-text { /* Renamed from .-text */
+.prompt-text {
     background: rgba(0,0,0,0.4);
     border: 1px solid rgba(0, 245, 255, 0.1);
     padding: 25px;
-    /* ... rest of your styles ... */
+    border-radius: 12px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.95);
+    margin-top: 20px;
+    position: relative;
+    
+    /* Folding Logic */
+    max-height: 100px; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+/* When the card has the 'expanded' class, show everything */
+.prompt-card.expanded .prompt-text {
+    max-height: 2000px; 
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--electric);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 15px;
+    text-transform: uppercase;
+    padding: 0;
 }
         }
 
@@ -2946,1542 +2975,1570 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
 <div id="prompts" class="page">
-        <div class="content-page">
-            <h1>Professional AI <span class="gradient-text">Prompt Library</span></h1>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">Battle-tested prompts for business professionals. Copy, paste, and adapt to your workflow.</p>
-            <p style="opacity: 0.7; margin-bottom: 50px;">Each prompt uses advanced chain-of-thought reasoning for superior AI outputs. Optimized for ChatGPT, Claude, and other LLMs.</p>
+    <div class="content-page">
+        <h1>Professional AI <span class="gradient-text">Prompt Library</span></h1>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">Battle-tested prompts for business professionals. Copy, paste, and adapt to your workflow.</p>
+        <p style="opacity: 0.7; margin-bottom: 50px;">Each prompt uses advanced chain-of-thought reasoning for superior AI outputs. Optimized for ChatGPT, Claude, and other LLMs.</p>
 
-            <div class="prompt-grid">
-                
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Objection Handler & Reframe Generator</h3>
-                    <p class="description">Transforms customer objections into opportunities by identifying the real concern and providing strategic response frameworks.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a master sales strategist specializing in objection handling.
+        <div class="prompt-grid">
+            
+            <div class="prompt-card">
+                <span class="category">Sales Strategy</span>
+                <h3>Objection Handler & Reframe Generator</h3>
+                <p class="description">Transforms customer objections into opportunities by identifying the real concern and providing strategic response frameworks.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a master sales strategist specializing in objection handling.
 
-Customer objection: [PASTE THEIR CONCERN]
-Context: [e.g., "Comparing our £24,995 product to £22,500 competitor"]
+                    Customer objection: [PASTE THEIR CONCERN]
+                    Context: [e.g., "Comparing our £24,995 product to £22,500 competitor"]
 
-Analyze and respond:
-Step 1 - Identify real objection:
-- Is this about price, trust, timing, value perception, or something else?
+                    Analyze and respond:
+                    Step 1 - Identify real objection:
+                    - Is this about price, trust, timing, value perception, or something else?
 
-Step 2 - Strategic response:
-- Bridge statement that validates concern without being defensive
-- Reframe from cost/problem to value/opportunity
-- Question that uncovers real decision criteria
-- Next step that maintains momentum
+                    Step 2 - Strategic response:
+                    - Bridge statement that validates concern without being defensive
+                    - Reframe from cost/problem to value/opportunity
+                    - Question that uncovers real decision criteria
+                    - Next step that maintains momentum
 
-Write 3-4 sentence response that:
-- Validates their concern authentically
-- Reframes with context or value
-- Asks qualifying question
-- Suggests concrete next step
+                    Write 3-4 sentence response that:
+                    - Validates their concern authentically
+                    - Reframes with context or value
+                    - Asks qualifying question
+                    - Suggests concrete next step
 
-Conversational, confident but collaborative tone. UK English.
-                    </div>
+                    Conversational, confident but collaborative tone. UK English.
                 </div>
-
-                <div class="prompt-card">
-                    <span class="category">Automotive Sales</span>
-                    <h3>Instant Lead Response Generator</h3>
-                    <p class="description">Creates personalized, urgent first responses to automotive enquiries that qualify buyers and book appointments.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert automotive sales responder specializing in immediate engagement.
-
-Lead details:
-- Name: [NAME]
-- Vehicle interest: [MAKE/MODEL]
-- Enquiry source: [AUTOTRADER/WEBSITE/FACEBOOK]
-- Message: [PASTE THEIR ENQUIRY]
-- Time received: [TIMESTAMP]
-
-Create instant response (within 90 seconds) that:
-
-Opening (personalized):
-- Reference their specific vehicle interest
-- Acknowledge enquiry source
-- Create immediate rapport
-
-Qualification (soft):
-- When are they looking to buy?
-- Part-exchange situation?
-- Viewing/test drive this week?
-- Preferred contact method?
-
-Next Steps (concrete):
-- Specific appointment slots (today/tomorrow)
-- Alternative vehicles if unavailable
-- Finance pre-qualification offer
-- Direct phone number
-
-Tone: Enthusiastic, helpful, creates urgency without pressure.
-Length: 60-90 words
-Include: Your name, direct number, "I'm available now if you'd like to chat"
-
-UK English, automotive industry appropriate.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Customer Service</span>
-                    <h3>WhatsApp Business Auto-Response Builder</h3>
-                    <p class="description">Generates conversational WhatsApp responses that feel human while qualifying leads efficiently.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert WhatsApp Business messaging specialist.
-
-Message received: [PASTE MESSAGE]
-Business: [YOUR BUSINESS]
-Sender context: [NEW/RETURNING CUSTOMER]
-
-Create WhatsApp response that:
-
-Style requirements:
-- Conversational (like texting a friend)
-- Short messages (20-40 words max)
-- Use natural breaks (multiple messages OK)
-- No corporate language
-- Emoji where appropriate (1-2 max)
-
-Content structure:
-1. Acknowledge their message (specific reference)
-2. Ask ONE qualifying question
-3. Offer immediate help/next step
-
-Examples of good flow:
-"Hi Sarah! 👋 Saw you're interested in the Audi A4."
-"Quick question - are you looking to view this week or just gathering info?"
-"Either way, happy to help!"
-
-Think through:
-- What's the ONE thing we need to know first?
-- How can we sound helpful, not sales-y?
-- What immediate value can we offer?
-
-Provide response as 2-3 separate WhatsApp messages.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales Strategy</span>
-                    <h3>Pre-Call Research & Strategy Brief</h3>
-                    <p class="description">Analyzes available prospect information to create actionable call preparation briefs.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a sales preparation specialist.
-
-Prospect information:
-- Name/Company: [DETAILS]
-- Industry: [SECTOR]
-- Previous interactions: [ANY HISTORY]
-- Source: [HOW THEY FOUND US]
-- Available intel: [LINKEDIN/WEBSITE/NOTES]
-
-Create pre-call brief:
-
-SITUATION ANALYSIS:
-- What we know
-- What we don't know (need to discover)
-- Red flags or concerns
-
-CONVERSATION OBJECTIVES:
-- Primary goal (qualify/close/discovery)
-- Secondary goals
-- Questions to ask (prioritized)
-
-OPENING APPROACH:
-- Icebreaker/rapport building
-- Reference point (mutual connection, news, their situation)
-- Permission to proceed
-
-QUALIFICATION CHECKLIST:
-- Budget indicators
-- Decision authority
-- Timeline
-- Current solution/problem
-- Success criteria
-
-LIKELY OBJECTIONS:
-- Price concerns
-- Timing issues
-- Competitor comparisons
-Prepare responses for each
-
-CLOSING STRATEGY:
-- If qualified → next step
-- If not qualified → nurture approach
-
-Keep it scannable, actionable, 5-minute read max.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Business Strategy</span>
-                    <h3>Competitive Positioning Quick Reference</h3>
-                    <p class="description">Creates sales-ready battlecards for handling competitor comparisons in real-time.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a competitive intelligence strategist.
-
-Our product: [PRODUCT/SERVICE]
-Competitor: [COMPETITOR NAME]
-Context: [WHAT WE KNOW ABOUT THEM]
-
-Create sales battlecard:
-
-HEAD-TO-HEAD COMPARISON:
-
-What they'll say about us:
-- [List likely criticisms]
-Our response to each
-
-What we say about them:
-- Where they're genuinely strong (acknowledge it)
-- Where they fall short (evidence-based)
-- Hidden costs/limitations
-
-POSITIONING STATEMENTS:
-
-When price comes up:
-"While [Competitor] is [£X cheaper/more expensive], here's what that actually means..."
-
-When features compared:
-"Great question. [Competitor] does offer [feature], and here's how we approach that differently..."
-
-When they say "already using [Competitor]":
-"Many of our clients switched from [Competitor]. The top 3 reasons were..."
-
-TRAP QUESTIONS (what not to say):
-❌ Never badmouth directly
-❌ Never say "we're cheaper because..."
-❌ Never promise features we don't have
-
-DEAL-WINNING DIFFERENTIATORS:
-1. [Specific advantage with proof]
-2. [Specific advantage with proof]  
-3. [Specific advantage with proof]
-
-Make it printable, keep on desk during calls.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Customer Success</span>
-                    <h3>Proactive Health Check Message</h3>
-                    <p class="description">Creates non-sales health check messages that uncover issues before they become churn risks.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a customer success expert focused on retention.
-
-Customer context:
-- Account: [COMPANY]
-- Product: [WHAT THEY USE]
-- Tenure: [HOW LONG]
-- Usage pattern: [RECENT ACTIVITY]
-- Last contact: [WHEN]
-- Contract renewal: [DATE]
-
-Create health-check message:
-
-APPROACH:
-Make it about THEM, not us asking for anything.
-
-Structure:
-1. Specific reference (not generic)
-2. Genuine question about their results
-3. Offer proactive help
-4. Easy response mechanism
-
-Good example:
-"Hi Alex, noticed you've been using [feature] heavily this month. Curious - is it solving [specific problem] or are you working around something?"
-
-Bad example:
-"Hi, wanted to check in on how things are going. Let me know if you need anything!"
-
-Think through:
-- What would make them feel we're paying attention?
-- What would make them want to respond?
-- How can we uncover issues without seeming needy?
-
-Provide:
-- Email version (60-80 words)
-- LinkedIn message version (40-50 words)
-- Subject line
-
-Tone: Helpful consultant, not vendor checking boxes.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales</span>
-                    <h3>Price Objection Response Framework</h3>
-                    <p class="description">Transforms "too expensive" into value-based conversations with strategic questioning.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a pricing and value communication expert.
-
-Objection received: [PASTE THEIR PRICE CONCERN]
-Our pricing: [YOUR PRICE]
-Competitor pricing: [IF KNOWN]
-Context: [DEAL STAGE]
-
-Create response framework:
-
-STEP 1 - VALIDATE & CLARIFY:
-Never defend immediately. First understand.
-"I appreciate you being direct about that. Help me understand - when you say it's [expensive/outside budget/not worth it], what are you comparing it to?"
-
-STEP 2 - REFRAME THE CONVERSATION:
-Shift from cost to value/risk/total cost.
-
-If comparing to competitor:
-"Makes sense. The [£X] difference breaks down to [£Y/month]. Given [specific value we provide], how do you see that impacting [their key metric]?"
-
-If comparing to doing nothing:
-"Fair question. What's your current [situation] costing you in [time/revenue/efficiency]? Let's see if the ROI makes sense..."
-
-If comparing to internal solution:
-"Understood. What's your internal team's capacity cost for maintaining this? And what happens if [key person] leaves?"
-
-STEP 3 - TRIAL CLOSE:
-"If we can show this pays for itself within [timeframe], would pricing still be the blocker?"
-
-STEP 4 - OPTIONS:
-If still stuck, provide:
-- Payment terms
-- Phased approach
-- ROI guarantee
-- Starter package
-
-Provide full response script (120-150 words) that sounds conversational.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Productivity</span>
-                    <h3>Post-Meeting Action Email Generator</h3>
-                    <p class="description">Converts meeting notes into clear recap emails that prevent "I thought you were doing that" situations.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at meeting follow-up communication.
-
-Meeting context:
-- Attendees: [WHO]
-- Date: [WHEN]
-- Purpose: [WHY]
-- Notes: [PASTE RAW NOTES]
-
-Create recap email:
-
-STRUCTURE:
-
-Subject: [Meeting Type] Recap: [Main Topic] - Action Items
-
-Opening:
-"Thanks for [specific positive from meeting]. Quick recap of what we covered and next steps:"
-
-DECISIONS MADE:
-List clearly with context (what and why)
-
-ACTION ITEMS:
-Format as table:
-| Action | Owner | Deadline | Status |
-
-For each action:
-- Be specific (not "research options" but "get 3 quotes from vendors A, B, C")
-- Single owner (no "team" or "we")
-- Actual date (not "soon")
-- Dependencies noted
-
-OPEN QUESTIONS:
-What needs clarification
-
-NEXT MEETING:
-- Proposed date/time
-- Agenda preview
-
-PARKING LOT:
-Deferred items for later
-
-TONE:
-- Collaborative, not dictatorial
-- Assumes good intent
-- Creates accountability without blame
-
-Length: Under 200 words
-Make it skim-friendly with clear formatting.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Marketing</span>
-                    <h3>Customer Testimonial Request Email</h3>
-                    <p class="description">Gets high-quality testimonials by making it easy and specific for customers to respond.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at gathering compelling customer testimonials.
-
-Customer context:
-- Name: [CUSTOMER]
-- Company: [COMPANY]
-- What they bought: [PRODUCT/SERVICE]
-- Results achieved: [METRICS IF KNOWN]
-- Relationship: [HOW LONG, HOW WELL]
-
-Create testimonial request:
-
-APPROACH:
-Make it easy, specific, and valuable for them too.
-
-Email structure:
-
-Subject: Quick question about [specific result]
-
-Body:
-1. Acknowledge their success (specific)
-2. Explain why you're asking (mutual benefit)
-3. Make it stupid simple (provide questions, not blank canvas)
-4. Show how it helps them (exposure, industry authority)
-5. Respect their time (10 minutes max)
-
-GOOD QUESTIONS TO INCLUDE:
-- What problem were you trying to solve?
-- Why did you choose us over [alternatives]?
-- What result surprised you most?
-- What would you tell someone considering this?
-
-MAKE IT EASY:
-"Feel free to just reply to these bullet points, I'll polish the language"
-
-INCENTIVE (without being transactional):
-"Happy to feature you on [platform], link to [their site], or just say thanks with [appropriate gesture]"
-
-Provide:
-- Email (100-120 words)
-- Follow-up if no response (60 words)
-- Thank you response when received
-
-Tone: Appreciative colleague, not needy vendor.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales</span>
-                    <h3>Multi-Touch Cold Outreach Campaign</h3>
-                    <p class="description">Creates a strategic 5-touch sequence that builds familiarity without being annoying.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert cold outreach strategist focused on B2B.
-
-Target prospect:
-- Name/Title: [DETAILS]
-- Company: [COMPANY]
-- Industry: [SECTOR]
-- Pain point we solve: [SPECIFIC PROBLEM]
-- Trigger event: [WHY NOW - funding, growth, news, hire]
-
-Create 5-touch sequence (7 days):
-
-TOUCH 1 (Day 1) - Email:
-Subject: [Specific observation about their company]
-Body: 60 words max
-- Relevant observation (not about us)
-- One question (about them)
-- Easy response mechanism
-NO PITCH YET
-
-TOUCH 2 (Day 3) - LinkedIn:
-- Comment on their recent post OR
-- Send connection request with custom note (200 char)
-Reference the email casually
-
-TOUCH 3 (Day 5) - Email:
-Subject: Quick follow-up
-- Assume they're busy (not ignoring)
-- Add ONE piece of value (insight, data, example)
-- Soft pitch (one sentence)
-- Clear CTA
-
-TOUCH 4 (Day 6) - LinkedIn Message:
-If connected, send:
-- "Saw you're active on LinkedIn"
-- Share relevant content
-- No ask
-
-TOUCH 5 (Day 7) - Breakup Email:
-Subject: Closing the loop
-- Acknowledge no response
-- Make it about them (timing, priority)
-- Last easy out ("one word reply")
-- Permission to follow up later
-
-PRINCIPLES:
-- Value in every touch
-- Multiple channels
-- Respect their time
-- Make it easy to respond
-
-Provide all 5 touches ready to use.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Content Creation</span>
-                    <h3>Problem-Agitate-Solve Copy Framework</h3>
-                    <p class="description">Uses classic PAS formula to create compelling marketing copy that drives action.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert copywriter specializing in the Problem-Agitate-Solve framework.
-
-Context:
-- Target audience: [WHO]
-- Problem they face: [SPECIFIC PROBLEM]
-- Our solution: [PRODUCT/SERVICE]
-- Desired action: [WHAT WE WANT THEM TO DO]
-
-Create PAS copy:
-
-PROBLEM (Identify):
-State the problem clearly. Make it specific and recognizable.
-"You're spending [X hours] doing [frustrating task] that [consequence]"
-
-AGITATE (Amplify):
-Make the pain visceral. Show the real cost.
-
-Emotional cost:
-- Frustration
-- Embarrassment
-- Fear
-- Lost opportunity
-
-Financial cost:
-- Money wasted
-- Revenue lost
-- Hidden expenses
-
-Time cost:
-- Hours burned
-- Missed deadlines
-- Opportunity cost
-
-Use concrete examples:
-"Last week you stayed until 8pm doing [task]. The week before, you did [consequence]. How long can you keep doing this?"
-
-SOLVE (Resolution):
-Present solution as the bridge from pain to relief.
-
-What life looks like with solution:
-- Specific time saved
-- Specific money saved
-- Specific stress relieved
-
-Make it tangible:
-"Imagine [specific scenario where problem is solved]"
-
-Call to action:
-- Clear next step
-- Remove friction
-- Create urgency (without false scarcity)
-
-Length: 150-200 words
-Tone: Empathetic but direct. We understand the pain because we solved it.
-
-Provide final copy ready to use.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Sales</span>
-                    <h3>Proactive Objection Handling in Pitch</h3>
-                    <p class="description">Addresses common objections before they're raised, building trust and credibility.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at preemptive objection handling.
-
-Context:
-- Prospect type: [INDUSTRY/SIZE]
-- Common objections: [LIST]
-- Our pitch focus: [MAIN MESSAGE]
-
-Strategy for each objection:
-
-For "Too expensive":
-BEFORE they say it:
-"You're probably wondering about ROI. Here's why clients in [industry] see payback in [timeframe]..."
-
-For "Need to think about it":
-BEFORE they say it:
-"I know this seems like a lot to process. The three questions everyone asks themselves are..."
-
-For "Happy with current solution":
-BEFORE they say it:
-"Most of our clients were using [competitor/internal solution] before. Here's what changed their mind..."
-
-For "Not the right time":
-BEFORE they say it:
-"Timing matters. Here's why [clients] who started in [situation] actually had an advantage..."
-
-FRAMEWORK:
-
-Acknowledge the elephant:
-"Let's address the obvious question..."
-
-Show you understand:
-"Every [role] asks this, and for good reason..."
-
-Provide evidence:
-"Here's what [specific example] found..."
-
-Make it about them:
-"In your case, with [their situation]..."
-
-Invite dialogue:
-"What questions does that raise for you?"
-
-Create script that weaves 2-3 major objections into natural pitch flow.
-Length: 80-100 words per objection
-Tone: Confident consultant, not defensive vendor
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Growth</span>
-                    <h3>Strategic Referral Request Framework</h3>
-                    <p class="description">Gets warm introductions without sounding desperate or transactional.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at generating customer referrals authentically.
-
-Customer context:
-- Name: [CUSTOMER]
-- Success with product: [RESULTS]
-- Relationship strength: [STRONG/GOOD/DEVELOPING]
-- Their network: [INDUSTRY/ROLE CONNECTIONS]
-
-Create referral request approach:
-
-TIMING (when to ask):
-✅ Right after major win
-✅ Unprompted positive feedback
-✅ Renewal/expansion
-❌ During onboarding
-❌ When they have issues
-
-APPROACH:
-
-Step 1 - Acknowledge their success:
-"The results you're seeing with [specific metric] are exactly what we built this for. Can I ask you something?"
-
-Step 2 - Make it specific, not generic:
-DON'T: "Know anyone who could use this?"
-DO: "Who in your network is dealing with [specific problem you solved]?"
-
-Step 3 - Lower the barrier:
-"I'm not asking for an introduction yet - just curious if this resonates with challenges you hear about from [peers/colleagues]?"
-
-Step 4 - Make introduction easy:
-"If someone comes to mind, would it be OK if I sent you a 2-sentence blurb you could forward? No pressure, just makes it easy if it comes up naturally."
-
-Step 5 - Offer value exchange:
-"Happy to do the same if you ever need [relevant introduction/resource]."
-
-FOLLOW-UP:
-If they agree:
-- Send the forwardable blurb within 1 hour
-- Make it about the prospect, not you
-- Give your customer credit
-- Never follow up more than once
-
-Provide:
-- Initial ask (60 words)
-- Forwardable blurb (40 words)
-- Thank you response
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Marketing</span>
-                    <h3>Customer-Centric Value Prop Generator</h3>
-                    <p class="description">Transforms feature-focused messaging into compelling customer benefit statements.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert value proposition strategist.
-
-Current messaging: [PASTE YOUR CURRENT VALUE PROP]
-Target customer: [WHO]
-What you actually do: [PRODUCT/SERVICE]
-
-Refine using framework:
-
-TRANSLATE FEATURES TO BENEFITS:
-For each feature:
-- Feature: What it is
-- Benefit: What it does
-- Value: Why it matters
-
-Example:
-❌ "AI-powered lead scoring"
-✅ "Your sales team only touches buyers who are ready to buy"
-
-CUSTOMER OUTCOME FOCUS:
-
-Before state:
-- What's their current situation?
-- What's painful about it?
-- What's the cost of continuing?
-
-After state:
-- What changes?
-- How does it feel?
-- What becomes possible?
-
-VALUE PROP FORMULA:
-
-We help [specific customer]
-Achieve [specific outcome]
-By [specific mechanism]
-Unlike [alternative]
-Because [unique advantage]
-
-TEST IT:
-
-Can prospect explain it back in own words?
-Does it answer "why should I care"?
-Is it specific enough to be believable?
-Does it differentiate from competitors?
-
-Provide:
-- Refined value prop (25 words)
-- Supporting proof points (3 bullets)
-- Elevator pitch version (60 seconds)
-
-Avoid:
-- Jargon
-- Superlatives without proof
-- Generic benefits anyone could claim
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Communication</span>
-                    <h3>Customer Issue Response Framework</h3>
-                    <p class="description">Handles customer complaints and service issues with empathy and efficiency.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a crisis communication expert for customer service.
-
-Situation:
-- Customer: [NAME]
-- Issue: [WHAT WENT WRONG]
-- Impact on them: [CONSEQUENCES]
-- Our fault? [YES/NO/PARTIAL]
-- History with customer: [CONTEXT]
-
-Create response:
-
-IMMEDIATE RESPONSE (within 1 hour):
-
-Step 1 - Acknowledge (don't defend):
-"I've just seen what happened with [specific issue]. That's not OK."
-
-Step 2 - Show you understand impact:
-"I know this means [specific consequence for them]. That's on us."
-
-Step 3 - Take ownership (even if not entirely our fault):
-"Here's what I'm doing right now to fix this..."
-
-Step 4 - Timeline & accountability:
-"You'll hear from me by [specific time] with [specific update]."
-
-DON'T SAY:
-❌ "Unfortunately..."
-❌ "Sorry for any inconvenience"
-❌ "As per our policy..."
-❌ "Let me check with my team"
-
-DO SAY:
-✅ "This is unacceptable"
-✅ "Here's exactly what I'm doing"
-✅ "You have my direct number"
-✅ "This won't happen again because..."
-
-FOLLOW-UP RESPONSE:
-
-Update with:
-- What we found
-- What we fixed
-- What we're changing to prevent recurrence
-- What we're doing to make it right
-
-RECOVERY OFFER:
-Match to severity:
-- Minor: sincere apology
-- Moderate: credit/discount
-- Major: refund + compensation
-- Severe: full refund + future service credit
-
-Provide:
-- Initial response (80 words)
-- Follow-up response (120 words)
-- Prevention explanation (60 words)
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Personal Branding</span>
-                    <h3>LinkedIn Profile Conversion Optimizer</h3>
-                    <p class="description">Transforms LinkedIn profiles from resume format to lead generation asset.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a LinkedIn profile optimization expert.
-
-Current profile: [PASTE CURRENT ABOUT/HEADLINE]
-Target audience: [WHO SHOULD CONTACT YOU]
-Goal: [INBOUND LEADS/PARTNERSHIPS/JOBS]
-
-Optimize for conversion:
-
-HEADLINE FORMULA:
-❌ "Marketing Manager at Company X"
-✅ "I help [target] achieve [outcome] | [credibility indicator]"
-
-Example: "I help B2B SaaS companies convert 3x more trials | Ex-Salesforce | £50M+ pipeline generated"
-
-ABOUT SECTION STRUCTURE:
-
-Hook (first 2 lines visible):
-Make them want to click "see more"
-- Surprising stat
-- Bold claim with proof
-- Specific problem you solve
-
-Story (personal):
-- Where you started
-- What you learned
-- Why you do this now
-
-Value Prop (professional):
-- Who you help
-- How you help them
-- What makes your approach different
-
-Social Proof:
-- Results (quantified)
-- Notable clients/companies
-- Awards/recognition
-
-Call to Action:
-- Who should reach out
-- What to reach out about
-- How to reach out (email, DM, calendar link)
-
-FEATURED SECTION:
-Add:
-- Case studies
-- Best content
-- Lead magnet
-- Calendar link
-
-OPTIMIZE FOR SEARCH:
-Keywords to include (naturally):
-- Industry terms
-- Role titles (of who hires you)
-- Problems you solve
-- Methods you use
-
-Provide:
-- Optimized headline
-- Optimized about section (250 words)
-- 5 featured content ideas
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Customer Success</span>
-                    <h3>Executive QBR Presentation Builder</h3>
-                    <p class="description">Creates data-driven quarterly business reviews that demonstrate value and identify expansion.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at customer success and executive communication.
-
-Account context:
-- Company: [NAME]
-- Product usage: [WHAT THEY USE]
-- Quarter: [Q#]
-- Key stakeholders: [WHO ATTENDS]
-- Contract value: [IF KNOWN]
-- Renewal date: [WHEN]
-
-Create QBR structure:
-
-SLIDE 1 - EXECUTIVE SUMMARY:
-- Quarter highlights (3 bullets)
-- Key metrics (4 numbers)
-- Looking ahead (1 major opportunity)
-
-SLIDE 2 - USAGE & ADOPTION:
-- Activity trends (visualize)
-- Feature adoption (what they use vs available)
-- User engagement (active users, frequency)
-- Comparison to peers (anonymized benchmarks)
-
-SLIDE 3 - BUSINESS IMPACT:
-Translate usage into business outcomes:
-- Time saved: [X hours/week]
-- Cost reduced: [£Y saved on...]
-- Revenue enabled: [Z deals influenced]
-- Efficiency gained: [% improvement in...]
-
-SLIDE 4 - SUCCESS STORIES:
-2-3 specific wins:
-- Situation
-- Action
-- Result
-- Quote (if available)
-
-SLIDE 5 - OPTIMIZATION OPPORTUNITIES:
-3 underutilized features that could drive more value:
-- Feature name
-- Potential benefit for them
-- Quick start guide
-
-SLIDE 6 - ROADMAP PREVIEW:
-Upcoming features they care about:
-- What's coming
-- When it ships
-- Why it matters to them
-- Beta access opportunity
-
-SLIDE 7 - NEXT QUARTER GOALS:
-Co-created objectives:
-- What they want to achieve
-- How we'll support it
-- Success metrics
-- Checkpoints
-
-SPEAKING NOTES:
-For each slide, provide:
-- Key message (what to emphasize)
-- Potential questions (and answers)
-- Transition to next slide
-
-Avoid:
-- Feature lists
-- Generic metrics
-- "Us" language (make it about them)
-- Surprises (pre-wire anything sensitive)
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Product Marketing</span>
-                    <h3>Customer Feature Launch Communication</h3>
-                    <p class="description">Announces new features in a way that drives adoption, not confusion.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a product marketing expert focused on feature adoption.
-
-Feature context:
-- Feature name: [NAME]
-- What it does: [FUNCTIONALITY]
-- Who it's for: [USER TYPE]
-- Why we built it: [PROBLEM SOLVED]
-- Availability: [WHEN/WHO]
-
-Create launch communication:
-
-EMAIL ANNOUNCEMENT:
-
-Subject line options (test 2-3):
-- Benefit-focused: "Now you can [outcome] in [time]"
-- Curiosity: "The #1 requested feature is here"
-- Specific: "[Feature] launches today - here's why it matters"
-
-Email body:
-
-Hook (first line):
-Make them want to read more.
-"You've been doing [tedious task] manually. Not anymore."
-
-What it is (one sentence):
-Simple explanation a non-technical person understands.
-
-Why it matters:
-- Problem it solves
-- Time it saves
-- Money it makes/saves
-- Frustration it removes
-
-Who should use it:
-"If you [do X] or [have Y problem], this changes everything for you."
-
-How to get started:
-3 steps maximum:
-1. [Action]
-2. [Action]
-3. [Action]
-
-Support resources:
-- Video walkthrough (2 min)
-- Help doc link
-- Live demo session (if applicable)
-
-CTA:
-Single, clear action.
-
-AVOID:
-❌ Technical jargon
-❌ Every feature detail
-❌ Multiple CTAs
-❌ "Excited to announce" (show don't tell)
-
-IN-APP NOTIFICATION:
-
-For users who didn't read email:
-- 20 words max
-- Clear benefit
-- One-click access
-- Dismissable
-
-FOLLOW-UP (7 days later):
-
-To users who haven't tried it:
-- Subject: "Quick question about [feature]"
-- "Noticed you haven't tried [feature] yet - totally fine! Curious if it's because:"
-- A) Don't need it
-- B) Not clear what it does
-- C) Want to but haven't had time
-- "One-word reply helps us make this better"
-
-Provide full email, in-app message, follow-up.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Recruitment</span>
-                    <h3>High-Converting Job Description Writer</h3>
-                    <p class="description">Creates job posts that attract top candidates and filter out poor fits.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a hiring and recruitment marketing expert.
-
-Role context:
-- Position: [TITLE]
-- Team: [DEPARTMENT]
-- Reports to: [ROLE]
-- Location: [WHERE/REMOTE POLICY]
-- Company stage: [STARTUP/GROWTH/ENTERPRISE]
-
-Create job description:
-
-STRUCTURE:
-
-Hook (first 2 sentences):
-Not "We're hiring X"
-Instead: "If you [specific skill], you've probably [specific frustration]. We're solving it."
-
-The Challenge (not "responsibilities"):
-"In this role you'll tackle:"
-- [Specific problem] by [specific approach]
-- [Specific problem] by [specific approach]
-- [Specific problem] by [specific approach]
-
-Use concrete examples:
-❌ "Manage customer relationships"
-✅ "Turn angry customers into advocates when product breaks at 3am"
-
-You're Great If (not "requirements"):
-"You might be perfect for this if you:"
-- [Specific experience or approach]
-- [Specific skill or mindset]
-- [Specific achievement or habit]
-
-Mix must-haves with nice-to-haves transparently.
-
-You're Not a Fit If:
-Be honest about dealbreakers:
-- "If you need [thing we can't offer]"
-- "If you don't like [aspect of role]"
-- "If you expect [unrealistic expectation]"
-
-What We Offer:
-Beyond compensation:
-- Career growth path
-- Learning opportunities
-- Team culture specifics
-- Unique benefits
-
-Make it specific, not generic:
-❌ "Competitive salary"
-✅ "£X-Y base + equity that vests monthly from day 1"
-
-The Process:
-Transparency builds trust:
-1. [Step] - [Timeframe]
-2. [Step] - [Timeframe]
-3. [Step] - [Timeframe]
-"Whole process: [X weeks] from application to offer"
-
-How to Apply:
-Make it easy but filter quality:
-"Send to [email]:
-1. Your CV
-2. 2-3 sentences on why this specific role
-3. Link to work you're proud of"
-
-TONE:
-- Honest about challenges
-- Specific about expectations
-- Excited but not hyperbolic
-- Inclusive without corporate speak
-
-Length: 300-400 words
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Content Marketing</span>
-                    <h3>Multi-Platform Content Atomizer</h3>
-                    <p class="description">Transforms one piece of long-form content into multiple platform-specific pieces.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a content repurposing strategist.
-
-Source content: [PASTE BLOG POST/ARTICLE/VIDEO TRANSCRIPT]
-Original format: [BLOG/VIDEO/PODCAST/WEBINAR]
-Length: [WORD COUNT/DURATION]
-
-Extract and repurpose:
-
-IDENTIFY CORE THEMES:
-- Main thesis (one sentence)
-- Supporting points (3-5)
-- Best examples/stories
-- Surprising data/insights
-- Quotable moments
-
-REPURPOSE FOR EACH PLATFORM:
-
-LINKEDIN POST (150-200 words):
-- Hook (stop scroll)
-- Story or insight
-- Lesson or framework
-- Engagement question
-Include: Line breaks, no emoji spam
-
-TWITTER THREAD (8-10 tweets):
-- Tweet 1: Hook + promise
-- Tweets 2-8: One idea per tweet
-- Tweet 9: Summary
-- Tweet 10: CTA
-Keep each under 280 chars
-
-INSTAGRAM CAROUSEL (6-8 slides):
-- Slide 1: Eye-catching headline
-- Slides 2-7: One concept per slide
-- Slide 8: CTA
-Caption: 150 words with story
-
-EMAIL NEWSLETTER (200 words):
-- Subject line
-- Personal opening
-- Main insight
-- Why it matters now
-- One clear CTA
-
-YOUTUBE SHORT / TIKTOK (60 seconds):
-Script format:
-- 0-3s: Hook (pattern interrupt)
-- 3-15s: Setup (problem/question)
-- 15-45s: Payoff (answer/solution)
-- 45-60s: CTA
-Include: Visual cues, text overlay suggestions
-
-QUOTE GRAPHICS (3-5):
-- Pull best soundbites
-- Add context if needed
-- Format for readability
-
-Provide all formats ready to publish.
-Maintain core message but optimize for each platform's algorithm and audience.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Customer Success</span>
-                    <h3>Product Onboarding Email Sequence Builder</h3>
-                    <p class="description">Creates automated welcome sequences that drive activation and prevent early churn.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a customer onboarding expert focused on activation.
-
-Product context:
-- What it does: [PRODUCT]
-- Target user: [WHO]
-- Key "aha moment": [WHEN THEY GET IT]
-- Activation metric: [WHAT DEFINES SUCCESS]
-- Time to value: [HOW LONG TO FIRST WIN]
-
-Create 5-email onboarding sequence:
-
-EMAIL 1 (Day 0 - Immediate):
-Subject: Welcome to [Product] - Start here
-
-Purpose: Set expectations, quick win
-
-Content:
-- Welcome (personal)
-- What to expect (roadmap next 7 days)
-- Quick action (5-minute win)
-- Support availability
-- "Reply with questions" invitation
-
-CTA: Complete [simplest valuable action]
-
-EMAIL 2 (Day 1):
-Subject: [Personal] here - did you [action from Email 1]?
-
-Purpose: Check progress, offer help
-
-Content:
-- Reference their signup context
-- Acknowledge if they did/didn't complete action
-- Share one tip to make it easier
-- Success story (quick example)
-
-CTA: Next logical step
-
-EMAIL 3 (Day 3):
-Subject: Most people miss this [feature]
-
-Purpose: Drive to "aha moment"
-
-Content:
-- The overlooked feature that creates breakthrough
-- Why it matters (specific benefit)
-- 3-step guide
-- Video walkthrough (2 min)
-- What to do after they try it
-
-CTA: Try the feature
-
-EMAIL 4 (Day 5):
-Subject: Quick question about your [goal]
-
-Purpose: Personalize, prevent drop-off
-
-Content:
-- Ask about their specific goal
-- Show how current features support it
-- Identify what might be blocking them
-- Offer specific help
-
-CTA: Reply with biggest question/blocker
-
-EMAIL 5 (Day 7):
-Subject: Your first week with [Product]
-
-Purpose: Celebrate progress, plan next step
-
-Content:
-- Recap what they've accomplished
-- Show them their progress/metrics
-- Preview what's possible next
-- Invite to community/resources
-- Introduce human support
-
-CTA: Book 15-min success call OR join community
-
-THROUGHOUT SEQUENCE:
-
-Track and branch:
-- If completed activation -> Success path
-- If stuck -> Help path
-- If inactive -> Re-engagement path
-
-Personalization variables:
-- Use case they selected
-- Role/industry
-- Company size
-- Signup source
-
-Tone: Helpful coach, not pushy vendor
-
-Provide all 5 emails with:
-- Subject lines
-- Full body copy
-- CTAs
-- Trigger logic
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Automotive Sales</span>
-                    <h3>Car Dealership Lead Qualifier</h3>
-                    <p class="description">Instantly qualify incoming vehicle enquiries by extracting buyer intent, urgency, budget signals, and next-step recommendations for sales teams.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are an expert at qualifying automotive sales leads for UK dealerships.
-
-Analyze this enquiry:
-[PASTE ENQUIRY TEXT]
-
-Extract and score:
-
-1. URGENCY (0-10):
-- Timeline mentioned? (today, this week, just browsing)
-- Situation urgency? (current car died, lease ending, accident)
-- Language intensity? (need, must have, considering)
-
-2. BUDGET READINESS (0-10):
-- Specific price mentioned?
-- Finance/PCP keywords?
-- Trade-in mentioned?
-- Down payment indicators?
-
-3. DECISION AUTHORITY (0-10):
-- Solo decision or family/partner involved?
-- Researching vs ready to buy?
-- Asking questions vs requesting to view?
-
-4. VEHICLE MATCH (0-10):
-- Specific model or browsing?
-- Requirements clear? (size, features, fuel type)
-- Alternatives acceptable?
-
-5. CONTACT QUALITY (0-10):
-- Full name + phone + email?
-- Local area?
-- Best contact time mentioned?
-
-Provide:
-- Overall lead score (0-10)
-- Priority: HOT/WARM/COLD
-- Recommended response: [Immediate call / Personalized email / Auto-response]
-- Key talking points for sales team
-- Red flags if any
-
-Format as actionable brief for sales team.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Business Strategy</span>
-                    <h3>Competitor Analysis Framework</h3>
-                    <p class="description">Comprehensive competitive analysis for dealerships. Identify gaps in competitor offerings and find opportunities to differentiate your dealership.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are analyzing competitive positioning for a UK car dealership.
-
-My dealership: [NAME, LOCATION, BRANDS]
-Key competitors: [LIST 3-5 COMPETITORS]
-
-Analyze across these dimensions:
-
-1. DIGITAL PRESENCE:
-- Website UX and speed
-- Lead capture methods
-- Response time (call their sales number, submit enquiry)
-- Social media activity
-
-2. INVENTORY & PRICING:
-- Stock levels and variety
-- Pricing vs market average
-- Special offers/promotions
-- Finance options advertised
-
-3. CUSTOMER EXPERIENCE:
-- Google reviews (count, rating, response rate)
-- Trustpilot presence
-- Mystery shop insights
-- Delivery/handover process
-
-4. MARKETING CHANNELS:
-- AutoTrader presence
-- Facebook/Instagram ads
-- Local marketing (signage, events)
-- Referral programs
-
-5. OPERATIONAL GAPS:
-- Hours of operation
-- Weekend availability
-- Home delivery options
-- After-hours enquiry handling
-
-Provide:
-1. Competitive positioning matrix
-2. Three biggest opportunities they're missing
-3. Quick wins to differentiate
-4. Long-term strategic moves
-
-Focus on actionable gaps we can exploit.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Operations</span>
-                    <h3>Process Optimization Audit</h3>
-                    <p class="description">Identify bottlenecks and inefficiencies in your dealership operations. Get specific recommendations to improve conversion rates and reduce costs.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a dealership operations consultant analyzing workflow efficiency.
-
-Current process I want to optimize:
-[DESCRIBE PROCESS - e.g., "enquiry to test drive booking"]
-
-Provide detailed analysis:
-
-STEP 1: MAP CURRENT STATE
-- Break down every step in the process
-- Identify all handoffs between people/systems
-- Note where data is entered/transferred
-- Mark decision points
-
-STEP 2: IDENTIFY FRICTION
-For each step, assess:
-- Time required (manual vs automated)
-- Error rate (missing data, wrong routing)
-- Handoff delays (waiting for next person)
-- Customer drop-off points
-
-STEP 3: CALCULATE IMPACT
-- How many enquiries/month through this process?
-- Current conversion rate at each step?
-- Revenue per successful conversion?
-- Cost of current process (staff time, tools)?
-
-STEP 4: REDESIGN OPTIMAL FLOW
-- Which steps can be automated?
-- Which can be eliminated entirely?
-- Which need better handoffs?
-- Where to add checkpoints?
-
-STEP 5: IMPLEMENTATION ROADMAP
-Priority 1 (Immediate - no tech needed):
-[Quick wins]
-
-Priority 2 (Short-term - simple automation):
-[1-4 week projects]
-
-Priority 3 (Long-term - system changes):
-[Strategic investments]
-
-Expected impact:
-- Conversion rate improvement: X%
-- Time saved per enquiry: X minutes
-- Annual revenue impact: £X
-
-Provide specific, actionable recommendations with ROI estimates.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Marketing</span>
-                    <h3>High-Converting Ad Copy Generator</h3>
-                    <p class="description">Create compelling Facebook, Google, and AutoTrader ads that drive quality enquiries. Optimized for UK automotive market with proven frameworks.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a direct response copywriter specializing in UK automotive advertising.
-
-Campaign brief:
-- Platform: [Facebook/Google/AutoTrader]
-- Vehicle: [SPECIFIC MODEL OR CATEGORY]
-- Target audience: [AGE, INCOME, LOCATION, SITUATION]
-- Key differentiator: [PRICE/STOCK/FINANCE/SERVICE]
-- Goal: [ENQUIRIES/SHOWROOM VISITS/CALLS]
-
-Create 3 ad variations using proven frameworks:
-
-AD 1 - PROBLEM/AGITATE/SOLVE:
-Hook: Start with their pain point
-Agitate: Make the problem real and urgent
-Solve: Position your offer as the solution
-
-AD 2 - BEFORE/AFTER/BRIDGE:
-Before: Their current frustrating situation
-After: The better outcome they want
-Bridge: How you get them there (your offer)
-
-AD 3 - FEATURES/ADVANTAGES/BENEFITS:
-Feature: What the vehicle/deal includes
-Advantage: Why that feature matters
-Benefit: The emotional/practical outcome
-
-For each ad provide:
-- Headline (max 40 chars)
-- Primary text (125-150 words)
-- Call-to-action button text
-- Expected click-through rate benchmark
-
-Include:
-- Urgency element (limited stock, offer ending)
-- Social proof (reviews, years in business)
-- Risk reversal (test drive, no obligation)
-- Clear next step (call, enquire, visit)
-
-UK English. Conversational but professional. Focus on buyer benefits not features.
-                    </div>
-                </div>
-
-                <div class="prompt-card">
-                    <span class="category">Finance & Pricing</span>
-                    <h3>Deal Structure Optimizer</h3>
-                    <p class="description">Structure attractive vehicle deals that maximize profit while meeting customer budget. Calculate PCP, HP, and cash scenarios with clear presentations.</p>
-                    <div class="prompt-text">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
-You are a finance expert helping structure vehicle deals for UK customers.
-
-Deal parameters:
-- Vehicle price: £[AMOUNT]
-- Target customer budget: £[MONTHLY OR TOTAL]
-- Trade-in value: £[AMOUNT] (if applicable)
-- Deposit available: £[AMOUNT]
-- Credit profile: [EXCELLENT/GOOD/FAIR/BUILDING]
-- Usage: [ANNUAL MILEAGE]
-
-Create 3 deal structures:
-
-OPTION 1: PCP (Personal Contract Purchase)
-- Deposit: [AMOUNT]
-- Monthly: [AMOUNT] over [TERM]
-- Final balloon: [AMOUNT]
-- Total interest: [AMOUNT]
-- Cost per mile: [CALCULATE]
-- End-of-term options explained
-
-OPTION 2: Hire Purchase
-- Deposit: [AMOUNT]
-- Monthly: [AMOUNT] over [TERM]
-- Total interest: [AMOUNT]
-- Ownership timeline
-- Best for: [CUSTOMER TYPE]
-
-OPTION 3: Cash/Alternative
-- Discounted cash price
-- Reduced warranty/service bundle
-- Benefits vs finance
-- Negotiation room
-
-For each option, explain:
-- Who it's best suited for
-- Hidden costs to highlight upfront
-- Comparison to competitors
-- Approval likelihood
-- Upsell opportunities (GAP, warranty, service plan)
-
-Present in customer-friendly language that builds confidence and closes deals.
-
-Include script for presenting options:
-"Let me show you three ways to get into this vehicle..."
-                    </div>
-                </div>
-
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
             </div>
+
+            <div class="prompt-card">
+                <span class="category">Automotive Sales</span>
+                <h3>Instant Lead Response Generator</h3>
+                <p class="description">Creates personalized, urgent first responses to automotive enquiries that qualify buyers and book appointments.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert automotive sales responder specializing in immediate engagement.
+
+                    Lead details:
+                    - Name: [NAME]
+                    - Vehicle interest: [MAKE/MODEL]
+                    - Enquiry source: [AUTOTRADER/WEBSITE/FACEBOOK]
+                    - Message: [PASTE THEIR ENQUIRY]
+                    - Time received: [TIMESTAMP]
+
+                    Create instant response (within 90 seconds) that:
+
+                    Opening (personalized):
+                    - Reference their specific vehicle interest
+                    - Acknowledge enquiry source
+                    - Create immediate rapport
+
+                    Qualification (soft):
+                    - When are they looking to buy?
+                    - Part-exchange situation?
+                    - Viewing/test drive this week?
+                    - Preferred contact method?
+
+                    Next Steps (concrete):
+                    - Specific appointment slots (today/tomorrow)
+                    - Alternative vehicles if unavailable
+                    - Finance pre-qualification offer
+                    - Direct phone number
+
+                    Tone: Enthusiastic, helpful, creates urgency without pressure.
+                    Length: 60-90 words
+                    Include: Your name, direct number, "I'm available now if you'd like to chat"
+
+                    UK English, automotive industry appropriate.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Customer Service</span>
+                <h3>WhatsApp Business Auto-Response Builder</h3>
+                <p class="description">Generates conversational WhatsApp responses that feel human while qualifying leads efficiently.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert WhatsApp Business messaging specialist.
+
+                    Message received: [PASTE MESSAGE]
+                    Business: [YOUR BUSINESS]
+                    Sender context: [NEW/RETURNING CUSTOMER]
+
+                    Create WhatsApp response that:
+
+                    Style requirements:
+                    - Conversational (like texting a friend)
+                    - Short messages (20-40 words max)
+                    - Use natural breaks (multiple messages OK)
+                    - No corporate language
+                    - Emoji where appropriate (1-2 max)
+
+                    Content structure:
+                    1. Acknowledge their message (specific reference)
+                    2. Ask ONE qualifying question
+                    3. Offer immediate help/next step
+
+                    Examples of good flow:
+                    "Hi Sarah! 👋 Saw you're interested in the Audi A4."
+                    "Quick question - are you looking to view this week or just gathering info?"
+                    "Either way, happy to help!"
+
+                    Think through:
+                    - What's the ONE thing we need to know first?
+                    - How can we sound helpful, not sales-y?
+                    - What immediate value can we offer?
+
+                    Provide response as 2-3 separate WhatsApp messages.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Sales Strategy</span>
+                <h3>Pre-Call Research & Strategy Brief</h3>
+                <p class="description">Analyzes available prospect information to create actionable call preparation briefs.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a sales preparation specialist.
+
+                    Prospect information:
+                    - Name/Company: [DETAILS]
+                    - Industry: [SECTOR]
+                    - Previous interactions: [ANY HISTORY]
+                    - Source: [HOW THEY FOUND US]
+                    - Available intel: [LINKEDIN/WEBSITE/NOTES]
+
+                    Create pre-call brief:
+
+                    SITUATION ANALYSIS:
+                    - What we know
+                    - What we don't know (need to discover)
+                    - Red flags or concerns
+
+                    CONVERSATION OBJECTIVES:
+                    - Primary goal (qualify/close/discovery)
+                    - Secondary goals
+                    - Questions to ask (prioritized)
+
+                    OPENING APPROACH:
+                    - Icebreaker/rapport building
+                    - Reference point (mutual connection, news, their situation)
+                    - Permission to proceed
+
+                    QUALIFICATION CHECKLIST:
+                    - Budget indicators
+                    - Decision authority
+                    - Timeline
+                    - Current solution/problem
+                    - Success criteria
+
+                    LIKELY OBJECTIONS:
+                    - Price concerns
+                    - Timing issues
+                    - Competitor comparisons
+                    Prepare responses for each
+
+                    CLOSING STRATEGY:
+                    - If qualified → next step
+                    - If not qualified → nurture approach
+
+                    Keep it scannable, actionable, 5-minute read max.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Business Strategy</span>
+                <h3>Competitive Positioning Quick Reference</h3>
+                <p class="description">Creates sales-ready battlecards for handling competitor comparisons in real-time.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a competitive intelligence strategist.
+
+                    Our product: [PRODUCT/SERVICE]
+                    Competitor: [COMPETITOR NAME]
+                    Context: [WHAT WE KNOW ABOUT THEM]
+
+                    Create sales battlecard:
+
+                    HEAD-TO-HEAD COMPARISON:
+
+                    What they'll say about us:
+                    - [List likely criticisms]
+                    Our response to each
+
+                    What we say about them:
+                    - Where they're genuinely strong (acknowledge it)
+                    - Where they fall short (evidence-based)
+                    - Hidden costs/limitations
+
+                    POSITIONING STATEMENTS:
+
+                    When price comes up:
+                    "While [Competitor] is [£X cheaper/more expensive], here's what that actually means..."
+
+                    When features compared:
+                    "Great question. [Competitor] does offer [feature], and here's how we approach that differently..."
+
+                    When they say "already using [Competitor]":
+                    "Many of our clients switched from [Competitor]. The top 3 reasons were..."
+
+                    TRAP QUESTIONS (what not to say):
+                    ❌ Never badmouth directly
+                    ❌ Never say "we're cheaper because..."
+                    ❌ Never promise features we don't have
+
+                    DEAL-WINNING DIFFERENTIATORS:
+                    1. [Specific advantage with proof]
+                    2. [Specific advantage with proof]  
+                    3. [Specific advantage with proof]
+
+                    Make it printable, keep on desk during calls.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Customer Success</span>
+                <h3>Proactive Health Check Message</h3>
+                <p class="description">Creates non-sales health check messages that uncover issues before they become churn risks.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a customer success expert focused on retention.
+
+                    Customer context:
+                    - Account: [COMPANY]
+                    - Product: [WHAT THEY USE]
+                    - Tenure: [HOW LONG]
+                    - Usage pattern: [RECENT ACTIVITY]
+                    - Last contact: [WHEN]
+                    - Contract renewal: [DATE]
+
+                    Create health-check message:
+
+                    APPROACH:
+                    Make it about THEM, not us asking for anything.
+
+                    Structure:
+                    1. Specific reference (not generic)
+                    2. Genuine question about their results
+                    3. Offer proactive help
+                    4. Easy response mechanism
+
+                    Good example:
+                    "Hi Alex, noticed you've been using [feature] heavily this month. Curious - is it solving [specific problem] or are you working around something?"
+
+                    Bad example:
+                    "Hi, wanted to check in on how things are going. Let me know if you need anything!"
+
+                    Think through:
+                    - What would make them feel we're paying attention?
+                    - What would make them want to respond?
+                    - How can we uncover issues without seeming needy?
+
+                    Provide:
+                    - Email version (60-80 words)
+                    - LinkedIn message version (40-50 words)
+                    - Subject line
+
+                    Tone: Helpful consultant, not vendor checking boxes.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Sales</span>
+                <h3>Price Objection Response Framework</h3>
+                <p class="description">Transforms "too expensive" into value-based conversations with strategic questioning.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a pricing and value communication expert.
+
+                    Objection received: [PASTE THEIR PRICE CONCERN]
+                    Our pricing: [YOUR PRICE]
+                    Competitor pricing: [IF KNOWN]
+                    Context: [DEAL STAGE]
+
+                    Create response framework:
+
+                    STEP 1 - VALIDATE & CLARIFY:
+                    Never defend immediately. First understand.
+                    "I appreciate you being direct about that. Help me understand - when you say it's [expensive/outside budget/not worth it], what are you comparing it to?"
+
+                    STEP 2 - REFRAME THE CONVERSATION:
+                    Shift from cost to value/risk/total cost.
+
+                    If comparing to competitor:
+                    "Makes sense. The [£X] difference breaks down to [£Y/month]. Given [specific value we provide], how do you see that impacting [their key metric]?"
+
+                    If comparing to doing nothing:
+                    "Fair question. What's your current [situation] costing you in [time/revenue/efficiency]? Let's see if the ROI makes sense..."
+
+                    If comparing to internal solution:
+                    "Understood. What's your internal team's capacity cost for maintaining this? And what happens if [key person] leaves?"
+
+                    STEP 3 - TRIAL CLOSE:
+                    "If we can show this pays for itself within [timeframe], would pricing still be the blocker?"
+
+                    STEP 4 - OPTIONS:
+                    If still stuck, provide:
+                    - Payment terms
+                    - Phased approach
+                    - ROI guarantee
+                    - Starter package
+
+                    Provide full response script (120-150 words) that sounds conversational.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Productivity</span>
+                <h3>Post-Meeting Action Email Generator</h3>
+                <p class="description">Converts meeting notes into clear recap emails that prevent "I thought you were doing that" situations.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at meeting follow-up communication.
+
+                    Meeting context:
+                    - Attendees: [WHO]
+                    - Date: [WHEN]
+                    - Purpose: [WHY]
+                    - Notes: [PASTE RAW NOTES]
+
+                    Create recap email:
+
+                    STRUCTURE:
+
+                    Subject: [Meeting Type] Recap: [Main Topic] - Action Items
+
+                    Opening:
+                    "Thanks for [specific positive from meeting]. Quick recap of what we covered and next steps:"
+
+                    DECISIONS MADE:
+                    List clearly with context (what and why)
+
+                    ACTION ITEMS:
+                    Format as table:
+                    | Action | Owner | Deadline | Status |
+
+                    For each action:
+                    - Be specific (not "research options" but "get 3 quotes from vendors A, B, C")
+                    - Single owner (no "team" or "we")
+                    - Actual date (not "soon")
+                    - Dependencies noted
+
+                    OPEN QUESTIONS:
+                    What needs clarification
+
+                    NEXT MEETING:
+                    - Proposed date/time
+                    - Agenda preview
+
+                    PARKING LOT:
+                    Deferred items for later
+
+                    TONE:
+                    - Collaborative, not dictatorial
+                    - Assumes good intent
+                    - Creates accountability without blame
+
+                    Length: Under 200 words
+                    Make it skim-friendly with clear formatting.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Marketing</span>
+                <h3>Customer Testimonial Request Email</h3>
+                <p class="description">Gets high-quality testimonials by making it easy and specific for customers to respond.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at gathering compelling customer testimonials.
+
+                    Customer context:
+                    - Name: [CUSTOMER]
+                    - Company: [COMPANY]
+                    - What they bought: [PRODUCT/SERVICE]
+                    - Results achieved: [METRICS IF KNOWN]
+                    - Relationship: [HOW LONG, HOW WELL]
+
+                    Create testimonial request:
+
+                    APPROACH:
+                    Make it easy, specific, and valuable for them too.
+
+                    Email structure:
+
+                    Subject: Quick question about [specific result]
+
+                    Body:
+                    1. Acknowledge their success (specific)
+                    2. Explain why you're asking (mutual benefit)
+                    3. Make it stupid simple (provide questions, not blank canvas)
+                    4. Show how it helps them (exposure, industry authority)
+                    5. Respect their time (10 minutes max)
+
+                    GOOD QUESTIONS TO INCLUDE:
+                    - What problem were you trying to solve?
+                    - Why did you choose us over [alternatives]?
+                    - What result surprised you most?
+                    - What would you tell someone considering this?
+
+                    MAKE IT EASY:
+                    "Feel free to just reply to these bullet points, I'll polish the language"
+
+                    INCENTIVE (without being transactional):
+                    "Happy to feature you on [platform], link to [their site], or just say thanks with [appropriate gesture]"
+
+                    Provide:
+                    - Email (100-120 words)
+                    - Follow-up if no response (60 words)
+                    - Thank you response when received
+
+                    Tone: Appreciative colleague, not needy vendor.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Sales</span>
+                <h3>Multi-Touch Cold Outreach Campaign</h3>
+                <p class="description">Creates a strategic 5-touch sequence that builds familiarity without being annoying.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert cold outreach strategist focused on B2B.
+
+                    Target prospect:
+                    - Name/Title: [DETAILS]
+                    - Company: [COMPANY]
+                    - Industry: [SECTOR]
+                    - Pain point we solve: [SPECIFIC PROBLEM]
+                    - Trigger event: [WHY NOW - funding, growth, news, hire]
+
+                    Create 5-touch sequence (7 days):
+
+                    TOUCH 1 (Day 1) - Email:
+                    Subject: [Specific observation about their company]
+                    Body: 60 words max
+                    - Relevant observation (not about us)
+                    - One question (about them)
+                    - Easy response mechanism
+                    NO PITCH YET
+
+                    TOUCH 2 (Day 3) - LinkedIn:
+                    - Comment on their recent post OR
+                    - Send connection request with custom note (200 char)
+                    Reference the email casually
+
+                    TOUCH 3 (Day 5) - Email:
+                    Subject: Quick follow-up
+                    - Assume they're busy (not ignoring)
+                    - Add ONE piece of value (insight, data, example)
+                    - Soft pitch (one sentence)
+                    - Clear CTA
+
+                    TOUCH 4 (Day 6) - LinkedIn Message:
+                    If connected, send:
+                    - "Saw you're active on LinkedIn"
+                    - Share relevant content
+                    - No ask
+
+                    TOUCH 5 (Day 7) - Breakup Email:
+                    Subject: Closing the loop
+                    - Acknowledge no response
+                    - Make it about them (timing, priority)
+                    - Last easy out ("one word reply")
+                    - Permission to follow up later
+
+                    PRINCIPLES:
+                    - Value in every touch
+                    - Multiple channels
+                    - Respect their time
+                    - Make it easy to respond
+
+                    Provide all 5 touches ready to use.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Content Creation</span>
+                <h3>Problem-Agitate-Solve Copy Framework</h3>
+                <p class="description">Uses classic PAS formula to create compelling marketing copy that drives action.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert copywriter specializing in the Problem-Agitate-Solve framework.
+
+                    Context:
+                    - Target audience: [WHO]
+                    - Problem they face: [SPECIFIC PROBLEM]
+                    - Our solution: [PRODUCT/SERVICE]
+                    - Desired action: [WHAT WE WANT THEM TO DO]
+
+                    Create PAS copy:
+
+                    PROBLEM (Identify):
+                    State the problem clearly. Make it specific and recognizable.
+                    "You're spending [X hours] doing [frustrating task] that [consequence]"
+
+                    AGITATE (Amplify):
+                    Make the pain visceral. Show the real cost.
+
+                    Emotional cost:
+                    - Frustration
+                    - Embarrassment
+                    - Fear
+                    - Lost opportunity
+
+                    Financial cost:
+                    - Money wasted
+                    - Revenue lost
+                    - Hidden expenses
+
+                    Time cost:
+                    - Hours burned
+                    - Missed deadlines
+                    - Opportunity cost
+
+                    Use concrete examples:
+                    "Last week you stayed until 8pm doing [task]. The week before, you did [consequence]. How long can you keep doing this?"
+
+                    SOLVE (Resolution):
+                    Present solution as the bridge from pain to relief.
+
+                    What life looks like with solution:
+                    - Specific time saved
+                    - Specific money saved
+                    - Specific stress relieved
+
+                    Make it tangible:
+                    "Imagine [specific scenario where problem is solved]"
+
+                    Call to action:
+                    - Clear next step
+                    - Remove friction
+                    - Create urgency (without false scarcity)
+
+                    Length: 150-200 words
+                    Tone: Empathetic but direct. We understand the pain because we solved it.
+
+                    Provide final copy ready to use.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Sales</span>
+                <h3>Proactive Objection Handling in Pitch</h3>
+                <p class="description">Addresses common objections before they're raised, building trust and credibility.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at preemptive objection handling.
+
+                    Context:
+                    - Prospect type: [INDUSTRY/SIZE]
+                    - Common objections: [LIST]
+                    - Our pitch focus: [MAIN MESSAGE]
+
+                    Strategy for each objection:
+
+                    For "Too expensive":
+                    BEFORE they say it:
+                    "You're probably wondering about ROI. Here's why clients in [industry] see payback in [timeframe]..."
+
+                    For "Need to think about it":
+                    BEFORE they say it:
+                    "I know this seems like a lot to process. The three questions everyone asks themselves are..."
+
+                    For "Happy with current solution":
+                    BEFORE they say it:
+                    "Most of our clients were using [competitor/internal solution] before. Here's what changed their mind..."
+
+                    For "Not the right time":
+                    BEFORE they say it:
+                    "Timing matters. Here's why [clients] who started in [situation] actually had an advantage..."
+
+                    FRAMEWORK:
+
+                    Acknowledge the elephant:
+                    "Let's address the obvious question..."
+
+                    Show you understand:
+                    "Every [role] asks this, and for good reason..."
+
+                    Provide evidence:
+                    "Here's what [specific example] found..."
+
+                    Make it about them:
+                    "In your case, with [their situation]..."
+
+                    Invite dialogue:
+                    "What questions does that raise for you?"
+
+                    Create script that weaves 2-3 major objections into natural pitch flow.
+                    Length: 80-100 words per objection
+                    Tone: Confident consultant, not defensive vendor
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Growth</span>
+                <h3>Strategic Referral Request Framework</h3>
+                <p class="description">Gets warm introductions without sounding desperate or transactional.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at generating customer referrals authentically.
+
+                    Customer context:
+                    - Name: [CUSTOMER]
+                    - Success with product: [RESULTS]
+                    - Relationship strength: [STRONG/GOOD/DEVELOPING]
+                    - Their network: [INDUSTRY/ROLE CONNECTIONS]
+
+                    Create referral request approach:
+
+                    TIMING (when to ask):
+                    ✅ Right after major win
+                    ✅ Unprompted positive feedback
+                    ✅ Renewal/expansion
+                    ❌ During onboarding
+                    ❌ When they have issues
+
+                    APPROACH:
+
+                    Step 1 - Acknowledge their success:
+                    "The results you're seeing with [specific metric] are exactly what we built this for. Can I ask you something?"
+
+                    Step 2 - Make it specific, not generic:
+                    DON'T: "Know anyone who could use this?"
+                    DO: "Who in your network is dealing with [specific problem you solved]?"
+
+                    Step 3 - Lower the barrier:
+                    "I'm not asking for an introduction yet - just curious if this resonates with challenges you hear about from [peers/colleagues]?"
+
+                    Step 4 - Make introduction easy:
+                    "If someone comes to mind, would it be OK if I sent you a 2-sentence blurb you could forward? No pressure, just makes it easy if it comes up naturally."
+
+                    Step 5 - Offer value exchange:
+                    "Happy to do the same if you ever need [relevant introduction/resource]."
+
+                    FOLLOW-UP:
+                    If they agree:
+                    - Send the forwardable blurb within 1 hour
+                    - Make it about the prospect, not you
+                    - Give your customer credit
+                    - Never follow up more than once
+
+                    Provide:
+                    - Initial ask (60 words)
+                    - Forwardable blurb (40 words)
+                    - Thank you response
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Marketing</span>
+                <h3>Customer-Centric Value Prop Generator</h3>
+                <p class="description">Transforms feature-focused messaging into compelling customer benefit statements.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert value proposition strategist.
+
+                    Current messaging: [PASTE YOUR CURRENT VALUE PROP]
+                    Target customer: [WHO]
+                    What you actually do: [PRODUCT/SERVICE]
+
+                    Refine using framework:
+
+                    TRANSLATE FEATURES TO BENEFITS:
+                    For each feature:
+                    - Feature: What it is
+                    - Benefit: What it does
+                    - Value: Why it matters
+
+                    Example:
+                    ❌ "AI-powered lead scoring"
+                    ✅ "Your sales team only touches buyers who are ready to buy"
+
+                    CUSTOMER OUTCOME FOCUS:
+
+                    Before state:
+                    - What's their current situation?
+                    - What's painful about it?
+                    - What's the cost of continuing?
+
+                    After state:
+                    - What changes?
+                    - How does it feel?
+                    - What becomes possible?
+
+                    VALUE PROP FORMULA:
+
+                    We help [specific customer]
+                    Achieve [specific outcome]
+                    By [specific mechanism]
+                    Unlike [alternative]
+                    Because [unique advantage]
+
+                    TEST IT:
+
+                    Can prospect explain it back in own words?
+                    Does it answer "why should I care"?
+                    Is it specific enough to be believable?
+                    Does it differentiate from competitors?
+
+                    Provide:
+                    - Refined value prop (25 words)
+                    - Supporting proof points (3 bullets)
+                    - Elevator pitch version (60 seconds)
+
+                    Avoid:
+                    - Jargon
+                    - Superlatives without proof
+                    - Generic benefits anyone could claim
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Communication</span>
+                <h3>Customer Issue Response Framework</h3>
+                <p class="description">Handles customer complaints and service issues with empathy and efficiency.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a crisis communication expert for customer service.
+
+                    Situation:
+                    - Customer: [NAME]
+                    - Issue: [WHAT WENT WRONG]
+                    - Impact on them: [CONSEQUENCES]
+                    - Our fault? [YES/NO/PARTIAL]
+                    - History with customer: [CONTEXT]
+
+                    Create response:
+
+                    IMMEDIATE RESPONSE (within 1 hour):
+
+                    Step 1 - Acknowledge (don't defend):
+                    "I've just seen what happened with [specific issue]. That's not OK."
+
+                    Step 2 - Show you understand impact:
+                    "I know this means [specific consequence for them]. That's on us."
+
+                    Step 3 - Take ownership (even if not entirely our fault):
+                    "Here's what I'm doing right now to fix this..."
+
+                    Step 4 - Timeline & accountability:
+                    "You'll hear from me by [specific time] with [specific update]."
+
+                    DON'T SAY:
+                    ❌ "Unfortunately..."
+                    ❌ "Sorry for any inconvenience"
+                    ❌ "As per our policy..."
+                    ❌ "Let me check with my team"
+
+                    DO SAY:
+                    ✅ "This is unacceptable"
+                    ✅ "Here's exactly what I'm doing"
+                    ✅ "You have my direct number"
+                    ✅ "This won't happen again because..."
+
+                    FOLLOW-UP RESPONSE:
+
+                    Update with:
+                    - What we found
+                    - What we fixed
+                    - What we're changing to prevent recurrence
+                    - What we're doing to make it right
+
+                    RECOVERY OFFER:
+                    Match to severity:
+                    - Minor: sincere apology
+                    - Moderate: credit/discount
+                    - Major: refund + compensation
+                    - Severe: full refund + future service credit
+
+                    Provide:
+                    - Initial response (80 words)
+                    - Follow-up response (120 words)
+                    - Prevention explanation (60 words)
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Personal Branding</span>
+                <h3>LinkedIn Profile Conversion Optimizer</h3>
+                <p class="description">Transforms LinkedIn profiles from resume format to lead generation asset.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a LinkedIn profile optimization expert.
+
+                    Current profile: [PASTE CURRENT ABOUT/HEADLINE]
+                    Target audience: [WHO SHOULD CONTACT YOU]
+                    Goal: [INBOUND LEADS/PARTNERSHIPS/JOBS]
+
+                    Optimize for conversion:
+
+                    HEADLINE FORMULA:
+                    ❌ "Marketing Manager at Company X"
+                    ✅ "I help [target] achieve [outcome] | [credibility indicator]"
+
+                    Example: "I help B2B SaaS companies convert 3x more trials | Ex-Salesforce | £50M+ pipeline generated"
+
+                    ABOUT SECTION STRUCTURE:
+
+                    Hook (first 2 lines visible):
+                    Make them want to click "see more"
+                    - Surprising stat
+                    - Bold claim with proof
+                    - Specific problem you solve
+
+                    Story (personal):
+                    - Where you started
+                    - What you learned
+                    - Why you do this now
+
+                    Value Prop (professional):
+                    - Who you help
+                    - How you help them
+                    - What makes your approach different
+
+                    Social Proof:
+                    - Results (quantified)
+                    - Notable clients/companies
+                    - Awards/recognition
+
+                    Call to Action:
+                    - Who should reach out
+                    - What to reach out about
+                    - How to reach out (email, DM, calendar link)
+
+                    FEATURED SECTION:
+                    Add:
+                    - Case studies
+                    - Best content
+                    - Lead magnet
+                    - Calendar link
+
+                    OPTIMIZE FOR SEARCH:
+                    Keywords to include (naturally):
+                    - Industry terms
+                    - Role titles (of who hires you)
+                    - Problems you solve
+                    - Methods you use
+
+                    Provide:
+                    - Optimized headline
+                    - Optimized about section (250 words)
+                    - 5 featured content ideas
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Customer Success</span>
+                <h3>Executive QBR Presentation Builder</h3>
+                <p class="description">Creates data-driven quarterly business reviews that demonstrate value and identify expansion.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at customer success and executive communication.
+
+                    Account context:
+                    - Company: [NAME]
+                    - Product usage: [WHAT THEY USE]
+                    - Quarter: [Q#]
+                    - Key stakeholders: [WHO ATTENDS]
+                    - Contract value: [IF KNOWN]
+                    - Renewal date: [WHEN]
+
+                    Create QBR structure:
+
+                    SLIDE 1 - EXECUTIVE SUMMARY:
+                    - Quarter highlights (3 bullets)
+                    - Key metrics (4 numbers)
+                    - Looking ahead (1 major opportunity)
+
+                    SLIDE 2 - USAGE & ADOPTION:
+                    - Activity trends (visualize)
+                    - Feature adoption (what they use vs available)
+                    - User engagement (active users, frequency)
+                    - Comparison to peers (anonymized benchmarks)
+
+                    SLIDE 3 - BUSINESS IMPACT:
+                    Translate usage into business outcomes:
+                    - Time saved: [X hours/week]
+                    - Cost reduced: [£Y saved on...]
+                    - Revenue enabled: [Z deals influenced]
+                    - Efficiency gained: [% improvement in...]
+
+                    SLIDE 4 - SUCCESS STORIES:
+                    2-3 specific wins:
+                    - Situation
+                    - Action
+                    - Result
+                    - Quote (if available)
+
+                    SLIDE 5 - OPTIMIZATION OPPORTUNITIES:
+                    3 underutilized features that could drive more value:
+                    - Feature name
+                    - Potential benefit for them
+                    - Quick start guide
+
+                    SLIDE 6 - ROADMAP PREVIEW:
+                    Upcoming features they care about:
+                    - What's coming
+                    - When it ships
+                    - Why it matters to them
+                    - Beta access opportunity
+
+                    SLIDE 7 - NEXT QUARTER GOALS:
+                    Co-created objectives:
+                    - What they want to achieve
+                    - How we'll support it
+                    - Success metrics
+                    - Checkpoints
+
+                    SPEAKING NOTES:
+                    For each slide, provide:
+                    - Key message (what to emphasize)
+                    - Potential questions (and answers)
+                    - Transition to next slide
+
+                    Avoid:
+                    - Feature lists
+                    - Generic metrics
+                    - "Us" language (make it about them)
+                    - Surprises (pre-wire anything sensitive)
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Product Marketing</span>
+                <h3>Customer Feature Launch Communication</h3>
+                <p class="description">Announces new features in a way that drives adoption, not confusion.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a product marketing expert focused on feature adoption.
+
+                    Feature context:
+                    - Feature name: [NAME]
+                    - What it does: [FUNCTIONALITY]
+                    - Who it's for: [USER TYPE]
+                    - Why we built it: [PROBLEM SOLVED]
+                    - Availability: [WHEN/WHO]
+
+                    Create launch communication:
+
+                    EMAIL ANNOUNCEMENT:
+
+                    Subject line options (test 2-3):
+                    - Benefit-focused: "Now you can [outcome] in [time]"
+                    - Curiosity: "The #1 requested feature is here"
+                    - Specific: "[Feature] launches today - here's why it matters"
+
+                    Email body:
+
+                    Hook (first line):
+                    Make them want to read more.
+                    "You've been doing [tedious task] manually. Not anymore."
+
+                    What it is (one sentence):
+                    Simple explanation a non-technical person understands.
+
+                    Why it matters:
+                    - Problem it solves
+                    - Time it saves
+                    - Money it makes/saves
+                    - Frustration it removes
+
+                    Who should use it:
+                    "If you [do X] or [have Y problem], this changes everything for you."
+
+                    How to get started:
+                    3 steps maximum:
+                    1. [Action]
+                    2. [Action]
+                    3. [Action]
+
+                    Support resources:
+                    - Video walkthrough (2 min)
+                    - Help doc link
+                    - Live demo session (if applicable)
+
+                    CTA:
+                    Single, clear action.
+
+                    AVOID:
+                    ❌ Technical jargon
+                    ❌ Every feature detail
+                    ❌ Multiple CTAs
+                    ❌ "Excited to announce" (show don't tell)
+
+                    IN-APP NOTIFICATION:
+
+                    For users who didn't read email:
+                    - 20 words max
+                    - Clear benefit
+                    - One-click access
+                    - Dismissable
+
+                    FOLLOW-UP (7 days later):
+
+                    To users who haven't tried it:
+                    - Subject: "Quick question about [feature]"
+                    - "Noticed you haven't tried [feature] yet - totally fine! Curious if it's because:"
+                    - A) Don't need it
+                    - B) Not clear what it does
+                    - C) Want to but haven't had time
+                    - "One-word reply helps us make this better"
+
+                    Provide full email, in-app message, follow-up.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Recruitment</span>
+                <h3>High-Converting Job Description Writer</h3>
+                <p class="description">Creates job posts that attract top candidates and filter out poor fits.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a hiring and recruitment marketing expert.
+
+                    Role context:
+                    - Position: [TITLE]
+                    - Team: [DEPARTMENT]
+                    - Reports to: [ROLE]
+                    - Location: [WHERE/REMOTE POLICY]
+                    - Company stage: [STARTUP/GROWTH/ENTERPRISE]
+
+                    Create job description:
+
+                    STRUCTURE:
+
+                    Hook (first 2 sentences):
+                    Not "We're hiring X"
+                    Instead: "If you [specific skill], you've probably [specific frustration]. We're solving it."
+
+                    The Challenge (not "responsibilities"):
+                    "In this role you'll tackle:"
+                    - [Specific problem] by [specific approach]
+                    - [Specific problem] by [specific approach]
+                    - [Specific problem] by [specific approach]
+
+                    Use concrete examples:
+                    ❌ "Manage customer relationships"
+                    ✅ "Turn angry customers into advocates when product breaks at 3am"
+
+                    You're Great If (not "requirements"):
+                    "You might be perfect for this if you:"
+                    - [Specific experience or approach]
+                    - [Specific skill or mindset]
+                    - [Specific achievement or habit]
+
+                    Mix must-haves with nice-to-haves transparently.
+
+                    You're Not a Fit If:
+                    Be honest about dealbreakers:
+                    - "If you need [thing we can't offer]"
+                    - "If you don't like [aspect of role]"
+                    - "If you expect [unrealistic expectation]"
+
+                    What We Offer:
+                    Beyond compensation:
+                    - Career growth path
+                    - Learning opportunities
+                    - Team culture specifics
+                    - Unique benefits
+
+                    Make it specific, not generic:
+                    ❌ "Competitive salary"
+                    ✅ "£X-Y base + equity that vests monthly from day 1"
+
+                    The Process:
+                    Transparency builds trust:
+                    1. [Step] - [Timeframe]
+                    2. [Step] - [Timeframe]
+                    3. [Step] - [Timeframe]
+                    "Whole process: [X weeks] from application to offer"
+
+                    How to Apply:
+                    Make it easy but filter quality:
+                    "Send to [email]:
+                    1. Your CV
+                    2. 2-3 sentences on why this specific role
+                    3. Link to work you're proud of"
+
+                    TONE:
+                    - Honest about challenges
+                    - Specific about expectations
+                    - Excited but not hyperbolic
+                    - Inclusive without corporate speak
+
+                    Length: 300-400 words
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Content Marketing</span>
+                <h3>Multi-Platform Content Atomizer</h3>
+                <p class="description">Transforms one piece of long-form content into multiple platform-specific pieces.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a content repurposing strategist.
+
+                    Source content: [PASTE BLOG POST/ARTICLE/VIDEO TRANSCRIPT]
+                    Original format: [BLOG/VIDEO/PODCAST/WEBINAR]
+                    Length: [WORD COUNT/DURATION]
+
+                    Extract and repurpose:
+
+                    IDENTIFY CORE THEMES:
+                    - Main thesis (one sentence)
+                    - Supporting points (3-5)
+                    - Best examples/stories
+                    - Surprising data/insights
+                    - Quotable moments
+
+                    REPURPOSE FOR EACH PLATFORM:
+
+                    LINKEDIN POST (150-200 words):
+                    - Hook (stop scroll)
+                    - Story or insight
+                    - Lesson or framework
+                    - Engagement question
+                    Include: Line breaks, no emoji spam
+
+                    TWITTER THREAD (8-10 tweets):
+                    - Tweet 1: Hook + promise
+                    - Tweets 2-8: One idea per tweet
+                    - Tweet 9: Summary
+                    - Tweet 10: CTA
+                    Keep each under 280 chars
+
+                    INSTAGRAM CAROUSEL (6-8 slides):
+                    - Slide 1: Eye-catching headline
+                    - Slides 2-7: One concept per slide
+                    - Slide 8: CTA
+                    Caption: 150 words with story
+
+                    EMAIL NEWSLETTER (200 words):
+                    - Subject line
+                    - Personal opening
+                    - Main insight
+                    - Why it matters now
+                    - One clear CTA
+
+                    YOUTUBE SHORT / TIKTOK (60 seconds):
+                    Script format:
+                    - 0-3s: Hook (pattern interrupt)
+                    - 3-15s: Setup (problem/question)
+                    - 15-45s: Payoff (answer/solution)
+                    - 45-60s: CTA
+                    Include: Visual cues, text overlay suggestions
+
+                    QUOTE GRAPHICS (3-5):
+                    - Pull best soundbites
+                    - Add context if needed
+                    - Format for readability
+
+                    Provide all formats ready to publish.
+                    Maintain core message but optimize for each platform's algorithm and audience.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Customer Success</span>
+                <h3>Product Onboarding Email Sequence Builder</h3>
+                <p class="description">Creates automated welcome sequences that drive activation and prevent early churn.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a customer onboarding expert focused on activation.
+
+                    Product context:
+                    - What it does: [PRODUCT]
+                    - Target user: [WHO]
+                    - Key "aha moment": [WHEN THEY GET IT]
+                    - Activation metric: [WHAT DEFINES SUCCESS]
+                    - Time to value: [HOW LONG TO FIRST WIN]
+
+                    Create 5-email onboarding sequence:
+
+                    EMAIL 1 (Day 0 - Immediate):
+                    Subject: Welcome to [Product] - Start here
+
+                    Purpose: Set expectations, quick win
+
+                    Content:
+                    - Welcome (personal)
+                    - What to expect (roadmap next 7 days)
+                    - Quick action (5-minute win)
+                    - Support availability
+                    - "Reply with questions" invitation
+
+                    CTA: Complete [simplest valuable action]
+
+                    EMAIL 2 (Day 1):
+                    Subject: [Personal] here - did you [action from Email 1]?
+
+                    Purpose: Check progress, offer help
+
+                    Content:
+                    - Reference their signup context
+                    - Acknowledge if they did/didn't complete action
+                    - Share one tip to make it easier
+                    - Success story (quick example)
+
+                    CTA: Next logical step
+
+                    EMAIL 3 (Day 3):
+                    Subject: Most people miss this [feature]
+
+                    Purpose: Drive to "aha moment"
+
+                    Content:
+                    - The overlooked feature that creates breakthrough
+                    - Why it matters (specific benefit)
+                    - 3-step guide
+                    - Video walkthrough (2 min)
+                    - What to do after they try it
+
+                    CTA: Try the feature
+
+                    EMAIL 4 (Day 5):
+                    Subject: Quick question about your [goal]
+
+                    Purpose: Personalize, prevent drop-off
+
+                    Content:
+                    - Ask about their specific goal
+                    - Show how current features support it
+                    - Identify what might be blocking them
+                    - Offer specific help
+
+                    CTA: Reply with biggest question/blocker
+
+                    EMAIL 5 (Day 7):
+                    Subject: Your first week with [Product]
+
+                    Purpose: Celebrate progress, plan next step
+
+                    Content:
+                    - Recap what they've accomplished
+                    - Show them their progress/metrics
+                    - Preview what's possible next
+                    - Invite to community/resources
+                    - Introduce human support
+
+                    CTA: Book 15-min success call OR join community
+
+                    THROUGHOUT SEQUENCE:
+
+                    Track and branch:
+                    - If completed activation -> Success path
+                    - If stuck -> Help path
+                    - If inactive -> Re-engagement path
+
+                    Personalization variables:
+                    - Use case they selected
+                    - Role/industry
+                    - Company size
+                    - Signup source
+
+                    Tone: Helpful coach, not pushy vendor
+
+                    Provide all 5 emails with:
+                    - Subject lines
+                    - Full body copy
+                    - CTAs
+                    - Trigger logic
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Automotive Sales</span>
+                <h3>Car Dealership Lead Qualifier</h3>
+                <p class="description">Instantly qualify incoming vehicle enquiries by extracting buyer intent, urgency, budget signals, and next-step recommendations for sales teams.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are an expert at qualifying automotive sales leads for UK dealerships.
+
+                    Analyze this enquiry:
+                    [PASTE ENQUIRY TEXT]
+
+                    Extract and score:
+
+                    1. URGENCY (0-10):
+                    - Timeline mentioned? (today, this week, just browsing)
+                    - Situation urgency? (current car died, lease ending, accident)
+                    - Language intensity? (need, must have, considering)
+
+                    2. BUDGET READINESS (0-10):
+                    - Specific price mentioned?
+                    - Finance/PCP keywords?
+                    - Trade-in mentioned?
+                    - Down payment indicators?
+
+                    3. DECISION AUTHORITY (0-10):
+                    - Solo decision or family/partner involved?
+                    - Researching vs ready to buy?
+                    - Asking questions vs requesting to view?
+
+                    4. VEHICLE MATCH (0-10):
+                    - Specific model or browsing?
+                    - Requirements clear? (size, features, fuel type)
+                    - Alternatives acceptable?
+
+                    5. CONTACT QUALITY (0-10):
+                    - Full name + phone + email?
+                    - Local area?
+                    - Best contact time mentioned?
+
+                    Provide:
+                    - Overall lead score (0-10)
+                    - Priority: HOT/WARM/COLD
+                    - Recommended response: [Immediate call / Personalized email / Auto-response]
+                    - Key talking points for sales team
+                    - Red flags if any
+
+                    Format as actionable brief for sales team.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Business Strategy</span>
+                <h3>Competitor Analysis Framework</h3>
+                <p class="description">Comprehensive competitive analysis for dealerships. Identify gaps in competitor offerings and find opportunities to differentiate your dealership.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are analyzing competitive positioning for a UK car dealership.
+
+                    My dealership: [NAME, LOCATION, BRANDS]
+                    Key competitors: [LIST 3-5 COMPETITORS]
+
+                    Analyze across these dimensions:
+
+                    1. DIGITAL PRESENCE:
+                    - Website UX and speed
+                    - Lead capture methods
+                    - Response time (call their sales number, submit enquiry)
+                    - Social media activity
+
+                    2. INVENTORY & PRICING:
+                    - Stock levels and variety
+                    - Pricing vs market average
+                    - Special offers/promotions
+                    - Finance options advertised
+
+                    3. CUSTOMER EXPERIENCE:
+                    - Google reviews (count, rating, response rate)
+                    - Trustpilot presence
+                    - Mystery shop insights
+                    - Delivery/handover process
+
+                    4. MARKETING CHANNELS:
+                    - AutoTrader presence
+                    - Facebook/Instagram ads
+                    - Local marketing (signage, events)
+                    - Referral programs
+
+                    5. OPERATIONAL GAPS:
+                    - Hours of operation
+                    - Weekend availability
+                    - Home delivery options
+                    - After-hours enquiry handling
+
+                    Provide:
+                    1. Competitive positioning matrix
+                    2. Three biggest opportunities they're missing
+                    3. Quick wins to differentiate
+                    4. Long-term strategic moves
+
+                    Focus on actionable gaps we can exploit.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Operations</span>
+                <h3>Process Optimization Audit</h3>
+                <p class="description">Identify bottlenecks and inefficiencies in your dealership operations. Get specific recommendations to improve conversion rates and reduce costs.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a dealership operations consultant analyzing workflow efficiency.
+
+                    Current process I want to optimize:
+                    [DESCRIBE PROCESS - e.g., "enquiry to test drive booking"]
+
+                    Provide detailed analysis:
+
+                    STEP 1: MAP CURRENT STATE
+                    - Break down every step in the process
+                    - Identify all handoffs between people/systems
+                    - Note where data is entered/transferred
+                    - Mark decision points
+
+                    STEP 2: IDENTIFY FRICTION
+                    For each step, assess:
+                    - Time required (manual vs automated)
+                    - Error rate (missing data, wrong routing)
+                    - Handoff delays (waiting for next person)
+                    - Customer drop-off points
+
+                    STEP 3: CALCULATE IMPACT
+                    - How many enquiries/month through this process?
+                    - Current conversion rate at each step?
+                    - Revenue per successful conversion?
+                    - Cost of current process (staff time, tools)?
+
+                    STEP 4: REDESIGN OPTIMAL FLOW
+                    - Which steps can be automated?
+                    - Which can be eliminated entirely?
+                    - Which need better handoffs?
+                    - Where to add checkpoints?
+
+                    STEP 5: IMPLEMENTATION ROADMAP
+                    Priority 1 (Immediate - no tech needed):
+                    [Quick wins]
+
+                    Priority 2 (Short-term - simple automation):
+                    [1-4 week projects]
+
+                    Priority 3 (Long-term - system changes):
+                    [Strategic investments]
+
+                    Expected impact:
+                    - Conversion rate improvement: X%
+                    - Time saved per enquiry: X minutes
+                    - Annual revenue impact: £X
+
+                    Provide specific, actionable recommendations with ROI estimates.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Marketing</span>
+                <h3>High-Converting Ad Copy Generator</h3>
+                <p class="description">Create compelling Facebook, Google, and AutoTrader ads that drive quality enquiries. Optimized for UK automotive market with proven frameworks.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a direct response copywriter specializing in UK automotive advertising.
+
+                    Campaign brief:
+                    - Platform: [Facebook/Google/AutoTrader]
+                    - Vehicle: [SPECIFIC MODEL OR CATEGORY]
+                    - Target audience: [AGE, INCOME, LOCATION, SITUATION]
+                    - Key differentiator: [PRICE/STOCK/FINANCE/SERVICE]
+                    - Goal: [ENQUIRIES/SHOWROOM VISITS/CALLS]
+
+                    Create 3 ad variations using proven frameworks:
+
+                    AD 1 - PROBLEM/AGITATE/SOLVE:
+                    Hook: Start with their pain point
+                    Agitate: Make the problem real and urgent
+                    Solve: Position your offer as the solution
+
+                    AD 2 - BEFORE/AFTER/BRIDGE:
+                    Before: Their current frustrating situation
+                    After: The better outcome they want
+                    Bridge: How you get them there (your offer)
+
+                    AD 3 - FEATURES/ADVANTAGES/BENEFITS:
+                    Feature: What the vehicle/deal includes
+                    Advantage: Why that feature matters
+                    Benefit: The emotional/practical outcome
+
+                    For each ad provide:
+                    - Headline (max 40 chars)
+                    - Primary text (125-150 words)
+                    - Call-to-action button text
+                    - Expected click-through rate benchmark
+
+                    Include:
+                    - Urgency element (limited stock, offer ending)
+                    - Social proof (reviews, years in business)
+                    - Risk reversal (test drive, no obligation)
+                    - Clear next step (call, enquire, visit)
+
+                    UK English. Conversational but professional. Focus on buyer benefits not features.
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
+            <div class="prompt-card">
+                <span class="category">Finance & Pricing</span>
+                <h3>Deal Structure Optimizer</h3>
+                <p class="description">Structure attractive vehicle deals that maximize profit while meeting customer budget. Calculate PCP, HP, and cash scenarios with clear presentations.</p>
+                <div class="prompt-text">
+                    <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+                    You are a finance expert helping structure vehicle deals for UK customers.
+
+                    Deal parameters:
+                    - Vehicle price: £[AMOUNT]
+                    - Target customer budget: £[MONTHLY OR TOTAL]
+                    - Trade-in value: £[AMOUNT] (if applicable)
+                    - Deposit available: £[AMOUNT]
+                    - Credit profile: [EXCELLENT/GOOD/FAIR/BUILDING]
+                    - Usage: [ANNUAL MILEAGE]
+
+                    Create 3 deal structures:
+
+                    OPTION 1: PCP (Personal Contract Purchase)
+                    - Deposit: [AMOUNT]
+                    - Monthly: [AMOUNT] over [TERM]
+                    - Final balloon: [AMOUNT]
+                    - Total interest: [AMOUNT]
+                    - Cost per mile: [CALCULATE]
+                    - End-of-term options explained
+
+                    OPTION 2: Hire Purchase
+                    - Deposit: [AMOUNT]
+                    - Monthly: [AMOUNT] over [TERM]
+                    - Total interest: [AMOUNT]
+                    - Ownership timeline
+                    - Best for: [CUSTOMER TYPE]
+
+                    OPTION 3: Cash/Alternative
+                    - Discounted cash price
+                    - Reduced warranty/service bundle
+                    - Benefits vs finance
+                    - Negotiation room
+
+                    For each option, explain:
+                    - Who it's best suited for
+                    - Hidden costs to highlight upfront
+                    - Comparison to competitors
+                    - Approval likelihood
+                    - Upsell opportunities (GAP, warranty, service plan)
+
+                    Present in customer-friendly language that builds confidence and closes deals.
+
+                    Include script for presenting options:
+                    "Let me show you three ways to get into this vehicle..."
+                </div>
+                <button class="expand-btn" onclick="togglePrompt(this)">+ View Full Prompt</button>
+            </div>
+
         </div>
+    </div>
+</div>
+    
     </div>
 <div id="blog" class="page">
         <div class="content-page">
@@ -5470,6 +5527,15 @@ Include script for presenting options:
                 }
             }, { passive: false });
         });
+
+function togglePrompt(btn) {
+    const card = btn.closest('.prompt-card');
+    const isExpanded = card.classList.toggle('expanded');
+    
+    // Change the button text
+    btn.innerText = isExpanded ? '- Hide Prompt' : '+ View Full Prompt';
+}
+        
     </script>
 
 <footer>
