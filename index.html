@@ -1732,11 +1732,19 @@
             letter-spacing: 0.5px;
         }
 
-        .-card .description {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin-bottom: 20px;
-            line-height: 1.6;
+.prompt-card .description {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.prompt-card .prompt-text { /* Renamed from .-text */
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(0, 245, 255, 0.1);
+    padding: 25px;
+    /* ... rest of your styles ... */
+}
         }
 
         .-card .-text {
@@ -2459,7 +2467,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('pricing')">Pricing</a>
     <a onclick="showPage('blog')">Blog</a>
-    <a onclick="showPage('s')">Free s</a>
+    <a onclick="showPage('prompts')">Free Prompts</a> <a class="btn-primary" ...>Get Started</a>
     <a class="btn-primary" style="padding: 10px 24px; font-size: 0.9rem; text-align: center;" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Started</a>
 </div>
     </nav>
