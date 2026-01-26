@@ -843,30 +843,133 @@
     line-height: 1.5;
 }
 
-/* --- PRO MOBILE PREVIEWS (With Notch & Home Bar) --- */
+/* --- LOGIC BRIDGE LAYOUT --- */
 .mobile-previews-container {
     display: flex;
     justify-content: center;
-    gap: 60px;
-    padding: 60px 5% 80px;
-    max-width: 1200px;
+    align-items: center; /* Vertically center everything */
+    gap: 0; /* Gap handled by padding/margin of logic column */
+    padding: 40px 2% 80px; /* Reduced side padding to fit 3 cols */
+    max-width: 1300px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
 
+/* The Phones (Left and Right) */
 .mobile-frame {
-    width: 300px;
+    width: 280px; /* Slightly smaller to fit logic col */
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2; /* Sits above connecting lines */
 }
 
+/* The Central Logic Column */
+.logic-column {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+    position: relative;
+}
+
+/* The Logic Cards (The "Brain") */
+.logic-card {
+    background: rgba(13, 17, 48, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.logic-card:hover {
+    border-color: var(--electric);
+    background: rgba(13, 17, 48, 0.9);
+    transform: scale(1.02);
+}
+
+.logic-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--electric);
+    flex-shrink: 0;
+}
+
+.logic-text h4 {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.logic-text p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Connecting Lines (Desktop Only) */
+@media (min-width: 1024px) {
+    .logic-column::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        right: -20px;
+        height: 2px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--electric) 20%, 
+            var(--volt) 80%, 
+            transparent 100%);
+        opacity: 0.2;
+        z-index: -1;
+    }
+    
+    /* Arrows pointing to phones */
+    .mobile-frame.left::after {
+        content: '◄';
+        position: absolute;
+        right: -25px;
+        top: 50%;
+        color: var(--electric);
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+
+    .mobile-frame.right::before {
+        content: '►';
+        position: absolute;
+        left: -25px;
+        top: 50%;
+        color: var(--volt);
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+}
+
+/* Existing Phone Styles (Preserved) */
 .screen-edge {
-    background: #000; /* OLED Black background */
+    background: #000;
     width: 100%;
-    aspect-ratio: 9 / 19; /* Taller iPhone Modern Ratio */
-    border: 14px solid #121212; /* Darker, matte bezel */
-    border-radius: 45px; /* High radius for modern iPhone look */
+    aspect-ratio: 9 / 19;
+    border: 14px solid #121212;
+    border-radius: 45px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 
@@ -874,67 +977,41 @@
     transition: transform 0.3s ease;
 }
 
-/* THE NOTCH */
 .screen-edge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 24px;
-    background: #121212;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    z-index: 10;
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 30%; height: 24px; background: #121212;
+    border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; z-index: 10;
 }
 
-/* THE HOME BAR */
 .screen-edge::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.screen-edge:hover {
-    transform: translateY(-5px);
-    border-color: #222;
+    content: ''; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    width: 40%; height: 5px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; z-index: 10; pointer-events: none;
 }
 
 .screen-edge img {
-    width: 100%;
-    height: 100%;
-    /* 'contain' ensures the whole screenshot is seen, no cropping */
-    object-fit: contain; 
-    /* Centers the image in the black space */
-    object-position: center; 
-    display: block;
+    width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;
 }
 
 .mobile-label {
     font-family: 'Sora', sans-serif;
-    font-size: 1.2rem;
-    color: var(--electric);
+    font-size: 1.1rem;
     font-weight: 700;
     margin-top: 25px;
-    margin-bottom: 8px;
     text-align: center;
 }
 
-.mobile-subtext {
-    font-size: 0.95rem;
-    opacity: 0.7;
-    line-height: 1.5;
-    text-align: center;
-    max-width: 280px;
+/* Mobile Response */
+@media (max-width: 1024px) {
+    .mobile-previews-container {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .logic-column {
+        order: -1; /* Puts logic on top on mobile */
+        width: 100%;
+        padding: 0;
+    }
+    .logic-column::before { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -2779,29 +2856,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="mobile-previews-section">
     <div class="section-header" style="margin-bottom: 50px;">
-        <h2>Instant Engagement. <span class="gradient-text">Zero Effort.</span></h2>
-        <p>While you're on the forecourt, IGNYTE handles the handshake and the heads-up.</p>
+        <h2>The <span class="gradient-text">Dual-Response</span> Engine</h2>
+        <p>IGNYTE doesn't just reply. It thinks. Every lead triggers a 3-step logic check before a single message is sent.</p>
     </div>
 
     <div class="mobile-previews-container">
-        <div class="mobile-frame">
+        
+        <div class="mobile-frame left">
             <div class="screen-edge">
                 <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response" loading="lazy">
             </div>
-            <div class="mobile-label">To the Customer</div>
-            <p class="mobile-subtext">Instant WhatsApp/SMS response to keep them off your competitor's site.</p>
+            <div class="mobile-label" style="color: var(--electric);">To the Customer</div>
+            <p class="mobile-subtext">Immediate reassurance that stops them browsing elsewhere.</p>
         </div>
 
-        <div class="mobile-frame">
+        <div class="logic-column">
+            
+            <div class="logic-card">
+                <div class="logic-icon">⏰</div>
+                <div class="logic-text">
+                    <h4>Context Check: 21:45 PM</h4>
+                    <p>System detects "After Hours". Human intervention unavailable. Switch to Auto-Pilot.</p>
+                </div>
+            </div>
+
+            <div class="logic-card">
+                <div class="logic-icon">🔥</div>
+                <div class="logic-text">
+                    <h4>Intent Score: 92/100</h4>
+                    <p>Natural Language Processing detects "Finance Approved" + "Ready to buy". Priority: HIGH.</p>
+                </div>
+            </div>
+
+            <div class="logic-card">
+                <div class="logic-icon">⚡</div>
+                <div class="logic-text">
+                    <h4>Action: Dual Route</h4>
+                    <p>1. Engage customer via WhatsApp (Hold attention)<br>2. Wake up Sales Manager (Close deal)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mobile-frame right">
             <div class="screen-edge" style="border-color: #1a1a1a;">
                 <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert" loading="lazy">
             </div>
             <div class="mobile-label" style="color: var(--volt);">To Your Team</div>
-            <p class="mobile-subtext">The "HOT" lead alert sent via SMS, showing exactly why they are ready to buy.</p>
+            <p class="mobile-subtext">The "HOT" alert that tells your closer exactly who to call first.</p>
         </div>
+
     </div>
 </section>
-
         <section id="demo" class="demo-section">
             <div class="form-container">
                 <div id="formContent">
