@@ -988,18 +988,19 @@
     width: 40%; height: 5px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; z-index: 10; pointer-events: none;
 }
 
-/* Update ONLY this block to fix the blur while keeping full visibility */
 .screen-edge img {
     width: 100%;
     height: 100%;
-    /* Keeps the full screenshot visible within the frame boundaries */
+    /* 'contain' ensures the full text is visible without zooming */
     object-fit: contain; 
-    /* Ensures the top of the screenshot (header/nav) is the anchor point */
+    /* Anchors to the top so headers are perfectly aligned */
     object-position: top; 
     display: block;
-    /* Essential: Forces the browser to render pixels sharply instead of smoothing them into a blur */
+    /* 'auto' is smoother; '-webkit-optimize-contrast' sharpens text */
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    /* Forces the browser to use higher-quality scaling algorithms */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .mobile-label {
