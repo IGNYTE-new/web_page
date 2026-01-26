@@ -843,11 +843,11 @@
     line-height: 1.5;
 }
 
-/* --- FIXED 9:16 MOBILE PREVIEWS --- */
+/* --- PRO MOBILE PREVIEWS (With Notch & Home Bar) --- */
 .mobile-previews-container {
     display: flex;
     justify-content: center;
-    gap: 60px; /* Increased gap for better separation */
+    gap: 60px;
     padding: 60px 5% 80px;
     max-width: 1200px;
     margin: 0 auto;
@@ -855,35 +855,67 @@
 }
 
 .mobile-frame {
-    width: 300px; /* Fixed width for consistency */
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .screen-edge {
-    background: #000;
+    background: #000; /* OLED Black background */
     width: 100%;
-    aspect-ratio: 9 / 16; /* FORCES Standard Mobile Shape */
-    border: 12px solid #1a1a1a; 
-    border-radius: 40px; 
+    aspect-ratio: 9 / 19; /* Taller iPhone Modern Ratio */
+    border: 14px solid #121212; /* Darker, matte bezel */
+    border-radius: 45px; /* High radius for modern iPhone look */
     overflow: hidden;
     position: relative;
     box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+                0 0 0 2px rgba(255, 255, 255, 0.05) inset;
     transition: transform 0.3s ease;
+}
+
+/* THE NOTCH */
+.screen-edge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 24px;
+    background: #121212;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 10;
+}
+
+/* THE HOME BAR */
+.screen-edge::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .screen-edge:hover {
     transform: translateY(-5px);
-    border-color: #333;
+    border-color: #222;
 }
 
 .screen-edge img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Fills the screen, cropping edges if needed */
-    object-position: top center; /* Anchors to top so headers are never cut off */
+    /* 'contain' ensures the whole screenshot is seen, no cropping */
+    object-fit: contain; 
+    /* Centers the image in the black space */
+    object-position: center; 
     display: block;
 }
 
@@ -905,6 +937,11 @@
     max-width: 280px;
 }
 
+@media (max-width: 768px) {
+    .mobile-previews-container {
+        gap: 40px;
+    }
+}
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
     .mobile-previews-container {
@@ -2743,15 +2780,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mobile-previews-container">
         <div class="mobile-frame">
             <div class="screen-edge">
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response" loading="lazy">
             </div>
             <div class="mobile-label">To the Customer</div>
             <p class="mobile-subtext">Instant WhatsApp/SMS response to keep them off your competitor's site.</p>
         </div>
 
         <div class="mobile-frame">
-            <div class="screen-edge" style="border-color: #2a2a2a;"> 
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert">
+            <div class="screen-edge" style="border-color: #1a1a1a;">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert" loading="lazy">
             </div>
             <div class="mobile-label" style="color: var(--volt);">To Your Team</div>
             <p class="mobile-subtext">The "HOT" lead alert sent via SMS, showing exactly why they are ready to buy.</p>
