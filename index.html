@@ -1642,6 +1642,7 @@
     position: relative;
     
     /* Folding Logic */
+    /* CHANGED: Reduced from 2000px to 800px to fix animation performance */
     max-height: 100px; 
     overflow: hidden;
     transition: max-height 0.4s ease-out;
@@ -1649,7 +1650,7 @@
 
 /* When the card has the 'expanded' class, show everything */
 .prompt-card.expanded .prompt-text {
-    max-height: 2000px; 
+    max-height: 800px; /* Item 3 Fix: Lower max-height for smoother animation */
 }
 
 .expand-btn {
@@ -2370,21 +2371,23 @@
         align-items: center;
         gap: 30px;
     }
-.mobile-frame {
-    width: 320px; /* Increased from 280px for better Desktop detail */
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
+
+    .mobile-frame {
+        width: 320px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
     }
+
     .logic-column {
         padding: 0;
         order: 2; /* Moves the logic cards between the two phones */
     }
-}
+
+    
     </style>
 </head>
 
@@ -2405,8 +2408,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('pricing')">Pricing</a>
     <a onclick="showPage('blog')">Blog</a>
-    <a class="btn-primary" ...>Get Started</a>
-    </nav>
+    <a class="btn-primary" onclick="showPage('home'); setTimeout(() => document.getElementById('demo').scrollIntoView({behavior: 'smooth'}), 100)">Get Started</a>
+</div>
 
     <div id="home" class="page active">
         <section class="hero">
@@ -2539,7 +2542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 
                 <div class="window-content">
-                    <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/sheets_view.png" alt="IGNYTE Google Sheets CRM View">
+                    <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/sheets_view.png" alt="IGNYTE Google Sheets CRM View" width="1000" height="600" loading="lazy">
                     
                     <div class="window-gloss"></div>
                 </div>
@@ -2584,10 +2587,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="comparison-slider" id="sliderbox">
         
-        <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/unorganised.png" alt="Before">
+        <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/unorganised.png" alt="Before" width="1200" height="800" loading="lazy">
         
         <div class="after-image-wrapper" id="afterWrapper">
-            <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/organised.png" alt="After">
+            <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/organised.png" alt="After" width="1200" height="800" loading="lazy">
         </div>
 
         <span class="slider-label label-before">Before</span>
@@ -2716,7 +2719,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="mobile-frame left">
             <div class="screen-edge">
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response" loading="lazy">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/customer_auto_response.png" alt="Customer Auto Response" width="380" height="456" loading="lazy">
             </div>
             <div class="mobile-label" style="color: var(--electric);">To the Customer</div>
             <p class="mobile-subtext">Immediate engagement that stops them from returning to the marketplace. Business Hour logic automatically adjusts response based on time of enquiry</p>
@@ -2752,7 +2755,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="mobile-frame right">
             <div class="screen-edge" style="border-color: #1a1a1a;">
-                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert" loading="lazy">
+                <img src="https://raw.githubusercontent.com/IGNYTE-new/web_page/main/manager_alert.png" alt="Manager Alert" width="380" height="456" loading="lazy">
             </div>
             <div class="mobile-label" style="color: var(--volt);">To Management</div>
             <p class="mobile-subtext">Direct alerts sent to you for immediate action. No need to sit monitoring emails.</p>
@@ -3033,6 +3036,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>Average UK car salesperson handles 8-12 enquiries daily. If 60% are tire-kickers (industry average), that's 5-7 hours wasted on leads that won't convert for months, if ever.</p>
 
             <p>Meanwhile, the 3-4 hot leads that came in got:</p>
+
             <ul>
                 <li>Voicemail (buyer calls competitor)</li>
                 <li>Generic email (buyer books elsewhere)</li>
@@ -3800,8 +3804,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 closeFlowModal();
             }
         });
+
+        // --- OPTIMIZED SLIDER LOGIC ---
         
-        // --- FIXED SLIDER LOGIC ---
+        // Item 4 Fix: Helper to debounce resize events
+        function debounce(func, wait) {
+            let timeout;
+            return function() {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, arguments), wait);
+            };
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const sliderBox = document.getElementById('sliderbox');
             const afterWrapper = document.getElementById('afterWrapper');
@@ -3810,69 +3824,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (!sliderBox || !afterWrapper || !handle) return;
 
             let isDown = false;
+            let startX = 0;
+            let sliderRect = null;
+            let animationFrameId = null;
 
-            function moveSlider(e) {
-                // Calculate position
-                let clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                const rect = sliderBox.getBoundingClientRect();
+            // Helper to cache dimensions on click
+            function startDrag(e) {
+                isDown = true;
+                // Calculate dimensions ONCE when click starts, not every pixel move
+                sliderRect = sliderBox.getBoundingClientRect();
                 
-                // Calculate position relative to container
-                let position = clientX - rect.left;
+                // Handle touch vs mouse coordinates
+                startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                
+                // Trigger immediate update
+                updateSliderPosition(startX);
+            }
 
-                // Constraint logic (don't go outside container)
+            // The heavy lifting logic (Item 1 Fix)
+            function updateSliderPosition(clientX) {
+                if (!sliderRect) return;
+
+                // Calculate position relative to container
+                let position = clientX - sliderRect.left;
+
+                // Constraints
                 if (position < 0) position = 0;
-                if (position > rect.width) position = rect.width;
+                if (position > sliderRect.width) position = sliderRect.width;
 
                 // Convert to percentage
-                const percentage = (position / rect.width) * 100;
+                const percentage = (position / sliderRect.width) * 100;
 
-                // Apply styles
-                afterWrapper.style.width = percentage + "%";
-                handle.style.left = percentage + "%";
+                // Apply visual updates inside a requestAnimationFrame for performance
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+                
+                animationFrameId = requestAnimationFrame(() => {
+                    afterWrapper.style.width = percentage + "%";
+                    handle.style.left = percentage + "%";
+                });
+            }
+
+            function stopDrag() {
+                isDown = false;
+                sliderRect = null; // Clear cache
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
             }
 
             // --- Mouse Events ---
             sliderBox.addEventListener('mousedown', function(e) {
-                isDown = true;
-                moveSlider(e); // Move immediately to click position
+                startDrag(e);
             });
 
-            window.addEventListener('mouseup', function() {
-                isDown = false;
-            });
+            window.addEventListener('mouseup', stopDrag);
 
             window.addEventListener('mousemove', function(e) {
                 if (!isDown) return;
-                e.preventDefault(); // Stop selection while dragging
-                moveSlider(e);
+                e.preventDefault();
+                updateSliderPosition(e.clientX);
             });
 
-            // --- Touch Events (Mobile Fix) ---
+            // --- Touch Events ---
             sliderBox.addEventListener('touchstart', function(e) {
-                isDown = true;
-                moveSlider(e);
-            }, { passive: true }); // passive: true helps scroll performance
+                startDrag(e);
+            }, { passive: false });
 
-            window.addEventListener('touchend', function() {
-                isDown = false;
-            });
+            window.addEventListener('touchend', stopDrag);
 
             window.addEventListener('touchmove', function(e) {
                 if (!isDown) return;
-                // Only prevent default if we are interacting with the slider
+                // Only prevent default if scrolling inside the slider area
                 if (e.target.closest('.comparison-slider')) {
-                     moveSlider(e);
+                     e.preventDefault(); 
+                     updateSliderPosition(e.touches[0].clientX);
                 }
             }, { passive: false });
+            
+            // Item 4 Fix: Recalculate on window resize safely (debounced)
+            window.addEventListener('resize', debounce(() => {
+                if(sliderBox) sliderRect = sliderBox.getBoundingClientRect();
+            }, 250));
         });
 
-function togglePrompt(btn) {
-    const card = btn.closest('.prompt-card');
-    const isExpanded = card.classList.toggle('expanded');
-    
-    // Change the button text
-    btn.innerText = isExpanded ? '- Hide Prompt' : '+ View Full Prompt';
-}
+        function togglePrompt(btn) {
+            const card = btn.closest('.prompt-card');
+            const isExpanded = card.classList.toggle('expanded');
+            
+            // Change the button text
+            btn.innerText = isExpanded ? '- Hide Prompt' : '+ View Full Prompt';
+        }
         
     </script>
 
